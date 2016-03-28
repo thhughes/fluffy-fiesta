@@ -121,7 +121,7 @@ public class BetaHantoMasterTest
 		assertEquals(BUTTERFLY, p.getType());
 	}
 	
-	@Test	// 1
+	@Test	// 2
 	public void bluePlacesInitialSparrowAtOrigin() throws HantoException
 	{
 		final MoveResult mr = game.makeMove(SPARROW, null, makeCoordinate(0, 0));
@@ -131,7 +131,7 @@ public class BetaHantoMasterTest
 		assertEquals(SPARROW, p.getType());
 	}
 	
-	@Test	// 1
+	@Test	// 3
 	public void redMakesValidMoveAfterBluePlacesButterfly() throws HantoException
 	{
 		MoveResult mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0, 0));
@@ -142,7 +142,7 @@ public class BetaHantoMasterTest
 		assertEquals(BUTTERFLY, p.getType());
 	}
 	
-	@Test	// 1
+	@Test(expected=HantoException.class)	// 4
 	public void redMakesinValidMoveAfterBluePlacesButterfly() throws HantoException
 	{
 		MoveResult mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0, 0));

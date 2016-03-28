@@ -30,6 +30,7 @@ public class BetaHantoGame implements HantoGame
 	private boolean firstMove = true;
 	private HantoPlayerColor nextPlayerColor = null;
 	private Queue<HantoPieceType> validPieces = new LinkedList<HantoPieceType>();
+	private Queue<HantoCoordinate> frontier = new LinkedList<HantoCoordinate>();
 	private Map<HantoCoordinate, HantoPiece> pieceHash = new HashMap<HantoCoordinate, HantoPiece>();
 	
 	
@@ -51,26 +52,31 @@ public class BetaHantoGame implements HantoGame
 	public MoveResult makeMove(HantoPieceType pieceType, HantoCoordinate from,
 			HantoCoordinate to) throws HantoException
 	{
+		HantoCoordinate safeTo = null; 
+		if (to != null) safeTo = new HantoCoordinateImpl(to);
+		HantoCoordinate safeFrom = null; 
+		if (from != null) safeFrom = new HantoCoordinateImpl(from);
 		
 		if(firstMove && validPieces.contains(pieceType)){
-			if (to.getX() != 0 && to.getY() != 0){
+			if (!safeTo.equals(new HantoCoordinateImpl(0,0))){
 				throw new HantoException("Invalid location for first move");
 			}
 
 			HantoPieceImpl movePiece = new HantoPieceImpl(getColor(), pieceType);
-			pieceHash.put(to, movePiece);
+			pieceHash.put(safeTo, movePiece);
+			expandFrontier(safeTo);
 			firstMove = false;
 			return MoveResult.OK;
 		}
 		else if(!firstMove && validPieces.contains(pieceType)){
-			if(spotTaken(to)){
+			if(spotTaken(safeTo)){
 				throw new HantoException("Invalid Location: Already Occupied");
 			}
-			if(!legalLocation(to)){
+			if(!legalLocation(safeTo)){
 				throw new HantoException("Invalid Locaiton: Cannot Move There");
 			}
 			HantoPieceImpl movePiece = new HantoPieceImpl(getColor(), pieceType);
-			pieceHash.put(to, movePiece);
+			pieceHash.put(safeTo, movePiece);
 			return MoveResult.OK;
 		}
 		throw new HantoException("Invalid Piece");
@@ -82,9 +88,11 @@ public class BetaHantoGame implements HantoGame
 	@Override
 	public HantoPiece getPieceAt(HantoCoordinate where)
 	{
+		HantoCoordinate safeWhere  = null;
+		if (where != null) safeWhere = new HantoCoordinateImpl(where);
 		HantoPiece returnPiece = null;
-		if(spotTaken(where)){
-			returnPiece = (HantoPiece) pieceHash.get(where);
+		if(spotTaken(safeWhere)){
+			returnPiece = (HantoPiece) pieceHash.get(safeWhere);
 		}
 		return returnPiece;
 	}
@@ -113,6 +121,33 @@ public class BetaHantoGame implements HantoGame
 		return HantoPlayerColor.RED;
 	}
 	
+	private void expandFrontier(HantoCoordinate newPoint){
+		if (frontier.contains(newPoint)){
+			frontier.remove(newPoint);
+		}
+		for (HantoCoordinate currentPoint : getSurroundingPoints(newPoint)){
+			if(!frontier.contains(currentPoint) && !spotTaken(currentPoint)){
+				frontier.add(currentPoint);
+			}
+		}
+	}
+	
+	private Queue<HantoCoordinate> getSurroundingPoints(HantoCoordinate point){
+		Queue<HantoCoordinate> surrounding = new LinkedList<HantoCoordinate>();
+		int startX = point.getX();
+		int startY = point.getY();
+		
+		surrounding.add(new HantoCoordinateImpl(startX,startY+1));
+		surrounding.add(new HantoCoordinateImpl(startX+1,startY));
+		surrounding.add(new HantoCoordinateImpl(startX,startY-1));
+		surrounding.add(new HantoCoordinateImpl(startX-1,startY));
+		surrounding.add(new HantoCoordinateImpl(startX-1,startY+1));
+		surrounding.add(new HantoCoordinateImpl(startX+1,startY-1));
+		
+		return surrounding;
+		
+	}
+	
 	/**
 	 * Checks if a spot is taken on the board and returns true if it is. False if it is not
 	 * @param spot : HantoCoordinate representing the location to check
@@ -122,16 +157,11 @@ public class BetaHantoGame implements HantoGame
 		return pieceHash.containsKey(spot);
 	}
 	
-	private boolean legalLocation(HantoCoordinate location) throws HantoException{
-		// @TODO
-		Queue<HantoCoordinate> frontier = new LinkedList<HantoCoordinate>();
-		Iterator it = pieceHash.entrySet().iterator();
-		while(it.hasNext()){
-			Map.Entry pair = (Map.Entry)it.next();
-			System.out.println(pair.getKey() + " = " + pair.getValue());
-	        it.remove(); // avoids a ConcurrentModificationException
+	private boolean legalLocation(HantoCoordinate location){
+		if (frontier.contains(location)){
+			return true;
 		}
-		throw new HantoException("Finish This Please");
+		return false;
 	}
 
 }
