@@ -18,11 +18,12 @@ import java.util.*;
 
 import hanto.common.*;
 import hanto.studentThhughes.common.*;
+import static hanto.common.HantoPieceType.*;
+import static hanto.common.HantoPlayerColor.*;
+
 
 /**
- * The implementation of Beta Hanto. Please note, that this class utilizes the .equals and .hashCode functions. 
- * All objects passed to this class should have the appropriate methods implemented to allow for proper 
- * functionality.
+ * The implementation of Beta Hanto.
  * @version Mar 16, 2016
  */
 public class BetaHantoGame implements HantoGame
@@ -31,8 +32,11 @@ public class BetaHantoGame implements HantoGame
 	private HantoPlayerColor nextPlayerColor = null;
 	private Queue<HantoPieceType> validPieces = new LinkedList<HantoPieceType>();
 	private Queue<HantoCoordinate> frontier = new LinkedList<HantoCoordinate>();
-	private Map<HantoCoordinate, HantoPiece> pieceHash = new HashMap<HantoCoordinate, HantoPiece>();
-	
+	private Map<HantoCoordinate, HantoPiece> boardMap = new HashMap<HantoCoordinate, HantoPiece>();
+	private int blueMoves = 0;
+	private int redMoves = 0;
+	private Map<HantoPieceType,Integer> bluePieceMap = new HashMap<HantoPieceType, Integer>();
+	private Map<HantoPieceType,Integer> redPieceMap = new HashMap<HantoPieceType, Integer>();
 	
 	
 	public BetaHantoGame(HantoPlayerColor firstMovePlayer){
@@ -52,22 +56,26 @@ public class BetaHantoGame implements HantoGame
 	public MoveResult makeMove(HantoPieceType pieceType, HantoCoordinate from,
 			HantoCoordinate to) throws HantoException
 	{
+		// Ensure the coordinates are 'safe' meaning they contain equals and hash
 		HantoCoordinate safeTo = null; 
 		if (to != null) safeTo = new HantoCoordinateImpl(to);
-		HantoCoordinate safeFrom = null; 
-		if (from != null) safeFrom = new HantoCoordinateImpl(from);
+		if (to == null) throw new HantoException("There Must be a To location specified for Beta Hanto");
 		
+		if (from != null){
+			throw new HantoException("Illegal Move: Cannot Move Pieces In BetaHanto");
+		}
+		
+		
+		// Check if it's a valid first move piece
 		if(firstMove && validPieces.contains(pieceType)){
 			if (!safeTo.equals(new HantoCoordinateImpl(0,0))){
 				throw new HantoException("Invalid location for first move");
 			}
 
-			HantoPieceImpl movePiece = new HantoPieceImpl(getColor(), pieceType);
-			pieceHash.put(safeTo, movePiece);
-			expandFrontier(safeTo);
-			firstMove = false;
+			cachePiece(pieceType, safeTo);
 			return MoveResult.OK;
 		}
+		// Check if it's a valid piece if it's not the first move
 		else if(!firstMove && validPieces.contains(pieceType)){
 			if(spotTaken(safeTo)){
 				throw new HantoException("Invalid Location: Already Occupied");
@@ -75,11 +83,32 @@ public class BetaHantoGame implements HantoGame
 			if(!legalLocation(safeTo)){
 				throw new HantoException("Invalid Locaiton: Cannot Move There");
 			}
-			HantoPieceImpl movePiece = new HantoPieceImpl(getColor(), pieceType);
-			pieceHash.put(safeTo, movePiece);
+			if(!isLegalBoardMove(pieceType, safeTo)){
+				throw new HantoException("Illegal Move: Cannot Make that Move");
+			}
+			cachePiece(pieceType, safeTo);
 			return MoveResult.OK;
 		}
 		throw new HantoException("Invalid Piece");
+	}
+
+
+	/**
+	 * This internally caches the piece in a frontier and in a hash of pieces based off it's location
+	 * @param pieceType: HantoPieceType of the piece that is being passed. 
+	 * @param safeTo : location of the hantoPiece as a HantoCoordinat
+	 */
+	private void cachePiece(HantoPieceType pieceType, HantoCoordinate safeTo) {
+		
+		expandFrontier(safeTo);
+		HantoPlayerColor curColor = getAndToggleColor();
+		HantoPieceImpl movePiece = new HantoPieceImpl(curColor, pieceType);
+		incrementTeamMoves(curColor);
+		
+		updateCurrentPlayerMap(pieceType);
+		
+		boardMap.put(safeTo, movePiece);
+		firstMove = false;
 	}
 
 	/*
@@ -92,7 +121,7 @@ public class BetaHantoGame implements HantoGame
 		if (where != null) safeWhere = new HantoCoordinateImpl(where);
 		HantoPiece returnPiece = null;
 		if(spotTaken(safeWhere)){
-			returnPiece = (HantoPiece) pieceHash.get(safeWhere);
+			returnPiece = (HantoPiece) boardMap.get(safeWhere);
 		}
 		return returnPiece;
 	}
@@ -112,13 +141,21 @@ public class BetaHantoGame implements HantoGame
 	 * the next move
 	 * @return HantoPlayerColor : representing the color of that move. 
 	 */
-	private HantoPlayerColor getColor(){
-		if (nextPlayerColor == HantoPlayerColor.BLUE){
-			nextPlayerColor = HantoPlayerColor.RED;
-			return HantoPlayerColor.BLUE;
+	private HantoPlayerColor getAndToggleColor(){
+		if (nextPlayerColor == BLUE){
+			nextPlayerColor = RED;
+			return BLUE;
 		}
-		nextPlayerColor = HantoPlayerColor.BLUE;
-		return HantoPlayerColor.RED;
+		nextPlayerColor = BLUE;
+		return RED;
+	}
+	
+	/**
+	 * Get's the color of the player that is playing right now
+	 * @return HantoPlayerColor
+	 */
+	private HantoPlayerColor currentColor(){
+		return nextPlayerColor;
 	}
 	
 	private void expandFrontier(HantoCoordinate newPoint){
@@ -154,14 +191,66 @@ public class BetaHantoGame implements HantoGame
 	 * @return boolean : representing if the spot is occupied.
 	 */
 	private boolean spotTaken(HantoCoordinate spot){
-		return pieceHash.containsKey(spot);
+		return boardMap.containsKey(spot);
 	}
 	
 	private boolean legalLocation(HantoCoordinate location){
-		if (frontier.contains(location)){
-			return true;
+		return frontier.contains(location);
+	}
+	
+	/**
+	 * Checks if a legal move is being made based off the turn number and the pieces on the board
+	 * @param pt : HantoPieceType -> the type of piece being played this turn
+	 * @param cord : hantoCoordinate -> where the peice is being placed
+	 * @return Boolean : True if the move is legal. 
+	 */
+	private boolean isLegalBoardMove(HantoPieceType pt, HantoCoordinate cord){
+		return !(currentPlayerMoveNumber() == 3 && 
+				!((currentPlayerMap().containsKey(BUTTERFLY)) ^ pt == BUTTERFLY));
+	}
+	
+	
+	private int currentPlayerMoveNumber(){
+		int numMoves = -1;
+		if(currentColor() == BLUE){
+			numMoves = blueMoves;
+		}else if(currentColor() == RED){
+			numMoves = redMoves;
 		}
-		return false;
+		return numMoves;
+	}
+	
+	private Map<HantoPieceType,Integer> currentPlayerMap(){
+		Map<HantoPieceType,Integer> resultMap = null;
+		if (currentColor() == BLUE){
+			resultMap = bluePieceMap;
+		}else if(currentColor() == RED){
+			resultMap = redPieceMap;
+		}
+		return resultMap;
+	}
+	
+	private void updateCurrentPlayerMap(HantoPieceType newPiece){
+		Map<HantoPieceType,Integer> updateMap = null;
+		if (currentColor() == BLUE){
+			updateMap = bluePieceMap;
+		}else if(currentColor() == RED){
+			updateMap = redPieceMap;
+		}
+		
+		if(updateMap.containsKey(newPiece)){
+			updateMap.put(newPiece, updateMap.get(newPiece) + 1);
+		}else{
+			updateMap.put(newPiece, new Integer(1));
+		}
+	}
+	
+	private void incrementTeamMoves(HantoPlayerColor col){
+		if (col == BLUE){
+			blueMoves++;
+		}else{
+			redMoves++;
+		}
 	}
 
 }

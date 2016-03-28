@@ -421,3 +421,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY com.instantiations.eclipse 1 0 2016-03-27 23:26:09.386
 !MESSAGE cannot support aboutToShutdown event - 2
+
+!ENTRY org.eclipse.jdt.debug.ui 4 4 2016-03-28 09:03:20.115
+!MESSAGE Invalid stack frame

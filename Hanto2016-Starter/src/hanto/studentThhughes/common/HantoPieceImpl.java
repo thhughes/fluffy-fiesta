@@ -71,4 +71,5 @@ public class HantoPieceImpl implements HantoPiece
 			return false;
 		return true;
 	}
+	
 }
