@@ -9,11 +9,12 @@ XX Second piece is not the same color as the first
 X Second piece is a legal piece (sp or but)
 
 TESTS: 
-- third -> 6th piece (legal piece and place)
+X third -> 6th piece (legal piece and place)
 
 Win Conditions: 
-- If one butterfly is surrounded win for other team
-- If 6 turns happen draw
+X If one butterfly is surrounded win for other team
+X If 6 turns happen draw
+X Both people lose 
 
 Random: 
 X Try to move piece :: error 

@@ -37,6 +37,8 @@ public class BetaHantoGame implements HantoGame
 	private int redMoves = 0;
 	private Map<HantoPieceType,Integer> bluePieceMap = new HashMap<HantoPieceType, Integer>();
 	private Map<HantoPieceType,Integer> redPieceMap = new HashMap<HantoPieceType, Integer>();
+	private Map<HantoCoordinate,Boolean> blueButterflyMap = new HashMap<HantoCoordinate,Boolean>();
+	private Map<HantoCoordinate,Boolean> redButterflyMap = new HashMap<HantoCoordinate,Boolean>();
 	
 	
 	public BetaHantoGame(HantoPlayerColor firstMovePlayer){
@@ -64,19 +66,19 @@ public class BetaHantoGame implements HantoGame
 		if (from != null){
 			throw new HantoException("Illegal Move: Cannot Move Pieces In BetaHanto");
 		}
+		if (!validPieces.contains(pieceType)) throw new HantoException("Invalid Piece");
 		
 		
 		// Check if it's a valid first move piece
-		if(firstMove && validPieces.contains(pieceType)){
+		if(firstMove){
 			if (!safeTo.equals(new HantoCoordinateImpl(0,0))){
 				throw new HantoException("Invalid location for first move");
 			}
 
 			cachePiece(pieceType, safeTo);
-			return MoveResult.OK;
 		}
 		// Check if it's a valid piece if it's not the first move
-		else if(!firstMove && validPieces.contains(pieceType)){
+		else {
 			if(spotTaken(safeTo)){
 				throw new HantoException("Invalid Location: Already Occupied");
 			}
@@ -87,11 +89,35 @@ public class BetaHantoGame implements HantoGame
 				throw new HantoException("Illegal Move: Cannot Make that Move");
 			}
 			cachePiece(pieceType, safeTo);
-			return MoveResult.OK;
 		}
-		throw new HantoException("Invalid Piece");
+		
+		return evaluateBoardState();
+		
 	}
 
+	// TODO : Add the win condition evaluation stuff
+	private MoveResult evaluateBoardState()
+	{
+		MoveResult result = MoveResult.OK;
+		if (!blueButterflyMap.containsValue(false) && !blueButterflyMap.isEmpty()){
+			result = MoveResult.RED_WINS;
+		}
+		if (!redButterflyMap.containsValue(false) && !redButterflyMap.isEmpty()){
+			if (result == MoveResult.RED_WINS){
+				result = MoveResult.DRAW;
+			}else{
+				result = MoveResult.BLUE_WINS;
+			}
+		}
+		
+		
+		if ((blueMoves == 6 && redMoves == 6) && 
+				(result != MoveResult.BLUE_WINS && result != MoveResult.RED_WINS)){
+			result = MoveResult.DRAW;
+		}
+		
+		return result;
+	}
 
 	/**
 	 * This internally caches the piece in a frontier and in a hash of pieces based off it's location
@@ -100,14 +126,38 @@ public class BetaHantoGame implements HantoGame
 	 */
 	private void cachePiece(HantoPieceType pieceType, HantoCoordinate safeTo) {
 		
+		// Expand the frontier of the point being placed
 		expandFrontier(safeTo);
-		HantoPlayerColor curColor = getAndToggleColor();
-		HantoPieceImpl movePiece = new HantoPieceImpl(curColor, pieceType);
+		
+		// Create the piece for internal hashing
+		HantoPlayerColor curColor = currentColor();
+		HantoPiece movePiece = new HantoPieceImpl(curColor, pieceType);
+		
+		// Increment the team's move
 		incrementTeamMoves(curColor);
 		
+		// Hash data for game progression
 		updateCurrentPlayerMap(pieceType);
-		
 		boardMap.put(safeTo, movePiece);
+		
+		// Get the butterfly data and update 
+		Map<HantoCoordinate,Boolean> butterflyMap = currentPlayerButterflyMap();
+		
+		if (pieceType == BUTTERFLY){
+			butterflyMap.clear();
+			for (HantoCoordinate somePoint : getSurroundingPoints(safeTo)){
+				butterflyMap.put(somePoint, spotTaken(somePoint));
+			}
+		}
+		if (blueButterflyMap.containsKey(safeTo) && !blueButterflyMap.isEmpty()){
+			blueButterflyMap.put(safeTo, spotTaken(safeTo));
+		}
+		if (redButterflyMap.containsKey(safeTo) && !redButterflyMap.isEmpty()){
+			redButterflyMap.put(safeTo, spotTaken(safeTo));
+		}
+		
+		
+		incrementColor(); 
 		firstMove = false;
 	}
 
@@ -141,13 +191,13 @@ public class BetaHantoGame implements HantoGame
 	 * the next move
 	 * @return HantoPlayerColor : representing the color of that move. 
 	 */
-	private HantoPlayerColor getAndToggleColor(){
+	private void incrementColor(){
 		if (nextPlayerColor == BLUE){
 			nextPlayerColor = RED;
-			return BLUE;
+		}else{
+			nextPlayerColor = BLUE;
 		}
-		nextPlayerColor = BLUE;
-		return RED;
+		
 	}
 	
 	/**
@@ -243,6 +293,16 @@ public class BetaHantoGame implements HantoGame
 		}else{
 			updateMap.put(newPiece, new Integer(1));
 		}
+	}
+	
+	private Map<HantoCoordinate,Boolean> currentPlayerButterflyMap(){
+		Map<HantoCoordinate,Boolean> resultMap = null;
+		if (currentColor() == BLUE){
+			resultMap = blueButterflyMap;
+		}else if(currentColor() == RED){
+			resultMap = redButterflyMap;
+		}
+		return resultMap;
 	}
 	
 	private void incrementTeamMoves(HantoPlayerColor col){

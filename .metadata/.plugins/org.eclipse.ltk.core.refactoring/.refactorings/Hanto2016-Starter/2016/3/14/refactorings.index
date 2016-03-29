@@ -1,3 +1,4 @@
 1459170175811	Extract method 'cachePiece'
 1459171130476	Rename method 'getColor'
 1459173629158	Rename field 'pieceHash'
+1459267880666	Rename method 'getAndToggleColor'

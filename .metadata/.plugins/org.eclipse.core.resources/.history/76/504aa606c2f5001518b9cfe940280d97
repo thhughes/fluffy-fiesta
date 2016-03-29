@@ -1,0 +1,19 @@
+TODO: 
+
+Starting: 
+X First thing placed is a legal move (at 0,0)
+X That first chip is also a legal piece 
+	- Either a Sparrow or Butterfly
+X Second piece placed is a legal move (touching 0,0)
+XX Second piece is not the same color as the first
+X Second piece is a legal piece (sp or but)
+
+TESTS: 
+- third -> 6th piece (legal piece and place)
+
+Win Conditions: 
+- If one butterfly is surrounded win for other team
+- If 6 turns happen draw
+
+Random: 
+X Try to move piece :: error 
