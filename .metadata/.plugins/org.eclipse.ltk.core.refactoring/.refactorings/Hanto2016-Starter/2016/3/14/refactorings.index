@@ -2,3 +2,12 @@
 1459171130476	Rename method 'getColor'
 1459173629158	Rename field 'pieceHash'
 1459267880666	Rename method 'getAndToggleColor'
+1459292375638	Rename method 'spotTaken'
+1459292393156	Rename method 'legalLocation'
+1459293278068	Rename method 'currentPlayerMap'
+1459293292638	Rename method 'currentPlayerButterflyMap'
+1459295997466	Copy packages
+1459296010868	Delete elements
+1459296031702	Delete element
+1459305585220	Copy compilation unit
+1459305751918	Delete elements

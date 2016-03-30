@@ -100,6 +100,12 @@ public class BetaHantoMasterTest
 		assertEquals(SPARROW, p.getType());
 	}
 	
+	@Test(expected=HantoException.class)	// 2
+	public void bluePlacesInitialSparrowAtIllegalLocation() throws HantoException
+	{
+		final MoveResult mr = game.makeMove(SPARROW, null, makeCoordinate(1, 1));
+	}
+	
 	@Test	// 3
 	public void redMakesValidMoveAfterBluePlacesButterfly() throws HantoException
 	{
@@ -384,6 +390,83 @@ public class BetaHantoMasterTest
 		mr = game.makeMove(SPARROW, null, makeCoordinate(-2,1)); // red
 		assertEquals(DRAW, mr);
 	}
+	
+	@Test(expected=HantoException.class) // 18
+	public void blueTriesToPlayTwoButterflies() throws HantoException
+	{
+		MoveResult mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0,0)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0,1)); // red
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(-1,1)); // blue
+		assertEquals(OK, mr);
+	}
+	
+	@Test(expected=HantoException.class) // 19
+	public void redTriesToPlayTwoButterflies() throws HantoException
+	{
+		MoveResult mr = game.makeMove(SPARROW, null, makeCoordinate(0,0)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0,1)); // red
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(-1,1)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(0,-1)); // blue
+		assertEquals(OK, mr);
+	}
+	
+	@Test(expected=HantoException.class)  // 20
+	public void tryingToMakeAMoveAfterADraw() throws HantoException
+	{
+		MoveResult mr = game.makeMove(SPARROW, null, makeCoordinate(0,0)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(0,1)); // red
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(-1,1)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(BUTTERFLY, null, makeCoordinate(-1,0)); // red
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(0,-1)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(-1,-1)); // red
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(-2,0)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(-1,2)); // RED
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(-2,2)); // blue
+		assertEquals(OK, mr);
+		mr = game.makeMove(SPARROW, null, makeCoordinate(-2,1)); // red
+		assertEquals(DRAW, mr);
+
+		System.out.println(game.getPrintableBoard());
+		mr = game.makeMove(SPARROW, null, makeCoordinate(0,2)); // red
+		
+	}
+	
+	@Test // 21
+	public void tryToGetPieceFromInvalidPlace(){
+		final HantoPiece p = game.getPieceAt(null);
+		assertNull(p);
+	}
+			
+	@Test // 22
+	public void usingGameFactoryToMakeAGameOfSpecificIDAndNoColorPref(){
+		game = factory.makeHantoGame(HantoGameID.BETA_HANTO);
+		assertNotNull(game);
+		// Just to get higher coverage... Wasn't sure what to do with it.
+		// Didn't want to delete alpha... 
+		game = factory.makeHantoGame(HantoGameID.ALPHA_HANTO); 
+		assertNotNull(game);
+	}
+	
+	@Test // 23
+	public void makingSureBoardPrintoutReturnsEvenThoughNotUsed(){
+		assertNotNull(game.getPrintableBoard());
+		System.out.println(game.getPrintableBoard());
+	}
+	
+	
 	
 	
 	
