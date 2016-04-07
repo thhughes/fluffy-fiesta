@@ -11,3 +11,9 @@
 1460035623467	Delete element
 1460035801512	Rename method 'currentColor'
 1460036829915	Delete element
+1460060197927	Change method 'isValidMove'
+1460062986451	Delete element
+1460063270439	Move compilation unit
+1460063289573	Rename type 'MoveCounter'
+1460063390097	Change method 'isValidMove'
+1460063834389	Change method 'getOutcome'

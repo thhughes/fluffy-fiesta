@@ -41,18 +41,18 @@ private static HantoCoordinate C2;
 	
 	@Test // 3
 	public void testCheckingStarterFrontierAvailability() throws HantoException{
-		assertTrue(validator.isValidMove(null, theFrontier, null, C1, null));
+		assertTrue(validator.isValidMove(null, theFrontier, null, null, C1, null));
 	}
 	
 	@Test // 3
 	public void testCheckingStarterFrontierAvailabilityOfOffFrontierPlace() throws HantoException{
-		assertFalse(validator.isValidMove(null, theFrontier, null, C2, null));
+		assertFalse(validator.isValidMove(null, theFrontier, null, null, C2, null));
 	}
 	
 	@Test // 5
 	public void testCheckingEmptySpotWithAFrontierOfOneThing() throws HantoException{
 		theFrontier.addToFrontier(C2);
-		assertTrue(validator.isValidMove(null, theFrontier, null, C2, null));
+		assertTrue(validator.isValidMove(null, theFrontier, null, null, C2, null));
 	}
 	
 	

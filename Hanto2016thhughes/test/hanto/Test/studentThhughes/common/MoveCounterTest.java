@@ -6,14 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.MoveCounter;
+import hanto.studentThhughes.common.moveCounter.MoveCounterImpl;
 
 public class MoveCounterTest {
-	private static MoveCounter mc;
+	private static MoveCounterImpl mc;
 	
 	@Before
 	public void setup(){
-		mc = new MoveCounter();
+		mc = new MoveCounterImpl();
 	}
 	
 	@Test

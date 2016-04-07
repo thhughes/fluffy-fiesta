@@ -1,0 +1,30 @@
+package hanto.Test.studentThhughes.common.boardValidator;
+
+import hanto.common.HantoPlayerColor;
+import hanto.studentThhughes.common.moveCounter.MoveCounter;
+
+public class TerminalMoveCheckTest {
+	private class dummyCounter implements MoveCounter{
+		int numMoves;
+		
+		public dummyCounter(int numberOfMoves){
+			numMoves = numberOfMoves;
+		}
+		
+		@Override
+		public int getNumberMoves(HantoPlayerColor player) {
+			return numMoves;
+		}
+
+		@Override
+		public void incrementNumberMoves(HantoPlayerColor player) {
+			numMoves++;
+			
+		}
+		
+		public void setNumberOfMoves(int val){
+			numMoves = val;
+		}
+		
+	}
+}

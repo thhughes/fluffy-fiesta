@@ -1,0 +1,53 @@
+package hanto.studentThhughes.common.moveValidator;
+
+import static hanto.common.HantoPieceType.BUTTERFLY;
+
+import java.util.Collection;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoPiece;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.studentThhughes.common.MoveCounter;
+import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.frontier.Frontier;
+
+public class ButterflyPlacedInTimeValidator implements MoveValidator{
+	Integer numberOfTurns;
+	public ButterflyPlacedInTimeValidator(int numberOfTurns){
+		numberOfTurns = new Integer(numberOfTurns);
+	}
+	
+	
+	@Override
+	public boolean isValidMove(Board theBoard, Frontier theFrontier, HantoPiece piece, HantoCoordinate where,
+			MoveCounter counter) {
+		HantoPlayerColor moveColor = piece.getColor();
+		Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(moveColor).values();
+		
+		return !(counter.getNumberMoves(piece.getColor()) == 3 &&
+				!((playerPieces.contains(HantoPieceType.BUTTERFLY)) ^ piece.getType() == HantoPieceType.BUTTERFLY));
+//		return !(numberButterflies == 0 &&
+//				piece.getType() != HantoPieceType.BUTTERFLY && 
+//				counter.getNumberMoves(piece.getColor()) < 3);
+	}
+	
+	/*
+	 * !(currentPlayerMoveNumber() == 3 && 
+				!((getCurrentPlayerMap().containsKey(BUTTERFLY)) ^ pt == BUTTERFLY))
+	 */
+	
+	
+	/*
+	 * (non-Javadoc)
+	 * @see hanto.studentThhughes.common.moveValidator.MoveValidator#invalidError()
+	 */
+
+	@Override
+	public void invalidError() throws HantoException {
+		throw new HantoException("Butterfly Placing Error: Must place butterfly by "+numberOfTurns.toString()+" Turns");
+		
+	}
+
+}

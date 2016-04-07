@@ -1,0 +1,11 @@
+package hanto.studentThhughes.common.moveCounter;
+
+import static hanto.common.HantoPlayerColor.RED;
+
+import hanto.common.HantoPlayerColor;
+
+public interface MoveCounter {
+	public int getNumberMoves(HantoPlayerColor player);
+	
+	public void incrementNumberMoves(HantoPlayerColor player);
+}

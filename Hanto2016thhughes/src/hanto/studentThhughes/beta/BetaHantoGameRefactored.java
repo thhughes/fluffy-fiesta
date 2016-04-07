@@ -25,6 +25,7 @@ import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.frontier.Frontier;
 import hanto.studentThhughes.common.frontier.FrontierImpl;
 import hanto.studentThhughes.common.hantoPiece.HantoPieceImpl;
+import hanto.studentThhughes.common.moveCounter.MoveCounterImpl;
 import hanto.studentThhughes.common.moveValidator.MoveValidator;
 
 import static hanto.common.HantoPieceType.*;
@@ -37,12 +38,9 @@ import static hanto.common.HantoPlayerColor.*;
  */
 public class BetaHantoGameRefactored implements HantoGame
 {
-	private boolean firstMove = true;
+
 	private boolean gameOver = false;
-//	private HantoPlayerColor nextPlayerColor = null;
-	private Queue<HantoPieceType> validPieces = new LinkedList<HantoPieceType>();
-	private int blueMoves = 0;
-	private int redMoves = 0;
+
 	private Map<HantoPieceType,Integer> bluePieceMap = new HashMap<HantoPieceType, Integer>();
 	private Map<HantoPieceType,Integer> redPieceMap = new HashMap<HantoPieceType, Integer>();
 	private Map<HantoCoordinate,Boolean> blueButterflyMap = new HashMap<HantoCoordinate,Boolean>();
@@ -52,7 +50,7 @@ public class BetaHantoGameRefactored implements HantoGame
 	private ColorManager hantoColorManager;
 	private Frontier hantoFrontier = new FrontierImpl();
 	private Board hantoBoard = new BoardImpl();
-	private MoveCounter hantoMC = new MoveCounter();
+	private MoveCounterImpl hantoMC = new MoveCounterImpl();
 	private MoveValidator hantoMV;
 	
 	
@@ -65,10 +63,6 @@ public class BetaHantoGameRefactored implements HantoGame
 	public BetaHantoGameRefactored(HantoPlayerColor firstMovePlayer, MoveValidator validator){
 		hantoColorManager = new ColorManager(firstMovePlayer);
 		hantoMV = validator;
-		
-		// Fill the list: 
-		validPieces.add(HantoPieceType.SPARROW);
-		validPieces.add(HantoPieceType.BUTTERFLY);
 		
 	}
 	
@@ -90,7 +84,7 @@ public class BetaHantoGameRefactored implements HantoGame
 		if (from != null) throw new HantoException("Illegal Move: Cannot Move Pieces In BetaHanto");
 		
 		if(!hantoMV.isValidMove(hantoBoard, hantoFrontier, 
-				new HantoPieceImpl(hantoColorManager.getCurrentColor(),pieceType), safeTo, hantoMC))
+				new HantoPieceImpl(hantoColorManager.getCurrentColor(),pieceType), hantoMC, safeTo, null))
 		{
 			hantoMV.invalidError();
 		}						
@@ -148,8 +142,7 @@ public class BetaHantoGameRefactored implements HantoGame
 		}
 		
 		
-		hantoColorManager.toggelCurrentColor(); 
-		firstMove = false;
+		hantoColorManager.toggelCurrentColor();
 	}
 	
 	private MoveResult evaluateBoardState()
@@ -192,7 +185,7 @@ public class BetaHantoGameRefactored implements HantoGame
 	@Override
 	public String getPrintableBoard()
 	{
-		return "hello World";
+		return "Running Get Printable Board: hello World";
 	}			
 	
 	
