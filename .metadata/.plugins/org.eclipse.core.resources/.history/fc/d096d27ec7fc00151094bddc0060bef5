@@ -1,0 +1,10 @@
+package hanto.Test.studentThhughes.common;
+
+public class MoveCounterTest {
+	private static MoveCounter mc;
+	
+	@Before
+	public void setup(){
+		mc = new MoveCounter();
+	}
+}

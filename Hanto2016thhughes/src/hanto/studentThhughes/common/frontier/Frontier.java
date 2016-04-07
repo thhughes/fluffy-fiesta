@@ -11,17 +11,15 @@ import hanto.common.*;
 public interface Frontier {
 
 	/**
-	 * This method adds a hanto piece at a hanto coordinate to the frontier. 
-	 * @param piece
-	 * 				The implementation of a hanto piece that is being placed at. If this
-	 * 				is null then the system will throw an exception
+	 * This method adds a location to the frontier - the frontier is the available 
+	 * points/locations that a HantoPiece can be placed on.
 	 * @param place
 	 * 				The implementation of a HantoCoordinate that the piece is being placed at
 	 * @return
 	 * 			Boolean : True if the object was correctly placed on the frontier
 	 * @throws HantoException
 	 */
-	boolean addToFrontier(HantoPiece piece, HantoCoordinate place) throws HantoException;
+	boolean addToFrontier(HantoCoordinate place) throws HantoException;
 
 
 	/**

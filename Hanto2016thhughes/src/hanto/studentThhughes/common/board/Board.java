@@ -1,5 +1,7 @@
 package hanto.studentThhughes.common.board;
 
+import java.util.Map;
+
 import hanto.common.*;
 
 /**
@@ -13,7 +15,9 @@ public interface Board {
 
 	/**
 	 * This method places something on the board. It returns a boolean indicating the success
-	 * or failure of the method.
+	 * or failure of the method. This method does not perform any type of error checking on 
+	 * the location. It simly checks if the location is valid and places the piece at the 
+	 * coordinate. 
 	 * 
 	 * @param piece
 	 * 				HantoPiece Implementation to be placed
@@ -52,10 +56,20 @@ public interface Board {
 	 * @param where
 	 * 				HantoCoordinate implementation representing the location of the piece
 	 * @return
-	 * 			HantoPiece in the HantoCoordinate
+	 * 			boolean: true if it's removed
 	 * @throws HantoException
 	 * 						If there is no piece in the given location
 	 * 						Or if the location is null.
 	 */
 	boolean removeFromBoard(HantoCoordinate where) throws HantoException;
+	
+	/**
+	 * This returns a map of the pieces in play by a given player. This map is 
+	 * build with hantoCoordinates as the key and hantoPieces as the value.
+	 * @param color
+	 * 				HantoPlayerColor : to decide what player to return data on.
+	 * @return
+	 * 			Map of the pieces from HantoCoordinate to HantoPiece. All pieces will have the same color. 
+	 */
+	Map<HantoCoordinate,HantoPiece> getPlayerPieces(HantoPlayerColor color);
 }

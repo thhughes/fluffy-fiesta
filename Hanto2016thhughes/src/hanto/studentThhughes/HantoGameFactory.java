@@ -13,6 +13,8 @@ package hanto.studentThhughes;
 import hanto.common.*;
 import hanto.studentThhughes.alpha.AlphaHantoGame;
 import hanto.studentThhughes.beta.BetaHantoGame;
+import hanto.studentThhughes.beta.BetaHantoGameRefactored;
+import hanto.studentThhughes.common.HantoMoveValidatorFactory;
 
 /**
  * This is a singleton class that provides a factory to create an instance of any version
@@ -59,13 +61,14 @@ public class HantoGameFactory
 	 * @return the game instance
 	 */
 	public  HantoGame makeHantoGame(HantoGameID gameId, HantoPlayerColor movesFirst) {
+		HantoMoveValidatorFactory validatorFactory = HantoMoveValidatorFactory.getInstance();
 		HantoGame game = null;
 		switch (gameId) {
 			case ALPHA_HANTO:
 				game = new AlphaHantoGame();
 				break;
 			case BETA_HANTO:
-				game = new BetaHantoGame(movesFirst);
+				game = new BetaHantoGameRefactored(movesFirst,validatorFactory.makeHantoValidator(gameId));
 				break;
 		}
 		return game;

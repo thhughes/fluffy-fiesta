@@ -40,20 +40,19 @@ private static HantoCoordinate C2;
 	}
 	
 	@Test // 3
-	public void testCheckingWithAnEmptyFrontier(){
-		assertTrue(validator.isValidMove(null, theFrontier, null, C1));
+	public void testCheckingStarterFrontierAvailability() throws HantoException{
+		assertTrue(validator.isValidMove(null, theFrontier, null, C1, null));
 	}
 	
-	@Test // 4
-	public void testCheckingTakenSpotWithAFrontierOfOneThing() throws HantoException{
-		theFrontier.addToFrontier(null, C1);
-		assertFalse(validator.isValidMove(null, theFrontier, null, C1));
+	@Test // 3
+	public void testCheckingStarterFrontierAvailabilityOfOffFrontierPlace() throws HantoException{
+		assertFalse(validator.isValidMove(null, theFrontier, null, C2, null));
 	}
 	
 	@Test // 5
 	public void testCheckingEmptySpotWithAFrontierOfOneThing() throws HantoException{
-		theFrontier.addToFrontier(null, C1);
-		assertTrue(validator.isValidMove(null, theFrontier, null, C2));
+		theFrontier.addToFrontier(C2);
+		assertTrue(validator.isValidMove(null, theFrontier, null, C2, null));
 	}
 	
 	

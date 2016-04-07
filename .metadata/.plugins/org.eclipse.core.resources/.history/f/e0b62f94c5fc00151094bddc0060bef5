@@ -1,0 +1,13 @@
+package hanto.Test.studentThhughes.common;
+
+import hanto.common.*;
+import static hanto.common.HantoPlayerColor.*;
+
+public class MoveCounter {
+	HantoPlayerColor startColor;
+	
+	public MoveCounter(HantoPlayerColor startingColor){
+		startColor = startingColor;
+	}
+
+}

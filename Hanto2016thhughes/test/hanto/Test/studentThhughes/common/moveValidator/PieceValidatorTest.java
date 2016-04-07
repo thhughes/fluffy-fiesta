@@ -27,7 +27,7 @@ public class PieceValidatorTest {
 	@Test // 2 
 	public void testValidatorWithEmptyList(){
 		validator = new PieceValidator(new LinkedList<HantoPieceType>());
-		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null));
+		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null));
 	}
 	
 	@Test //3 
@@ -36,7 +36,7 @@ public class PieceValidatorTest {
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
 		validator = new PieceValidator(validList);
-		assertTrue(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null));
+		assertTrue(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null));
 
 	}
 	
@@ -46,7 +46,7 @@ public class PieceValidatorTest {
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
 		validator = new PieceValidator(validList);
-		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,CRAB), null));
+		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,CRAB), null, null));
 
 	}
 	
