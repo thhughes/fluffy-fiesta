@@ -1,0 +1,21 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import hanto.studentThhughes.common.moveValidator.MoveValidator;
+import hanto.studentThhughes.common.moveValidator.PieceValidator;
+
+public class PieceValidatorTest {
+
+	private static MoveValidator validator;
+	
+	@Test // 1
+	public void testValidatorOnEmptyList(){
+		validator = new PieceValidator();
+		assertNotNull(validator);
+	}
+	
+	
+}

@@ -1,0 +1,33 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.studentThhughes.common.moveValidator.MoveValidator;
+import hanto.common.HantoException;
+import hanto.studentThhughes.common.moveValidator.LocationValidator;
+
+public class LocationValidatorTest {
+
+private static MoveValidator validator;
+
+	@Before
+	public void setup(){
+		validator = new LocationValidator();
+	}
+	
+	@Test // 1
+	public void testValidatorWithNoArgs(){
+		assertNotNull(validator);
+	}
+	
+	@Test(expected=HantoException.class) // 2
+	public void testInvalidError() throws HantoException{
+		validator.invalidError();
+	}
+	
+	
+	
+}

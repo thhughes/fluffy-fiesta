@@ -1,0 +1,31 @@
+package hanto.Test.studentThhughes.common.coordinate;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+
+public class HantoCoordinateImplTest {
+	
+	private static HantoCoordinateImpl C1;
+	private static HantoCoordinateImpl C2;
+	
+	@Before
+	public void setup(){
+		C1 = new HantoCoordinateImpl(0,0);
+		C2 = new HantoCoordinateImpl(0,1);
+		
+	}
+	
+	@Test //1 
+	public void testConstructor(){
+		assertNotNull(C1);	
+	}
+	
+	@Test //2 
+	public void testCopyConstructor(){
+		assertNotNull(new HantoCoordinateImpl(C1));
+	}
+}

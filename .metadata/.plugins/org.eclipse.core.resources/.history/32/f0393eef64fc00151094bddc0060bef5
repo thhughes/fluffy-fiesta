@@ -1,0 +1,53 @@
+/**
+ * 
+ */
+package hanto.studentThhughes.common.frontier;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoPiece;
+
+/**
+ * @author Troy
+ *
+ */
+public class FrontierImpl implements Frontier {
+
+	
+	Queue<HantoCoordinate> frontier;
+	
+	public FrontierImpl(){
+		frontier = new LinkedList<HantoCoordinate>();
+	}
+	
+	/* (non-Javadoc)
+	 * @see hanto.studentThhughes.common.frontier.Frontier#addToFrontier(hanto.common.HantoPiece, hanto.common.HantoCoordinate)
+	 */
+	@Override
+	public boolean addToFrontier(HantoPiece piece, HantoCoordinate place) throws HantoException {
+		if (place == null) throw new HantoException("Frontier Exception: cannot add null to frontier");
+		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see hanto.studentThhughes.common.frontier.Frontier#inFrontier(hanto.common.HantoCoordinate)
+	 */
+	@Override
+	public boolean inFrontier(HantoCoordinate place) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see hanto.studentThhughes.common.frontier.Frontier#removeFromFrontier(hanto.common.HantoCoordinate)
+	 */
+	@Override
+	public boolean removeFromFrontier(HantoCoordinate place) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

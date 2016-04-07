@@ -1,0 +1,15 @@
+package hanto.studentThhughes.common;
+
+public class HantoMoveValidatorFactory {
+
+	private static final HantoMoveValidatorFactory instance = new HantoMoveValidatorFactory();
+	
+	
+	private HantoMoveValidatorFactory(){
+		
+	}
+	
+	public static HantoMoveValidatorFactory getInstance(){
+		return instance;
+	}
+}

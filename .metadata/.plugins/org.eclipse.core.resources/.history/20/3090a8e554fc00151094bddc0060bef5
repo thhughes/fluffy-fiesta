@@ -1,0 +1,16 @@
+package hanto.studentThhughes.common.board;
+
+/**
+ * Interface to act as a container for the board. This allows there to be any underlying
+ * implementation without concern for interface (thus the board could be a map or a list).
+ * 
+ * @author Troy
+ *
+ */
+public interface Board {
+
+
+	
+	
+	
+}

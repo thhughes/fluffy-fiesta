@@ -1,0 +1,12 @@
+package hanto.studentThhughes.common.colorManager;
+
+import hanto.common.*;
+import static hanto.common.HantoPlayerColor.*;
+
+public class ColorManager {
+	
+	public ColorManager(HantoPlayerColor firstMovePlayer){
+		
+	}
+
+}

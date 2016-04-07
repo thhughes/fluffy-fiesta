@@ -1,0 +1,12 @@
+package hanto.Test.studentThhughes.common.board;
+
+import hanto.studentThhughes.common.board.Board;
+
+public class BoardImplTest {
+	private static Board theBoard;
+	
+	@Before
+	public void setup(){
+		theBoard = new BoardImpl();
+	}
+}

@@ -1,0 +1,13 @@
+package hanto.studentThhughes.common.frontier;
+
+import hanto.common.*;
+
+public interface Frontier {
+
+/**
+ * This is a frontier, and will be used to represent the areas that a piece can be placed.
+ * 
+ * 	
+ */
+	boolean addToFrontier(HantoPiece piece,HantoCoordinate place);
+}

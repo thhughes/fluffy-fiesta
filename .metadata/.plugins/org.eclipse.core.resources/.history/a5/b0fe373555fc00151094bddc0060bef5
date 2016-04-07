@@ -1,0 +1,29 @@
+package hanto.studentThhughes.common.board;
+
+import hanto.common.*;
+
+/**
+ * Interface to act as a container for the board. This allows there to be any underlying
+ * implementation without concern for interface (thus the board could be a map or a list).
+ * 
+ * @author Troy
+ *
+ */
+public interface Board {
+
+	/**
+	 * This method places something on the board. It returns a boolean indicating the success
+	 * or failure of the method.
+	 * 
+	 * @param piece
+	 * 				HantoPiece Implementation to be placed
+	 * @param where
+	 * 				HantoCoordinate Implementation representing the location of the piece
+	 * @return
+	 * 			Boolean : True if the piece was placed.
+	 * @throws HantoException
+	 */
+	boolean placeOnBoard(HantoPiece piece, HantoCoordinate where) throws HantoException;
+	
+	
+}

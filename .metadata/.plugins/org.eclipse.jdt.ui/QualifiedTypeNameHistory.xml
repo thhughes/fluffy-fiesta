@@ -6,4 +6,6 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="hanto.common.MoveResult"/>
+<fullyQualifiedTypeName name="hanto.common.HantoCoordinate"/>
+<fullyQualifiedTypeName name="hanto.studentThhughes.HantoGameFactory"/>
 </qualifiedTypeNameHistroy>

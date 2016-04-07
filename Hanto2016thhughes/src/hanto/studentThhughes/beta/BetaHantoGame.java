@@ -18,6 +18,9 @@ import java.util.*;
 
 import hanto.common.*;
 import hanto.studentThhughes.common.*;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoPiece.HantoPieceImpl;
+
 import static hanto.common.HantoPieceType.*;
 import static hanto.common.HantoPlayerColor.*;
 
@@ -75,7 +78,7 @@ public class BetaHantoGame implements HantoGame
 		if (from != null){
 			throw new HantoException("Illegal Move: Cannot Move Pieces In BetaHanto");
 		}
-		if (!validPieces.contains(pieceType)) throw new HantoException("Invalid Piece");
+		if (!validPieces.contains(pieceType)) throw new HantoException("Invalid Piece");						// 
 		
 		
 		// Check if it's a valid first move piece
@@ -201,8 +204,8 @@ public class BetaHantoGame implements HantoGame
 	}			
 	
 	// FRONTIER MANAGEMENT  ---------------------------------------------
-	// FRONTIER MANAGEMENT  ---------------------------------------------
-	// FRONTIER MANAGEMENT  ---------------------------------------------
+	// FRONTIER MANAGEMENT  ------------Create a class for this-----
+	// FRONTIER MANAGEMENT  --Use strategy pattern for placement rules?----
 	
 	private void expandFrontier(HantoCoordinate newPoint){
 		if (frontier.contains(newPoint)){
@@ -232,7 +235,7 @@ public class BetaHantoGame implements HantoGame
 	}
 	
 	// LEGAL MOVE CHECKERS  ---------------------------------------------
-	// LEGAL MOVE CHECKERS  ---------------------------------------------
+	// LEGAL MOVE CHECKERS  ------Create Strategy Pattern Move Checker!--
 	// LEGAL MOVE CHECKERS  ---------------------------------------------
 	
 	/**
@@ -261,7 +264,7 @@ public class BetaHantoGame implements HantoGame
 	
 	
 	// MAP MANAGEMENT COMMANDS  ---------------------------------------------
-	// MAP MANAGEMENT COMMANDS  ---------------------------------------------
+	// MAP MANAGEMENT COMMANDS  -----Map Class? ----------
 	// MAP MANAGEMENT COMMANDS  ---------------------------------------------
 	
 	private Map<HantoPieceType,Integer> getCurrentPlayerMap(){
@@ -287,7 +290,7 @@ public class BetaHantoGame implements HantoGame
 		}else{
 			updateMap.put(newPiece, new Integer(1));
 		}
-	}
+	} 
 	
 	private Map<HantoCoordinate,Boolean> getCurrentPlayerButterflyMap(){
 		Map<HantoCoordinate,Boolean> resultMap = null;

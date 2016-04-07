@@ -1,0 +1,21 @@
+package hanto.Test.studentThhughes.common.frontier;
+
+import org.junit.*;
+
+import hanto.common.HantoCoordinate;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.frontier.Frontier;
+import hanto.studentThhughes.common.frontier.FrontierImpl;
+
+public class FrontierImplTest {
+
+	public static Frontier theFrontier;
+	public static HantoCoordinate C1;
+	public static HantoCoordinate C2;
+	public static HantoCoordinate C3;
+	
+	@Before
+	public void setup(){
+		theFrontier = new FrontierImpl();
+	}
+}

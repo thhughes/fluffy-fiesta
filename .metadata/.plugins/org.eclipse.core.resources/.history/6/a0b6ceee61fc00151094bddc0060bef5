@@ -1,0 +1,45 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.*;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import org.junit.Test;
+
+import static hanto.common.HantoPieceType.*;
+
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.studentThhughes.common.hantoPiece.HantoPieceImpl;
+import hanto.studentThhughes.common.moveValidator.MoveValidator;
+import hanto.studentThhughes.common.moveValidator.PieceValidator;
+
+public class PieceValidatorTest {
+
+	private static MoveValidator validator;
+	
+	@Test // 1
+	public void testValidatorWithNoArgs(){
+		validator = new PieceValidator();
+		assertNotNull(validator);
+	}
+	
+	@Test // 2 
+	public void testValidatorWithEmptyList(){
+		validator = new PieceValidator(new LinkedList<HantoPieceType>());
+		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null));
+	}
+	
+	@Test //3 
+	public void testValidatorWithItemsInList(){
+		Queue<HantoPieceType> validList = new LinkedList<HantoPieceType>();
+		validList.add(BUTTERFLY);
+		validList.add(SPARROW);
+		validator = new PieceValidator(validList);
+		assertFalse(validator.isValidMove(null, null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null));
+
+	}
+	
+	
+}

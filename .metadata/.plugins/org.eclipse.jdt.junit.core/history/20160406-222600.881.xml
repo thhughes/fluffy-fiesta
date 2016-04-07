@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="FrontierImplTest" project="Hanto2016thhughes" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0">
+    <testcase name="removeNothingFromFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="RemoveACoordinateFromTheFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="testCheckingANullCoordinateIsInTheFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="addNothingToTheFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="addSomethingToFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="removeSomethingThatsNotInFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+    <testcase name="checkIfACoordinateIsIntheFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
+  </testsuite>
+</testrun>

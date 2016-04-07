@@ -1,2 +1,14 @@
+com.instantiations.assist.eclipse.javadoc.AddAuthorTagStyle=1
+com.instantiations.assist.eclipse.javadoc.AddVersionTagStyle=1
+com.instantiations.assist.eclipse.javadoc.AllowExtraThrowsTags=false
+com.instantiations.assist.eclipse.javadoc.FieldVisibility=
+com.instantiations.assist.eclipse.javadoc.GenerateEMptyComment=true
+com.instantiations.assist.eclipse.javadoc.IgnoreAccessorMethods=true
+com.instantiations.assist.eclipse.javadoc.IgnoreOverridingMethods=true
+com.instantiations.assist.eclipse.javadoc.KnownMethodTags=deprecated,exception,generated,generatedBy,param,post,pre,return,see,serialData,since,throws
+com.instantiations.assist.eclipse.javadoc.KnownTypeTags=author,deprecated,generated,generatedBy,inv,invariant,param,pattern,see,serial,since,version
+com.instantiations.assist.eclipse.javadoc.MethodVisibility=package,protected,public,
+com.instantiations.assist.eclipse.javadoc.ReplaceExceptionWithThrows=true
+com.instantiations.assist.eclipse.javadoc.TypeVisibility=package,protected,public,
 core.javadoc.pref.copy=true
 eclipse.preferences.version=1

@@ -14,6 +14,8 @@ package hanto.studentThhughes.alpha;
 
 import hanto.common.*;
 import hanto.studentThhughes.common.*;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoPiece.HantoPieceImpl;
 
 import static hanto.common.MoveResult.*;
 import static hanto.common.HantoPieceType.*;
