@@ -1,0 +1,53 @@
+package hanto.studentThhughes.common;
+
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import hanto.common.HantoGameID;
+import hanto.common.HantoPieceType;
+import hanto.studentThhughes.common.boardValidator.AggragateBoardValidator;
+import hanto.studentThhughes.common.boardValidator.BoardValidator;
+import hanto.studentThhughes.common.moveValidator.AggrigateValidator;
+import hanto.studentThhughes.common.moveValidator.ButterflyChecker;
+import hanto.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidator;
+import hanto.studentThhughes.common.moveValidator.FirstMoveValidator;
+import hanto.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidator;
+import hanto.studentThhughes.common.moveValidator.LocationValidator;
+import hanto.studentThhughes.common.moveValidator.MoveRealPieceValidator;
+import hanto.studentThhughes.common.moveValidator.MoveValidator;
+import hanto.studentThhughes.common.moveValidator.PieceValidator;
+import hanto.studentThhughes.common.moveValidator.PlaceBySameColorValidator;
+import hanto.studentThhughes.common.moveValidator.PlayingTooManyPieceValidator;
+import hanto.studentThhughes.common.moveValidator.TwoSpacesFreeToWalkValidator;
+
+public class HantoBoardValidatorFactory {
+
+	private static final HantoBoardValidatorFactory instance = new HantoBoardValidatorFactory();
+	
+	
+	private HantoBoardValidatorFactory(){
+		
+	}
+	
+	public static HantoBoardValidatorFactory getInstance(){
+		return instance;
+	}
+	
+	public BoardValidator makeHantoValidator(HantoGameID gameID){
+		AggragateBoardValidator mv = null;
+		switch (gameID) {
+			case ALPHA_HANTO:
+				break;
+			case BETA_HANTO:
+				break;
+			case GAMMA_HANTO:
+				mv.addValidator(new TerminalMoveCheck());
+				break;
+			
+			default:
+				break;
+		}
+		return mv;
+	}
+}

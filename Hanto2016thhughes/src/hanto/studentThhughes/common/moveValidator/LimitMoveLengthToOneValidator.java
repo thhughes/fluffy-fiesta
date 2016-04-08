@@ -30,7 +30,6 @@ public class LimitMoveLengthToOneValidator implements MoveValidator {
 			for(HantoCoordinate hc : neighbors){
 				if((new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from))){
 					result = true;
-					System.out.println("I made it");
 					break;
 				}
 				result = false;

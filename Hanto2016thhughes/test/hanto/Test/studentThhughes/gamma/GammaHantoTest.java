@@ -1,6 +1,10 @@
 package hanto.Test.studentThhughes.gamma;
 
+import static hanto.common.HantoPieceType.BUTTERFLY;
+import static hanto.common.HantoPieceType.SPARROW;
 import static hanto.common.HantoPlayerColor.BLUE;
+import static hanto.common.MoveResult.DRAW;
+import static hanto.common.MoveResult.OK;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -183,6 +187,87 @@ public class GammaHantoTest {
 		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,-5));			 //b
 		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,6));				 //r
 		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,-6));			 //b
+	}
+	
+	@Test //13
+	public void testGameLimitationAfterTwentyMoves() throws HantoException{
+		MoveResult result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(0,0)); 	//b
+		result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(-1,0)); 			 	//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,0));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,0), new HantoCoordinateImpl(0,1));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-2,0));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(0,1), new HantoCoordinateImpl(1,0));			 //b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,0), new HantoCoordinateImpl(-2,1));				 //r
+		
+		assertEquals(MoveResult.DRAW,result);
+	}
+	
+	@Test //14
+	public void testThatRedCanWin() throws HantoException{
+		MoveResult result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(0,0)); 	//b
+		result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(-1,0)); 			 	//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,0));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,1));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-1,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,-1));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-1,-1));			 		//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(2,0));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-1,-1), new HantoCoordinateImpl(0,-1));			 		//r
+		assertEquals(result,MoveResult.RED_WINS);
+	}
+	
+	@Test // 17
+	public void redAndBlueWinResultingInDraw() throws HantoException
+	{
+		MoveResult result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(0,0)); 	//b
+		result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(-1,0)); 			 	//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,0));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,1));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-1,1));				 //r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,-1));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-1,-1));			 		//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(2,0));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));			 		//r
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,-2));			 		//b
+		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,0));			 		//r
+		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,-2), new HantoCoordinateImpl(0,-1)); 		//b
+		assertEquals(MoveResult.DRAW,result);
+		
 	}
 	
 	

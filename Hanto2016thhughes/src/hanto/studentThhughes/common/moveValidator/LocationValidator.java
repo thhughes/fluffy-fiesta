@@ -14,6 +14,8 @@ import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 /**
+ * This class is used to make sure that the piece is moved to a contiguous location. 
+ * 
  * @author Troy
  *
  */
@@ -30,15 +32,22 @@ public class LocationValidator implements MoveValidator {
 			if((new HantoCoordinateImpl(0,0)).equals(new HantoCoordinateImpl(to))){
 				result = true;
 			}
-			
+			 
 		}else{
+			// Get all of the neighbors of where you're going
 			Queue<HantoCoordinate> neighbors = (new HantoCoordinateImpl(to)).getNeighbors();
+			
+			// Iterate over all the neighbors
 			for(HantoCoordinate hc : neighbors){
+				
+				// If the location that you've found is occupied
 				if(theBoard.isLocationOccupied(new HantoCoordinateImpl(hc))){
-					if(from == null){
+					// If it's being placed, not moved.
+					if(from == null){		
 						result = true;
 						break;
-					}else if (!(new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from))){
+					// If the location you've found is occupied and NOT the location that you're coming from
+					}else if (!((new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from)))){
 						result = true;
 						break;
 					}
