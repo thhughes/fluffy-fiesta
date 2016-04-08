@@ -1,0 +1,23 @@
+package hanto.Test.studentThhughes.common.boardValidator;
+
+import hanto.common.MoveResult;
+import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.boardValidator.BoardValidator;
+import hanto.studentThhughes.common.moveCounter.MoveCounter;
+
+public class AggragateBoardValidatorTest {
+
+	class dummyValidator implements BoardValidator{
+		
+		MoveResult res;
+		public dummyValidator(MoveResult custResult){
+			res = custResult;
+		}
+		@Override
+		public MoveResult getOutcome(Board theBoard, MoveCounter counter) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
+}

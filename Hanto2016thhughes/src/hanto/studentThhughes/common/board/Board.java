@@ -74,7 +74,7 @@ public interface Board {
 	 * This returns a map of the pieces in play by a given player. This map is 
 	 * build with hantoCoordinates as the key and hantoPieces as the value.
 	 * @param color
-	 * 				HantoPlayerColor : to decide what player to return data on.
+	 * 				HantoPlayerColor or null: If color, return the colors board. If null, dump the whole board
 	 * @return
 	 * 			Map of the pieces from HantoCoordinate to HantoPiece. All pieces will have the same color. 
 	 */

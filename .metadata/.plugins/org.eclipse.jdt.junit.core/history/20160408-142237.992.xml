@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.Test.studentThhughes.common" project="Hanto2016thhughes" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.Test.studentThhughes.common.MoveCounterTest" time="0.0">
+    <testcase name="testIncrementing" classname="hanto.Test.studentThhughes.common.MoveCounterTest" time="0.0"/>
+    <testcase name="testInitialization" classname="hanto.Test.studentThhughes.common.MoveCounterTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.MoveCounterTest" time="0.0"/>
+  </testsuite>
+</testrun>

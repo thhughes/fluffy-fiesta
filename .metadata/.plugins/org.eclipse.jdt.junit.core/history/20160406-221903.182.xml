@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="FrontierImplTest" project="Hanto2016thhughes" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0">
-    <testcase name="addNothingToTheFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
-    <testcase name="addSomethingToFrontier" classname="hanto.Test.studentThhughes.common.frontier.FrontierImplTest" time="0.0"/>
-  </testsuite>
-</testrun>

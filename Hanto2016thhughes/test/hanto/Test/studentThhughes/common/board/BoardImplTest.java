@@ -108,4 +108,18 @@ public class BoardImplTest {
 		theBoard.placeOnBoard(PA, CB);
 		assertTrue(theBoard.isLocationOccupied(CB));
 	}
+	
+	@Test// 11
+	public void testCopyConstructor() throws HantoException{
+		theBoard.placeOnBoard(PA, CB);
+		Board newBoard = new BoardImpl(theBoard);
+		assertTrue(newBoard.isLocationOccupied(CB));
+		assertFalse(newBoard.isLocationOccupied(CA));
+		assertEquals(theBoard.getFromBoard(CB).getColor(),
+				newBoard.getFromBoard(CB).getColor());
+		assertEquals(theBoard.getFromBoard(CB).getType(),
+				newBoard.getFromBoard(CB).getType());
+		
+		
+	}
 }

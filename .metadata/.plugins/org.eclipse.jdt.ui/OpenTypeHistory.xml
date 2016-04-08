@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=Hanto2016thhughes/src&lt;hanto.studentThhughes.common.frontier{Frontier.java[Frontier" modifiers="513" timestamp="1460084032000"/>
+<typeInfo handle="=Hanto2016thhughes/src&lt;hanto.studentThhughes.common.board{Board.java[Board" modifiers="513" timestamp="1460084027000"/>
+<typeInfo handle="=Hanto2016thhughes/src&lt;hanto.common{HantoGame.java[HantoGame" modifiers="513" timestamp="1456790548000"/>
+<typeInfo handle="=Hanto2016thhughes/src&lt;hanto.studentThhughes.common.moveValidator{MoveValidator.java[MoveValidator" modifiers="513" timestamp="1460085350000"/>
+<typeInfo handle="=Hanto2016thhughes/src&lt;hanto.studentThhughes.common.boardValidator{BoardValidator.java[BoardValidator" modifiers="513" timestamp="1460085332000"/>
+</typeInfoHistroy>

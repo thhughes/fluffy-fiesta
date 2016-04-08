@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="LocationValidatorTest" project="Hanto2016thhughes" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.003">
-    <testcase name="testValidatorWithNoArgs" classname="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.002"/>
-    <testcase name="testCheckingEmptySpotWithAFrontierOfOneThing" classname="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.0"/>
-    <testcase name="testCheckingWithAnEmptyFrontier" classname="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.0"/>
-    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.001"/>
-    <testcase name="testCheckingTakenSpotWithAFrontierOfOneThing" classname="hanto.Test.studentThhughes.common.moveValidator.LocationValidatorTest" time="0.0"/>
-  </testsuite>
-</testrun>

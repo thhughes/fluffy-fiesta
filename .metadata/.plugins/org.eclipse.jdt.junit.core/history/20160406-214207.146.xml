@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.Test.studentThhughes.common.moveValidator" project="Hanto2016thhughes" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0">
-    <testcase name="testValidatorWithItemsInListAndValidMove" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
-    <testcase name="testValidatorWithNoArgs" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
-    <testcase name="testValidatorWithEmptyList" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
-  </testsuite>
-</testrun>

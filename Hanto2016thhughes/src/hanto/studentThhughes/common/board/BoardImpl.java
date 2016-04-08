@@ -19,13 +19,32 @@ import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 public class BoardImpl implements Board {
 
 	Map<HantoCoordinateImpl,HantoPiece> theBoard;
+	Map<HantoCoordinate,HantoPiece> dumbBoard;
 	Map<HantoCoordinate,HantoPiece> redBoard;
 	Map<HantoCoordinate,HantoPiece> blueBoard;
+	
+	
 	public BoardImpl(){
 		theBoard = new HashMap<HantoCoordinateImpl,HantoPiece>();
+		dumbBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		redBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		blueBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		
+	}
+	
+	/**
+	 * Copy Constructor of a BoardImpl from any board type
+	 * @param someBoard
+	 */
+	public BoardImpl(Board someBoard){
+		this.redBoard = someBoard.getPlayerPieces(HantoPlayerColor.RED);
+		this.blueBoard = someBoard.getPlayerPieces(HantoPlayerColor.BLUE);
+		this.dumbBoard = someBoard.getPlayerPieces(null);
+		theBoard = new HashMap<HantoCoordinateImpl,HantoPiece>();
+		
+		for(HantoCoordinate hc : this.dumbBoard.keySet()){
+			theBoard.put(new HantoCoordinateImpl(hc), dumbBoard.get(hc));
+		}
 	}
 
 	
@@ -47,6 +66,7 @@ public class BoardImpl implements Board {
 		}
 		theBoard.put(new HantoCoordinateImpl(where), piece);
 		playerBoard.put(new HantoCoordinateImpl(where), piece);
+		dumbBoard.put(new HantoCoordinateImpl(where), piece);
 		return true;
 	}
 
@@ -83,14 +103,18 @@ public class BoardImpl implements Board {
 		if (!theBoard.containsKey(new HantoCoordinateImpl(where))) throw new HantoException("Board Exception: Cannot remove piece that's not on board");
 		
 		Map<HantoCoordinate, HantoPiece> playerBoard = getPlayerPieces(theBoard.get(new HantoCoordinateImpl(where)).getColor());
+		
 		theBoard.remove(new HantoCoordinateImpl(where));
+		dumbBoard.remove(new HantoCoordinateImpl(where));
 		playerBoard.remove(new HantoCoordinateImpl(where));
 		return true;
 	}
 
 	@Override
 	public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
-		if(color == HantoPlayerColor.RED){
+		if(color == null){
+			return dumbBoard;
+		}else if(color == HantoPlayerColor.RED){
 			return redBoard;
 		}
 		return blueBoard;

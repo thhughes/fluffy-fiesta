@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.Test.studentThhughes.common.boardValidator" project="Hanto2016thhughes" tests="15" started="15" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.Test.studentThhughes.common.boardValidator.TerminalMoveCheckTest" time="0.0">
+    <testcase name="testTerminalMovesReturnsDrawWhenTerminalMoves" classname="hanto.Test.studentThhughes.common.boardValidator.TerminalMoveCheckTest" time="0.0"/>
+    <testcase name="testTerminalMovesReturnsOKWhenNotTerminalMoves" classname="hanto.Test.studentThhughes.common.boardValidator.TerminalMoveCheckTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.boardValidator.TerminalMoveCheckTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0">
+    <testcase name="getDRAWWithRWandDRAWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getBWWithBWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getOKWithNoValidators" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getRWWithRWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getDRAWWithBWandDRAWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getDRAWWithBWandRWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+    <testcase name="getDRAWWithDRAWValidator" classname="hanto.Test.studentThhughes.common.boardValidator.AggragateBoardValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0">
+    <testcase name="testConstructorNotNull" classname="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0"/>
+    <testcase name="testBoardWithOneButterflyAndNoSparrows" classname="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0"/>
+    <testcase name="testBoardWIthNoButterfly" classname="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0"/>
+    <testcase name="testBoardWithOneButterflyAndSurrounded" classname="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0"/>
+    <testcase name="testBoardWithOneButterflyAndSurroundedWithBothTeamsPieces" classname="hanto.Test.studentThhughes.common.boardValidator.ColorWinValidatorTest" time="0.0"/>
+  </testsuite>
+</testrun>
