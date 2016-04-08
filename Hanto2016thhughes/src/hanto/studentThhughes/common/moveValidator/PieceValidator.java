@@ -21,11 +21,18 @@ public class PieceValidator implements MoveValidator {
 
 	Queue<HantoPieceType> validList;
 	
-	
+	/**
+	 * Empty constructor, not recommended use. No pieces are valid with use of this.
+	 */
 	public PieceValidator(){
 		validList = new LinkedList<HantoPieceType>();
 	}
 	
+	/**
+	 * Overloaded COnstructor
+	 * @param inputList
+	 * 					Queue<HantoPieceType> to be inputted into the allowed pieces
+	 */
 	public PieceValidator(Queue<HantoPieceType> inputList){
 		validList = inputList;
 	}

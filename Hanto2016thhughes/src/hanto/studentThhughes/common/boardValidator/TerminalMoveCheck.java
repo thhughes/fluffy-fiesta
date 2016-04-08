@@ -9,11 +9,18 @@ import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 /**
+ * This is a BoardValidator class that checks if the game has run out of moves. 
  * @author Troy
  *
  */
 public class TerminalMoveCheck implements BoardValidator {
 	int terminalNumber;
+	
+	/**
+	 * Constructor
+	 * @param maxNumberMoves
+	 * 						
+	 */
 	public TerminalMoveCheck(int maxNumberMoves){
 		terminalNumber = maxNumberMoves;
 	}

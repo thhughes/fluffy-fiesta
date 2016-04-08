@@ -4,9 +4,6 @@
 package hanto.studentThhughes.common.moveValidator;
 
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
@@ -14,7 +11,6 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 /**

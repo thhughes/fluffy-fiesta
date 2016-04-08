@@ -37,9 +37,13 @@ public class GammaHantoGame implements HantoGame {
 	
 	
 	/**
-	 * 
-	 * 
+	 * Constructor for a hanto game: 
 	 * @param firstMovePlayer
+	 * 					HantoPlayerColor : player who goes first
+	 * @param mValidator
+	 * 					MoveValidator :
+	 * @param bValidator
+	 * 					BoardValidator :
 	 */
 	public GammaHantoGame(HantoPlayerColor firstMovePlayer, MoveValidator mValidator, BoardValidator bValidator){
 		hantoColorManager = new ColorManager(firstMovePlayer);
@@ -68,7 +72,12 @@ public class GammaHantoGame implements HantoGame {
 		
 		placePiece(pieceType,from,to);
 		
-		return hantoBV.getOutcome(hantoBoard, hantoMC);
+		MoveResult result =hantoBV.getOutcome(hantoBoard, hantoMC);
+		if(result != MoveResult.OK){
+			gameOver = true;
+		}
+		
+		return result;
 	}
 
 	/* (non-Javadoc)

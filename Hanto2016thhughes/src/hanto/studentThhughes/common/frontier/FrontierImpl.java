@@ -8,7 +8,6 @@ import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
-import hanto.common.HantoPiece;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 
 /**

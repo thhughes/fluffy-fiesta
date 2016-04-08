@@ -6,11 +6,9 @@ package hanto.studentThhughes.common.boardValidator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import hanto.common.HantoException;
 import hanto.common.MoveResult;
 import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
-import hanto.studentThhughes.common.moveValidator.MoveValidator;
 
 /**
  * @author Troy
@@ -25,6 +23,12 @@ public class AggragateBoardValidator implements BoardValidator {
 		
 	}
 	
+	/**
+	 * This function adds a validator to the aggrigate to be run. 
+	 * 
+	 * @param toAdd
+	 * 				BoardValidator : is used in the aggrigate's getOutcome function
+	 */
 	public void addValidator(BoardValidator toAdd){
 		validatorList.add(toAdd);
 	}

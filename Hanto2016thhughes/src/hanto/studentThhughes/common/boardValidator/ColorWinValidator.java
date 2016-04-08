@@ -16,12 +16,19 @@ import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 /**
+ * This is a validator for the board that checks if a specific color won.
+ * 
  * @author Troy
  *
  */
 public class ColorWinValidator implements BoardValidator {
 	
 	HantoPlayerColor playerColor;
+	/**
+	 * Constructor of the ColorWinValidator
+	 * @param col
+	 * 			HantoPlayerColor : representing the color for this validator
+	 */
 	public ColorWinValidator(HantoPlayerColor col){
 		playerColor = col;
 	}

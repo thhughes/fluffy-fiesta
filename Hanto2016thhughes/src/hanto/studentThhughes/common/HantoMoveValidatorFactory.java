@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * This files was developed for CS4233: Object-Oriented Analysis & Design. The course was
+ * taken at Worcester Polytechnic Institute. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License
+ * v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package hanto.studentThhughes.common;
 
 
@@ -19,6 +26,11 @@ import hanto.studentThhughes.common.moveValidator.PlaceBySameColorValidator;
 import hanto.studentThhughes.common.moveValidator.PlayingTooManyPieceValidator;
 import hanto.studentThhughes.common.moveValidator.TwoSpacesFreeToWalkValidator;
 
+/**
+ * This is a factory for MoveValidator
+ * @author Troy
+ *
+ */
 public class HantoMoveValidatorFactory {
 
 	private static final HantoMoveValidatorFactory instance = new HantoMoveValidatorFactory();
@@ -32,6 +44,13 @@ public class HantoMoveValidatorFactory {
 		return instance;
 	}
 	
+	/**
+	 * Get the move validator for your type of game
+	 * @param gameID
+	 * 				HantoGameID : of the game type you want your validator to be
+	 * @return
+	 * 			MoveValidator : of the hantoGameId Passed
+	 */
 	public MoveValidator makeHantoValidator(HantoGameID gameID){
 		AggrigateValidator mv = null;
 		switch (gameID) {
@@ -50,7 +69,7 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
 				mv.addValidator(new ButterflyChecker());
-				mv.addValidator(new ButterflyPlacedInTimeValidator(20));
+				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new PlaceBySameColorValidator());
 				mv.addValidator(new LimitMoveLengthToOneValidator());
 				mv.addValidator(new TwoSpacesFreeToWalkValidator());

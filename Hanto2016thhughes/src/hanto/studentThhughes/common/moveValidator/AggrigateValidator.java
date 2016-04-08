@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * This files was developed for CS4233: Object-Oriented Analysis & Design. The course was
+ * taken at Worcester Polytechnic Institute. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License
+ * v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package hanto.studentThhughes.common.moveValidator;
 
 import java.util.LinkedList;
@@ -9,6 +16,12 @@ import hanto.common.HantoPiece;
 import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
+/**
+ * This is an aggrigate move validator. It can add many validators together and 
+ * run their isValidMove command. It makes it easier to chain validators
+ * @author Troy
+ *
+ */
 public class AggrigateValidator implements MoveValidator {
 
 	Queue<MoveValidator> validatorList;
@@ -34,7 +47,11 @@ public class AggrigateValidator implements MoveValidator {
 		}
 		return result;
 	}
-	
+	/**
+	 * Add a validator to run
+	 * @param toAdd
+	 * 				MoveValidator
+	 */
 	public void addValidator(MoveValidator toAdd){
 		validatorList.add(toAdd);
 	}

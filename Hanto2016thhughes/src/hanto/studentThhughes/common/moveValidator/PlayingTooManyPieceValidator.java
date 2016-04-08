@@ -4,7 +4,6 @@
 package hanto.studentThhughes.common.moveValidator;
 
 import java.util.Collection;
-import java.util.Collections;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;

@@ -25,12 +25,12 @@ public class MoveRealPieceValidator implements MoveValidator {
 		boolean result = true;
 		
 		if(from != null){
+			result = false;
 			if(theBoard.isLocationOccupied(new HantoCoordinateImpl(from))){
+				result = true;
 				if(theBoard.getFromBoard(new HantoCoordinateImpl(from)).getType() != piece.getType()){
 					result = false;
 				}
-			}else{
-				result = false;
 			}
 		}
 		

@@ -58,6 +58,12 @@ public class HantoCoordinateImpl implements HantoCoordinate
 		return y;
 	}
 	
+	/**
+	 * Get the surrounding coordinats of this point.
+	 * 
+	 * @return
+	 * 			Queue<HantoCoordinates> surrounding this coordinat
+	 */
 	public Queue<HantoCoordinate> getNeighbors(){
 		Queue<HantoCoordinate> neighbors = new LinkedList<HantoCoordinate>();
 		int startX = x;
