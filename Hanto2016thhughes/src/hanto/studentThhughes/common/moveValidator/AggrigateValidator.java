@@ -7,7 +7,6 @@ import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.frontier.Frontier;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 public class AggrigateValidator implements MoveValidator {
@@ -20,10 +19,10 @@ public class AggrigateValidator implements MoveValidator {
 	}
 
 	@Override
-	public boolean isValidMove(Board theBoard, Frontier theFrontier, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
+	public boolean isValidMove(Board theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = true;
 		for(MoveValidator mv : validatorList){
-			if(!mv.isValidMove(theBoard, theFrontier, piece, counter,to, from)){
+			if(!mv.isValidMove(theBoard, piece, counter, to,from)){
 				result = false;
 				try{
 					mv.invalidError();

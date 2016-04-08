@@ -10,9 +10,14 @@ import hanto.studentThhughes.common.moveValidator.AggrigateValidator;
 import hanto.studentThhughes.common.moveValidator.ButterflyChecker;
 import hanto.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidator;
 import hanto.studentThhughes.common.moveValidator.FirstMoveValidator;
+import hanto.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidator;
 import hanto.studentThhughes.common.moveValidator.LocationValidator;
+import hanto.studentThhughes.common.moveValidator.MoveRealPieceValidator;
 import hanto.studentThhughes.common.moveValidator.MoveValidator;
 import hanto.studentThhughes.common.moveValidator.PieceValidator;
+import hanto.studentThhughes.common.moveValidator.PlaceBySameColorValidator;
+import hanto.studentThhughes.common.moveValidator.PlayingTooManyPieceValidator;
+import hanto.studentThhughes.common.moveValidator.TwoSpacesFreeToWalkValidator;
 
 public class HantoMoveValidatorFactory {
 
@@ -33,6 +38,8 @@ public class HantoMoveValidatorFactory {
 			case ALPHA_HANTO:
 				break;
 			case BETA_HANTO:
+				break;
+			case GAMMA_HANTO:
 				Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
 				valid.add(HantoPieceType.SPARROW);
 				valid.add(HantoPieceType.BUTTERFLY);
@@ -43,10 +50,14 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
 				mv.addValidator(new ButterflyChecker());
-				mv.addValidator(new ButterflyPlacedInTimeValidator(3));
+				mv.addValidator(new ButterflyPlacedInTimeValidator(20));
+				mv.addValidator(new PlaceBySameColorValidator());
+				mv.addValidator(new LimitMoveLengthToOneValidator());
+				mv.addValidator(new TwoSpacesFreeToWalkValidator());
+				mv.addValidator(new MoveRealPieceValidator());
+				mv.addValidator(new PlayingTooManyPieceValidator(6));
 				break;
-			case GAMMA_HANTO:
-				break;
+			
 			default:
 				break;
 		}

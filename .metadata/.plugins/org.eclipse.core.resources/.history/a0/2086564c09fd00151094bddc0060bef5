@@ -1,0 +1,49 @@
+package hanto.Test.studentThhughes.gamma;
+
+import static hanto.common.HantoPlayerColor.BLUE;
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import hanto.common.HantoException;
+import hanto.common.HantoGame;
+import hanto.common.HantoGameID;
+import hanto.common.HantoPieceType;
+import hanto.common.MoveResult;
+import hanto.studentThhughes.HantoGameFactory;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+
+public class GammaHantoTest {
+
+	
+	private static HantoGameFactory factory;
+	private HantoGame game;
+	
+	@BeforeClass
+	public static void initializeClass()
+	{
+		factory = HantoGameFactory.getInstance();
+	}
+	
+	@Before
+	public void setup()
+	{
+		// By default, blue moves first.
+		game = factory.makeHantoGame(HantoGameID.GAMMA_HANTO, BLUE);
+	}
+	
+	
+	@Test //1
+	public void testNotNull(){
+		assertNotNull(game);
+	}
+	
+	@Test//2
+	public void makeSingleMoveCorrectly() throws HantoException{
+		MoveResult result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(0,0));
+		assertEquals(MoveResult.DRAW,result);
+		assertTrue(game.getPieceAt(new HantoCoordinateImpl(0,0)));
+	}
+}

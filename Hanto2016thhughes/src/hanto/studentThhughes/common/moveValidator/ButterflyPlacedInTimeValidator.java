@@ -10,7 +10,6 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.frontier.Frontier;
 import hanto.studentThhughes.common.moveCounter.MoveCounter;
 
 public class ButterflyPlacedInTimeValidator implements MoveValidator{
@@ -21,8 +20,8 @@ public class ButterflyPlacedInTimeValidator implements MoveValidator{
 	
 	
 	@Override
-	public boolean isValidMove(Board theBoard, Frontier theFrontier, HantoPiece piece, MoveCounter counter,
-			HantoCoordinate to, HantoCoordinate from) {
+	public boolean isValidMove(Board theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
+			HantoCoordinate from) {
 		HantoPlayerColor moveColor = piece.getColor();
 		Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(moveColor).values();
 		boolean playerHasButterfly = false;

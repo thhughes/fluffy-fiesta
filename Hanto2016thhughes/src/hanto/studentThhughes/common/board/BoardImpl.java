@@ -27,6 +27,7 @@ public class BoardImpl implements Board {
 		blueBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		
 	}
+
 	
 	/* (non-Javadoc)
 	 * @see hanto.studentThhughes.common.board.Board#placeOnBoard(hanto.common.HantoPiece, hanto.common.HantoCoordinate)

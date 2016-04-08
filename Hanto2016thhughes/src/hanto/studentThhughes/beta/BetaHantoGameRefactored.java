@@ -83,8 +83,8 @@ public class BetaHantoGameRefactored implements HantoGame
 		if (to == null) throw new HantoException("There Must be a To location specified for Beta Hanto");
 		if (from != null) throw new HantoException("Illegal Move: Cannot Move Pieces In BetaHanto");
 		
-		if(!hantoMV.isValidMove(hantoBoard, hantoFrontier, 
-				new HantoPieceImpl(hantoColorManager.getCurrentColor(),pieceType), hantoMC, safeTo, null))
+		if(!hantoMV.isValidMove(hantoBoard, new HantoPieceImpl(hantoColorManager.getCurrentColor(),pieceType), 
+				hantoMC, safeTo, null))
 		{
 			hantoMV.invalidError();
 		}						
@@ -111,7 +111,6 @@ public class BetaHantoGameRefactored implements HantoGame
 			}catch (HantoException e){
 				// Do nothing, it's probably ok.
 			}
-			
 		}
 		
 		// Create the piece for internal hashing
