@@ -1,0 +1,28 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.board.BoardImpl;
+import hanto.studentThhughes.common.moveValidator.ButterflyChecker;
+import hanto.studentThhughes.common.moveValidator.MoveValidator;
+
+public class ButterflyCheckerTest {
+
+	Board theBoard;
+	MoveValidator mv;
+	
+	@Before
+	public void setup(){
+		theBoard = new BoardImpl();
+		mv = new ButterflyChecker();
+	}
+	
+	@Test
+	public void testNotNull(){
+		assertNotNull(new ButterflyChecker());
+	}
+}

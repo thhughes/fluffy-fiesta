@@ -24,3 +24,4 @@
 1460076302755	Rename local variable 'validatorFactory'
 1460149997783	Move compilation unit
 1460166115966	Rename type 'LimitMoveLengthToOneValidator'
+1460167483929	Rename type 'ButterflyCheckerClass'
