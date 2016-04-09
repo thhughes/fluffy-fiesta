@@ -1,0 +1,14 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LimitMoveLengthToOneValidator {
+
+	
+	@Test
+	public void testNotNull(){
+		assertNotNull(new LimitMoveLengthToOneValidator());
+	}
+}

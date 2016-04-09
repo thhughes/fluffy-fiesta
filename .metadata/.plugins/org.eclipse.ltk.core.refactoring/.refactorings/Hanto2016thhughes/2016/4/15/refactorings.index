@@ -22,3 +22,5 @@
 1460075990302	Copy compilation unit
 1460076185716	Rename local variable 'validator'
 1460076302755	Rename local variable 'validatorFactory'
+1460149997783	Move compilation unit
+1460166115966	Rename type 'LimitMoveLengthToOneValidator'

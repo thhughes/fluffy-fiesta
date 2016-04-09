@@ -1,0 +1,33 @@
+package hanto.Test.studentThhughes.common.moveValidator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.common.HantoException;
+import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.board.BoardImpl;
+
+public class LimitMoveLengthToOneValidator {
+
+	Board theBoard;
+	MoveValidator mv;
+	
+	@Before
+	public void setup(){
+		theBoard = new BoardImpl();
+		mv = new LimitMoveLengthToOneValidator();
+	}
+	
+	@Test
+	public void testNotNull(){
+		assertNotNull(new LimitMoveLengthToOneValidator());
+	}
+	
+	@Test
+	public void placePieceNoMove() throws HantoException
+	{
+		
+	}
+}
