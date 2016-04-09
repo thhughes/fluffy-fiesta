@@ -75,17 +75,11 @@ public class ButterflyPlacedInTimeValidatorTest {
 	{
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY), 
 				new HantoCoordinateImpl(-1,1));
-		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.RED,HantoPieceType.BUTTERFLY), 
+		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.RED,HantoPieceType.SPARROW), 
 				new HantoCoordinateImpl(-2,1));
 		mv = new ButterflyPlacedInTimeValidator(2);
-		assertTrue(mv.isValidMove(theBoard, new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.SPARROW),
+		assertFalse(mv.isValidMove(theBoard, new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.SPARROW),
 				mc, new HantoCoordinateImpl(1,0), null));
-	}
-	
-	@Test(expected=HantoException.class)
-	public void testInvalidError() throws HantoException
-	{
-		(new ButterflyPlacedInTimeValidator(1)).invalidError();
 	}
 	
 	

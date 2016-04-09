@@ -82,12 +82,6 @@ public class ButterflyPlacedInTimeValidatorTest {
 				mc, new HantoCoordinateImpl(1,0), null));
 	}
 	
-	@Test(expected=HantoException.class)
-	public void testInvalidError() throws HantoException
-	{
-		(new ButterflyPlacedInTimeValidator(1)).invalidError();
-	}
-	
 	
 	
 }

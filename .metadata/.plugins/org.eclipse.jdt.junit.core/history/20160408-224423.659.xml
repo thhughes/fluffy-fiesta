@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.Test.studentThhughes.common.moveValidator" project="Hanto2016thhughes" tests="34" started="34" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidatorTest" time="0.001">
+    <testcase name="testAddingButterflyInTime" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidatorTest" time="0.0"/>
+    <testcase name="testNotAddingButterflyWhenItsTheLastTurn" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidatorTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidatorTest" time="0.0"/>
+    <testcase name="testAddingPieceToThingThatAlreadyHasButterfly" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyPlacedInTimeValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.PlayingTooManyPieceValidatorTest" time="0.0">
+    <testcase name="testAddingEnoughPieceToEmptyBoardToError" classname="hanto.Test.studentThhughes.common.moveValidator.PlayingTooManyPieceValidatorTest" time="0.0"/>
+    <testcase name="testMovingAPiece" classname="hanto.Test.studentThhughes.common.moveValidator.PlayingTooManyPieceValidatorTest" time="0.0"/>
+    <testcase name="testAddingOnePieceToEmptyBoard" classname="hanto.Test.studentThhughes.common.moveValidator.PlayingTooManyPieceValidatorTest" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.PlayingTooManyPieceValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0">
+    <testcase name="movePieceTwoLength" classname="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0"/>
+    <testcase name="placePieceNoMove" classname="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0"/>
+    <testcase name="movePieceOneLength" classname="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0">
+    <testcase name="testValidatorWithItemsInListAndINValidMove" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
+    <testcase name="testValidatorWithItemsInListAndValidMove" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
+    <testcase name="testValidatorWithNoArgs" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
+    <testcase name="testValidatorWithEmptyList" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
+    <testcase name="testFailureMessage" classname="hanto.Test.studentThhughes.common.moveValidator.PieceValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0">
+    <testcase name="testPlaceSecondButterfly" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0"/>
+    <testcase name="testPlaceSparrow" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0"/>
+    <testcase name="testMovePiece" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.moveValidator.ButterflyCheckerTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0">
+    <testcase name="testPlacingButterflyAtCenter" classname="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0"/>
+    <testcase name="testPlacingSparrowflyAtCenter" classname="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0"/>
+    <testcase name="testPlacingSparrowflyAtNotCenter" classname="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.moveValidator.FristMoveValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0">
+    <testcase name="testMovingAPieceThatDoesntExist" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+    <testcase name="testMovingAPieceThatIsLocatedInAnOccupiedPlace" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+    <testcase name="testPlacingAPiece" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+    <testcase name="testMovingAPieceThatIsntTheTypeAtAnOccupiedLocation" classname="hanto.Test.studentThhughes.common.moveValidator.MoveRealPieceValidatorTester" time="0.0"/>
+  </testsuite>
+</testrun>
