@@ -55,7 +55,7 @@ public class PieceValidatorTest {
 		@Override
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 			
-			return playerMap;
+			return null;
 		}
 		
 	}
@@ -80,7 +80,7 @@ public class PieceValidatorTest {
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
 		validator = new PieceValidator(validList);
-		assertTrue(validator.isValidMove(new dummyBoard(), new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
+		assertTrue(validator.isValidMove(null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
 
 	}
 	

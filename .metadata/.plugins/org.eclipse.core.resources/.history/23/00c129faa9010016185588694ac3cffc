@@ -51,26 +51,20 @@ public class PieceValidator implements MoveValidator {
 	@Override
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = true;
-		
-		if(!isValidPieceType(piece)){
-			result = false;
-		}else if(turnIsPieceMove(from)){
-			if(pieceTypeNotOnBoard(theBoard, piece)){
+		if(turnIsPieceMove(from)){
+			if(pieceTypeNotOnBoard(theBoard,piece)){
 				result = false;
 			}
-			if(fromPieceIsValidPiece(theBoard, piece, new HantoCoordinateImpl(from))){
-				result = false;
-			}else if(pieceToMoveIsOpponentsColor(theBoard, piece, new HantoCoordinateImpl(from))){
+			if(!pieceToMoveIsOpponentsColor(theBoard, piece, new HantoCoordinateImpl(from))){
 				result = false;
 			}
-			
+			if(!isValidPieceType(piece)){
+				result = false;
+			}
+		}else{
+			result = isValidPieceType(piece);
 		}
 		return result;
-	}
-
-	private boolean fromPieceIsValidPiece(HantoBoard theBoard, HantoPiece piece,
-			HantoCoordinateImpl from) {
-		return !theBoard.isLocationOccupied(from);
 	}
 
 	private boolean pieceToMoveIsOpponentsColor(HantoBoard theBoard, HantoPiece piece, HantoCoordinateImpl from) {
@@ -85,7 +79,7 @@ public class PieceValidator implements MoveValidator {
 	}
 
 	private boolean turnIsPieceMove(HantoCoordinate from) {
-		return from != null;
+		return from == null;
 	}
 
 	private boolean isValidPieceType(HantoPiece piece) {

@@ -7,16 +7,13 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.movevalidator;
 
-import java.util.Collection;
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
-import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
@@ -50,42 +47,7 @@ public class PieceValidator implements MoveValidator {
 	 */
 	@Override
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
-		boolean result = true;
-		
-		if(!isValidPieceType(piece)){
-			result = false;
-		}else if(turnIsPieceMove(from)){
-			if(pieceTypeNotOnBoard(theBoard, piece)){
-				result = false;
-			}
-			if(fromPieceIsValidPiece(theBoard, piece, new HantoCoordinateImpl(from))){
-				result = false;
-			}else if(pieceToMoveIsOpponentsColor(theBoard, piece, new HantoCoordinateImpl(from))){
-				result = false;
-			}
-			
-		}
-		return result;
-	}
-
-	private boolean fromPieceIsValidPiece(HantoBoard theBoard, HantoPiece piece,
-			HantoCoordinateImpl from) {
-		return !theBoard.isLocationOccupied(from);
-	}
-
-	private boolean pieceToMoveIsOpponentsColor(HantoBoard theBoard, HantoPiece piece, HantoCoordinateImpl from) {
-		return theBoard.getFromBoard(from).getColor() != piece.getColor();
-	}
-
-	private boolean pieceTypeNotOnBoard(HantoBoard theBoard, HantoPiece piece) {
-		Map<HantoCoordinate,HantoPiece> playerPieces = theBoard.getPlayerPieces(piece.getColor());
-		Collection<HantoPiece> playerPieceTypes = playerPieces.values();
-		
-		return playerPieceTypes.contains(piece.getType());
-	}
-
-	private boolean turnIsPieceMove(HantoCoordinate from) {
-		return from != null;
+		return isValidPieceType(piece);
 	}
 
 	private boolean isValidPieceType(HantoPiece piece) {

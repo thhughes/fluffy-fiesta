@@ -54,23 +54,14 @@ public class PieceValidator implements MoveValidator {
 		
 		if(!isValidPieceType(piece)){
 			result = false;
-		}else if(turnIsPieceMove(from)){
+		}else if(turnIsPieceMove(from))
 			if(pieceTypeNotOnBoard(theBoard, piece)){
 				result = false;
-			}
-			if(fromPieceIsValidPiece(theBoard, piece, new HantoCoordinateImpl(from))){
-				result = false;
-			}else if(pieceToMoveIsOpponentsColor(theBoard, piece, new HantoCoordinateImpl(from))){
+			if(pieceToMoveIsOpponentsColor(theBoard, piece, new HantoCoordinateImpl(from))){
 				result = false;
 			}
-			
 		}
 		return result;
-	}
-
-	private boolean fromPieceIsValidPiece(HantoBoard theBoard, HantoPiece piece,
-			HantoCoordinateImpl from) {
-		return !theBoard.isLocationOccupied(from);
 	}
 
 	private boolean pieceToMoveIsOpponentsColor(HantoBoard theBoard, HantoPiece piece, HantoCoordinateImpl from) {

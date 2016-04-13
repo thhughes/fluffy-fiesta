@@ -84,3 +84,4 @@
 1460571834276	Extract method 'checkIfMoveIsToContiguousPeice'
 1460572046963	Extract local variable 'toImpl'
 1460572060191	Extract local variable 'fromImpl'
+1460572367410	Extract method 'isValidPieceType'

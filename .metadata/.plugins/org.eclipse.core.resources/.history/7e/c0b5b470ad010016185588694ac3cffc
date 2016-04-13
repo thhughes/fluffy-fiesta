@@ -68,11 +68,6 @@ public class PieceValidator implements MoveValidator {
 		return result;
 	}
 
-	private boolean fromPieceIsValidPiece(HantoBoard theBoard, HantoPiece piece,
-			HantoCoordinateImpl from) {
-		return !theBoard.isLocationOccupied(from);
-	}
-
 	private boolean pieceToMoveIsOpponentsColor(HantoBoard theBoard, HantoPiece piece, HantoCoordinateImpl from) {
 		return theBoard.getFromBoard(from).getColor() != piece.getColor();
 	}

@@ -26,7 +26,7 @@ public class PieceValidatorTest {
 		
 		public dummyBoard(){
 			playerMap.put(new HantoCoordinateImpl(0,0), new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY));
-			playerMap.put(new HantoCoordinateImpl(0,1), new HantoPieceImpl(HantoPlayerColor.BLUE,SPARROW));
+			playerMap.put(new HantoCoordinateImpl(0,0), new HantoPieceImpl(HantoPlayerColor.BLUE,SPARROW));
 		}
 		@Override
 		public boolean placeOnBoard(HantoPiece piece, HantoCoordinate where) throws HantoException {
@@ -55,7 +55,7 @@ public class PieceValidatorTest {
 		@Override
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 			
-			return playerMap;
+			return null;
 		}
 		
 	}
@@ -80,7 +80,7 @@ public class PieceValidatorTest {
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
 		validator = new PieceValidator(validList);
-		assertTrue(validator.isValidMove(new dummyBoard(), new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
+		assertTrue(validator.isValidMove(null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
 
 	}
 	

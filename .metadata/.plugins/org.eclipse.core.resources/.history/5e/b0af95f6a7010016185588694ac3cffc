@@ -55,7 +55,7 @@ public class PieceValidatorTest {
 		@Override
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 			
-			return playerMap;
+			return null;
 		}
 		
 	}
