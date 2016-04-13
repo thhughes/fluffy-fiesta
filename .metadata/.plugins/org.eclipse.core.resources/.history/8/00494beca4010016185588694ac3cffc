@@ -34,30 +34,19 @@ public class LocationValidator implements MoveValidator {
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = true;
 		
-		HantoCoordinateImpl toImpl = new HantoCoordinateImpl(to);
 		if(isFirstMoveOfGame(counter)){
-			if(!boardOrigin.equals(toImpl)){
+			if(!boardOrigin.equals(new HantoCoordinateImpl(to))){
 				result = false;
 			}
 		}else if(!isMoveAPlace(from)){
-			HantoCoordinateImpl fromImpl = new HantoCoordinateImpl(from);
-			result = result && 
-					checkIfMoveIsToContiguousPeice(theBoard, toImpl, fromImpl) &&
-					checkIfPlaceLocationIsNotOccupied(theBoard, toImpl, fromImpl);
+			result = checkIfMoveIsToContiguousPeice(theBoard, to, from, result);
 		}
 		return result;
 	}
 
-	private boolean checkIfPlaceLocationIsNotOccupied(HantoBoard theBoard, HantoCoordinateImpl to,
-			HantoCoordinateImpl from) {
-		// TODO Auto-generated method stub
-		return !theBoard.isLocationOccupied(to);
-	}
-
-	private boolean checkIfMoveIsToContiguousPeice(HantoBoard theBoard, HantoCoordinateImpl to, HantoCoordinateImpl from) {
-		boolean result = false;
-		Queue<HantoCoordinate> neighbors = to.getNeighbors();
-		
+	private boolean checkIfMoveIsToContiguousPeice(HantoBoard theBoard, HantoCoordinate to, HantoCoordinate from,
+			boolean result) {
+		Queue<HantoCoordinate> neighbors = (new HantoCoordinateImpl(to)).getNeighbors();
 		for(HantoCoordinate hc : neighbors){
 			if(theBoard.isLocationOccupied(new HantoCoordinateImpl(hc))){
 				if (!areHantoCoordinatesEqual(from, hc)){

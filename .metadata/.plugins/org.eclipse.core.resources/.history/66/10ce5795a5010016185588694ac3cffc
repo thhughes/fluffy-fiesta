@@ -48,10 +48,10 @@ public class LocationValidator implements MoveValidator {
 		return result;
 	}
 
-	private boolean checkIfPlaceLocationIsNotOccupied(HantoBoard theBoard, HantoCoordinateImpl to,
-			HantoCoordinateImpl from) {
+	private boolean checkIfPlaceLocationIsNotOccupied(HantoBoard theBoard, HantoCoordinateImpl toImpl,
+			HantoCoordinateImpl fromImpl) {
 		// TODO Auto-generated method stub
-		return !theBoard.isLocationOccupied(to);
+		return false;
 	}
 
 	private boolean checkIfMoveIsToContiguousPeice(HantoBoard theBoard, HantoCoordinateImpl to, HantoCoordinateImpl from) {

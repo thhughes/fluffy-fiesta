@@ -81,3 +81,6 @@
 1460571084973	Extract method 'areHantoCoordinatesEqual'
 1460571188142	Extract method 'isMoveAPlace'
 1460571328002	Extract method 'isFirstMove'
+1460571834276	Extract method 'checkIfMoveIsToContiguousPeice'
+1460572046963	Extract local variable 'toImpl'
+1460572060191	Extract local variable 'fromImpl'
