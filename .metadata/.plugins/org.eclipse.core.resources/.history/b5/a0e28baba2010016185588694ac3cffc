@@ -14,7 +14,7 @@ import java.util.Queue;
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
 import hanto.studentthhughes.common.movevalidator.AggrigateValidator;
-import hanto.studentthhughes.common.movevalidator.CorrectNumberOfButterflyValidator;
+import hanto.studentthhughes.common.movevalidator.ButterflyChecker;
 import hanto.studentthhughes.common.movevalidator.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.movevalidator.FirstMoveValidator;
 import hanto.studentthhughes.common.movevalidator.LimitMoveLengthToOneValidator;
@@ -68,7 +68,7 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new LocationValidator());
 				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new CorrectNumberOfButterflyValidator());
+				mv.addValidator(new ButterflyChecker());
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new PlaceBySameColorValidator());
 				mv.addValidator(new LimitMoveLengthToOneValidator());

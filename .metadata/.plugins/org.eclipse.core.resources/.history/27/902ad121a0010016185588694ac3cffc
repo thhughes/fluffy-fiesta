@@ -24,12 +24,6 @@ public class ButterflyPlacedInTimeValidatorTest {
 	class dummyCounter implements MoveCounter
 	{
 		public int count = 1;
-		public dummyCounter(){
-			
-		}
-		public dummyCounter(int val){
-			count = val;
-		}
 
 		@Override
 		public int getNumberMoves(HantoPlayerColor player) {
@@ -74,7 +68,6 @@ public class ButterflyPlacedInTimeValidatorTest {
 	@Test
 	public void testNotAddingButterflyWhenItsTheLastTurn() throws HantoException
 	{
-		mc = new dummyCounter(0);
 		mv = new ButterflyPlacedInTimeValidator(1);
 		assertFalse(mv.isValidMove(theBoard, new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.SPARROW),
 				mc, new HantoCoordinateImpl(1,0), null));

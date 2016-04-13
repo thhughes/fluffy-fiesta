@@ -34,7 +34,7 @@ public class ButterflyPlacedInTimeValidator implements MoveValidator{
 	 * 					int : max number of turns before you need a butterfly
 	 */
 	public ButterflyPlacedInTimeValidator(int numTurns){
-		numberOfTurns = new Integer(numTurns);
+		numberOfTurns = new Integer(numTurns-1);
 	}
 	
 	

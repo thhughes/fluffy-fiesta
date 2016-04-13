@@ -12,7 +12,7 @@ import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
-import hanto.studentthhughes.common.movevalidator.CorrectNumberOfButterflyValidator;
+import hanto.studentthhughes.common.movevalidator.ButterflyChecker;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
 
 public class ButterflyCheckerTest {
@@ -23,14 +23,14 @@ public class ButterflyCheckerTest {
 	@Before
 	public void setup() throws HantoException{
 		theBoard = new HantoBoardImpl();
-		mv = new CorrectNumberOfButterflyValidator();
+		mv = new ButterflyChecker();
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY), 
 				new HantoCoordinateImpl(0,0));
 	}
 	
 	@Test
 	public void testNotNull(){
-		assertNotNull(new CorrectNumberOfButterflyValidator());
+		assertNotNull(new ButterflyChecker());
 	}
 	
 	@Test

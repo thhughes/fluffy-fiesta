@@ -52,4 +52,25 @@ public class MoveRealPieceValidator implements MoveValidator {
 		return result;
 	}
 	
+	public boolean isValidMoveOld(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
+			HantoCoordinate from) {
+		boolean result = true;
+		
+		
+		if(from != null){
+			HantoCoordinateImpl fromImpl = new HantoCoordinateImpl(from);
+			result = false;
+			
+			if(!theBoard.isLocationOccupied(fromImpl)){
+				result = true;
+				if(theBoard.getFromBoard(fromImpl).getType() != piece.getType()){
+					result = false;
+				}
+			}
+
+		}
+		
+		return result;
+	}
+
 }

@@ -7,10 +7,13 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.movevalidator;
 
+import java.util.Collection;
+
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
-import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
@@ -18,17 +21,28 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
  * @author Troy
  *
  */
-public class MoveRealPieceValidator implements MoveValidator {
+public class CorrectNumberOfButterflyValidator implements MoveValidator {
 
 	/* (non-Javadoc)
-	 * @see hanto.studentThhughes.common.moveValidator.MoveValidator#isValidMove(hanto.studentThhughes.common.board.Board, hanto.common.HantoPiece, hanto.studentThhughes.common.moveCounter.MoveCounter, hanto.common.HantoCoordinate, hanto.common.HantoCoordinate)
+	 * @see hanto.studentThhughes.common.moveValidator.MoveValidator#isValidMove(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.frontier.Frontier, hanto.common.HantoPiece, hanto.common.HantoCoordinate, hanto.studentThhughes.common.MoveCounter)
 	 */
 	@Override
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		boolean result = true;
-		if (from != null){
-			result = isPieceOnBoard(theBoard, piece, counter, new HantoCoordinateImpl(to), new HantoCoordinateImpl(from));
+		
+		if(from == null){
+			HantoPlayerColor moveColor = piece.getColor();
+			Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(moveColor).values();
+			int numberButterflies = 0;
+			
+			for(HantoPiece hp : playerPieces){
+				if(hp.getType() == HantoPieceType.BUTTERFLY){
+					numberButterflies++;
+				}
+			}
+			
+			result = !(numberButterflies > 0 && piece.getType() == HantoPieceType.BUTTERFLY);
 		}
 		return result;
 	}
@@ -38,18 +52,9 @@ public class MoveRealPieceValidator implements MoveValidator {
 	 */
 	@Override
 	public void invalidError() throws HantoException {
-		throw new HantoException("The Piece You're Trying To Move Doesn't exist");
+		throw new HantoException("Butterfly Check Error: Cannot add two butterflies");
 
 	}
-	
-	private boolean isPieceOnBoard(HantoBoard theBoard, HantoPiece piece, MoveCounter counter,
-			HantoCoordinateImpl to, HantoCoordinateImpl from) {
-		boolean result = true;
-		if(!theBoard.isLocationOccupied(from) || 
-				theBoard.getFromBoard(from).getType() != piece.getType()){
-			result = false;
-		}
-		return result;
-	}
-	
+
+
 }

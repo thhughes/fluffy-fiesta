@@ -45,11 +45,29 @@ public class MoveRealPieceValidator implements MoveValidator {
 	private boolean isPieceOnBoard(HantoBoard theBoard, HantoPiece piece, MoveCounter counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		boolean result = true;
-		if(!theBoard.isLocationOccupied(from) || 
-				theBoard.getFromBoard(from).getType() != piece.getType()){
-			result = false;
-		}
-		return result;
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
+	public boolean isValidMoveOld(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
+			HantoCoordinate from) {
+		boolean result = true;
+		
+		
+		if(from != null){
+			HantoCoordinateImpl fromImpl = new HantoCoordinateImpl(from);
+			result = false;
+			
+			if(!theBoard.isLocationOccupied(fromImpl)){
+				result = true;
+				if(theBoard.getFromBoard(fromImpl).getType() != piece.getType()){
+					result = false;
+				}
+			}
+
+		}
+		
+		return result;
+	}
+
 }

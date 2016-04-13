@@ -24,17 +24,13 @@ public class FirstMoveValidator implements MoveValidator {
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		boolean result = true;
-		
-		if(isFirstMove(counter)){
+		if(counter.getNumberMoves(HantoPlayerColor.BLUE)==0 && 
+				counter.getNumberMoves(HantoPlayerColor.RED)==0){
+			
 			result = (new HantoCoordinateImpl(0,0)).equals(new HantoCoordinateImpl(to));
 		}
 		
 		return result;
-	}
-
-	private boolean isFirstMove(MoveCounter counter) {
-		return counter.getNumberMoves(HantoPlayerColor.BLUE)==0 && 
-				counter.getNumberMoves(HantoPlayerColor.RED)==0;
 	}
 
 	/* (non-Javadoc)

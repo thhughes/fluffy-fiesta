@@ -74,7 +74,7 @@ public class ButterflyPlacedInTimeValidatorTest {
 	@Test
 	public void testNotAddingButterflyWhenItsTheLastTurn() throws HantoException
 	{
-		mc = new dummyCounter(0);
+
 		mv = new ButterflyPlacedInTimeValidator(1);
 		assertFalse(mv.isValidMove(theBoard, new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.SPARROW),
 				mc, new HantoCoordinateImpl(1,0), null));

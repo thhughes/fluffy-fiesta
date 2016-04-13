@@ -25,28 +25,33 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
  */
 public class LocationValidator implements MoveValidator {
 
-	HantoCoordinateImpl boardOrigin = new HantoCoordinateImpl(0,0);
-	
 	/* (non-Javadoc)
 	 * @see hanto.studentThhughes.common.moveValidator.MoveValidator#isValidMove(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.frontier.Frontier, hanto.common.HantoPiece, hanto.common.HantoCoordinate)
 	 */
 	@Override
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = false;
-		
-		if(isFirstMoveOfGame(counter)){
-			if(boardOrigin.equals(new HantoCoordinateImpl(to))){
+		if(counter.getNumberMoves(HantoPlayerColor.BLUE) == 0 &&
+				counter.getNumberMoves(HantoPlayerColor.RED) == 0){
+			if((new HantoCoordinateImpl(0,0)).equals(new HantoCoordinateImpl(to))){
 				result = true;
 			}
+			 
 		}else{
+			// Get all of the neighbors of where you're going
 			Queue<HantoCoordinate> neighbors = (new HantoCoordinateImpl(to)).getNeighbors();
 			
+			// Iterate over all the neighbors
 			for(HantoCoordinate hc : neighbors){
+				
+				// If the location that you've found is occupied
 				if(theBoard.isLocationOccupied(new HantoCoordinateImpl(hc))){
-					if(isMoveAPlace(from)){		
+					// If it's being placed, not moved.
+					if(from == null){		
 						result = true;
 						break;
-					}else if (!areHantoCoordinatesEqual(from, hc)){
+					// If the location you've found is occupied and NOT the location that you're coming from
+					}else if (!((new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from)))){
 						result = true;
 						break;
 					}
@@ -54,19 +59,6 @@ public class LocationValidator implements MoveValidator {
 			}
 		}
 		return result;
-	}
-
-	private boolean isMoveAPlace(HantoCoordinate from) {
-		return from == null;
-	}
-
-	private boolean areHantoCoordinatesEqual(HantoCoordinate from, HantoCoordinate hc) {
-		return (new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from));
-	}
-
-	private boolean isFirstMoveOfGame(MoveCounter counter) {
-		return counter.getNumberMoves(HantoPlayerColor.BLUE) == 0 &&
-				counter.getNumberMoves(HantoPlayerColor.RED) == 0;
 	}
 
 	/* (non-Javadoc)

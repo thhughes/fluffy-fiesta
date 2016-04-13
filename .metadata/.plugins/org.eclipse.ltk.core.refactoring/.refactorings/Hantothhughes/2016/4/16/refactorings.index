@@ -75,3 +75,9 @@
 1460561476103	Rename package 'hanto.studentthhughesduh.common.movevalidator'
 1460561483057	Delete elements
 1460562492817	Rename method 'managePlace'
+1460570885605	Rename type 'ButterflyChecker'
+1460570961214	Extract method 'isFirstMoveOfGame'
+1460571005700	Extract local variable 'boardOrigin'
+1460571084973	Extract method 'areHantoCoordinatesEqual'
+1460571188142	Extract method 'isMoveAPlace'
+1460571328002	Extract method 'isFirstMove'

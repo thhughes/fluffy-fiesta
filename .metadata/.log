@@ -2862,3 +2862,21 @@ java.lang.NullPointerException
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
+
+!ENTRY com.instantiations.eclipse 1 0 2016-04-13 13:32:51.481
+!MESSAGE cannot support aboutToShutdown event - 2
+
+!ENTRY org.eclipse.ui 4 0 2016-04-13 13:39:17.986
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.ui 4 0 2016-04-13 13:51:11.304
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.ui 4 0 2016-04-13 13:56:59.212
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
