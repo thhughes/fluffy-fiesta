@@ -13,7 +13,7 @@ package hanto.studentThhughes;
 import hanto.common.*;
 import hanto.studentThhughes.alpha.AlphaHantoGame;
 import hanto.studentThhughes.beta.BetaHantoGame;
-import hanto.studentThhughes.common.HantoGameStateCalculatorFactory;
+import hanto.studentThhughes.common.HantoBoardValidatorFactory;
 import hanto.studentThhughes.common.HantoMoveValidatorFactory;
 import hanto.studentThhughes.gamma.GammaHantoGame;
 
@@ -63,7 +63,7 @@ public class HantoGameFactory
 	 */
 	public  HantoGame makeHantoGame(HantoGameID gameId, HantoPlayerColor movesFirst) {
 		HantoMoveValidatorFactory mValidatorFactory = HantoMoveValidatorFactory.getInstance();
-		HantoGameStateCalculatorFactory gsValidatorFactory = HantoGameStateCalculatorFactory.getInstance();
+		HantoBoardValidatorFactory bValidatorFactory = HantoBoardValidatorFactory.getInstance();
 		HantoGame game = null;
 		switch (gameId) {
 			case ALPHA_HANTO:
@@ -75,7 +75,7 @@ public class HantoGameFactory
 			case GAMMA_HANTO:
 				game = new GammaHantoGame(movesFirst,
 						mValidatorFactory.makeHantoValidator(gameId),
-						gsValidatorFactory.makeHantoValidator(gameId));
+						bValidatorFactory.makeHantoValidator(gameId));
 				break;
 		}
 		return game;

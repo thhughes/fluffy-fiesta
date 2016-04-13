@@ -41,3 +41,4 @@
 1460560799460	Rename package 'hanto.studentThhughes.common.board'
 1460560813909	Rename type 'Board'
 1460560824746	Rename type 'BoardImpl'
+1460560873227	Rename type 'HantoBoardValidatorFactory'
