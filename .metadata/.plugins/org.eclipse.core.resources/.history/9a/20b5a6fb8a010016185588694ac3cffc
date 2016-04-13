@@ -8,12 +8,12 @@ import org.junit.Test;
 import hanto.common.MoveResult;
 import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.gamestate.AggregateGameStateCalculator;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
+import hanto.studentThhughes.common.gamestate.BoardValidator;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 public class AggragateBoardValidatorTest {
 
-	class dummyValidator implements GameStateCalculator{
+	class dummyValidator implements BoardValidator{
 		
 		MoveResult res;
 		public dummyValidator(MoveResult custResult){

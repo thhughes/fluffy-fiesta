@@ -33,3 +33,8 @@
 1460559803578	Rename package 'hanto.Test.studentThhughes.gamma'
 1460559810887	Delete element
 1460559822281	Delete elements
+1460560663037	Rename package 'hanto.studentThhughes.common.boardvalidator'
+1460560700808	Rename type 'AggragateBoardValidator'
+1460560712107	Rename type 'BoardValidator'
+1460560735663	Rename type 'ColorWinValidator'
+1460560754865	Rename type 'TerminalMoveCheck'

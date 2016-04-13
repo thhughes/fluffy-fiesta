@@ -12,10 +12,10 @@ package hanto.studentThhughes.common;
 
 import hanto.common.HantoGameID;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.gamestate.AggregateGameStateCalculator;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
-import hanto.studentThhughes.common.gamestate.PlayerWinCalculator;
-import hanto.studentThhughes.common.gamestate.EndOfGameCalculator;
+import hanto.studentThhughes.common.boardvalidator.AggragateBoardValidator;
+import hanto.studentThhughes.common.boardvalidator.BoardValidator;
+import hanto.studentThhughes.common.boardvalidator.ColorWinValidator;
+import hanto.studentThhughes.common.boardvalidator.TerminalMoveCheck;
 
 /**
  * This is a factory for board validators
@@ -41,18 +41,18 @@ public class HantoBoardValidatorFactory {
 	 * @return
 	 * 			BoardValidator : of the hantoGameId Passed
 	 */
-	public GameStateCalculator makeHantoValidator(HantoGameID gameID){
-		AggregateGameStateCalculator mv = null;
+	public BoardValidator makeHantoValidator(HantoGameID gameID){
+		AggragateBoardValidator mv = null;
 		switch (gameID) {
 			case ALPHA_HANTO:
 				break;
 			case BETA_HANTO:
 				break;
 			case GAMMA_HANTO:
-				mv = new AggregateGameStateCalculator();
-				mv.addValidator(new EndOfGameCalculator(20));
-				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.RED));
-				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.BLUE));
+				mv = new AggragateBoardValidator();
+				mv.addValidator(new TerminalMoveCheck(20));
+				mv.addValidator(new ColorWinValidator(HantoPlayerColor.RED));
+				mv.addValidator(new ColorWinValidator(HantoPlayerColor.BLUE));
 				break;
 			
 			default:

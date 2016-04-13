@@ -16,7 +16,7 @@ import hanto.common.HantoPlayerColor;
 import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
+import hanto.studentThhughes.common.gamestate.BoardValidator;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 
 /**
