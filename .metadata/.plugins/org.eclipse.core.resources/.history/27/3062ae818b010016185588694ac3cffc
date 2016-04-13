@@ -63,7 +63,7 @@ public class HantoGameFactory
 	 */
 	public  HantoGame makeHantoGame(HantoGameID gameId, HantoPlayerColor movesFirst) {
 		HantoMoveValidatorFactory mValidatorFactory = HantoMoveValidatorFactory.getInstance();
-		HantoGameStateCalculatorFactory gsCalculatorFactory = HantoGameStateCalculatorFactory.getInstance();
+		HantoGameStateCalculatorFactory gsValidatorFactory = HantoGameStateCalculatorFactory.getInstance();
 		HantoGame game = null;
 		switch (gameId) {
 			case ALPHA_HANTO:
@@ -75,7 +75,7 @@ public class HantoGameFactory
 			case GAMMA_HANTO:
 				game = new GammaHantoGame(movesFirst,
 						mValidatorFactory.makeHantoValidator(gameId),
-						gsCalculatorFactory.makeHantoValidator(gameId));
+						gsValidatorFactory.makeHantoValidator(gameId));
 				break;
 		}
 		return game;
