@@ -42,3 +42,35 @@
 1460560813909	Rename type 'Board'
 1460560824746	Rename type 'BoardImpl'
 1460560873227	Rename type 'HantoBoardValidatorFactory'
+1460561111110	Rename package 'hanto.studentThhughes'
+1460561125748	Rename package 'hanto.studentThhughes.alpha'
+1460561134374	Rename package 'hanto.studentThhughes.beta'
+1460561143255	Rename package 'hanto.studentThhughes.common'
+1460561168699	Rename package 'hanto.studentThhughes.common.colormanager'
+1460561176441	Rename package 'hanto.studentThhughes.common.coordinate'
+1460561183862	Rename package 'hanto.studentThhughes.common.frontier'
+1460561189420	Rename package 'hanto.studentThhughes.common.gamestate'
+1460561194791	Rename package 'hanto.studentThhughes.common.hantoboard'
+1460561203199	Rename package 'hanto.studentThhughes.common.hantopiece'
+1460561209383	Rename package 'hanto.studentThhughes.common.movecalculator'
+1460561216130	Rename package 'hanto.studentThhughes.common.movecounter'
+1460561235149	Rename package 'hanto.studentThhughes.common.movevalidator'
+1460561251510	Rename package 'hanto.studentThhughes.gamma'
+1460561289566	Rename package 'hanto.studentthhughesduh'
+1460561301086	Delete element
+1460561318942	Delete element
+1460561332547	Delete element
+1460561343743	Copy package
+1460561357377	Copy package
+1460561370852	Copy package
+1460561403589	Rename package 'hanto.studentthhughesduh.common'
+1460561418580	Rename package 'hanto.studentthhughesduh.common.colormanager'
+1460561425233	Rename package 'hanto.studentthhughesduh.common.coordinate'
+1460561431530	Rename package 'hanto.studentthhughesduh.common.frontier'
+1460561439204	Rename package 'hanto.studentthhughesduh.common.gamestate'
+1460561446820	Rename package 'hanto.studentthhughesduh.common.hantoboard'
+1460561455105	Rename package 'hanto.studentthhughesduh.common.hantopiece'
+1460561460634	Rename package 'hanto.studentthhughesduh.common.movecalculator'
+1460561465891	Rename package 'hanto.studentthhughesduh.common.movecounter'
+1460561476103	Rename package 'hanto.studentthhughesduh.common.movevalidator'
+1460561483057	Delete elements

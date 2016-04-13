@@ -8,9 +8,9 @@ import java.util.Queue;
 import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.movecalculator.MoveCalculator;
-import hanto.studentThhughes.common.movecalculator.SingleMoveCalculator;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.movecalculator.MoveCalculator;
+import hanto.studentthhughes.common.movecalculator.SingleMoveCalculator;
 public class SinglMoveTest {
 
 	MoveCalculator mc;

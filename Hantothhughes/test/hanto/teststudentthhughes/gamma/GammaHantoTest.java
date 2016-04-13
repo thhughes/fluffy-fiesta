@@ -14,8 +14,8 @@ import hanto.common.HantoGame;
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.HantoGameFactory;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.HantoGameFactory;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 
 public class GammaHantoTest {
 

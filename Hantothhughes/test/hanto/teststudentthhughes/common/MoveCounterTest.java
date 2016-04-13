@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.movecounter.MoveCounterImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 
 public class MoveCounterTest {
 	private static MoveCounterImpl mc;

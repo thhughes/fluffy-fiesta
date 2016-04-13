@@ -6,10 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.gamestate.AggregateGameStateCalculator;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
-import hanto.studentThhughes.common.hantoboard.HantoBoard;
-import hanto.studentThhughes.common.movecounter.MoveCounter;
+import hanto.studentthhughes.common.gamestate.AggregateGameStateCalculator;
+import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class AggragateBoardValidatorTest {
 

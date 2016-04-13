@@ -7,11 +7,11 @@ import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.frontier.Frontier;
-import hanto.studentThhughes.common.frontier.FrontierImpl;
-import hanto.studentThhughes.common.movevalidator.LocationValidator;
-import hanto.studentThhughes.common.movevalidator.MoveValidator;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.frontier.Frontier;
+import hanto.studentthhughes.common.frontier.FrontierImpl;
+import hanto.studentthhughes.common.movevalidator.LocationValidator;
+import hanto.studentthhughes.common.movevalidator.MoveValidator;
 
 public class LocationValidatorTest {
 

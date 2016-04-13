@@ -6,9 +6,9 @@ import org.junit.*;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.frontier.Frontier;
-import hanto.studentThhughes.common.frontier.FrontierImpl;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.frontier.Frontier;
+import hanto.studentthhughes.common.frontier.FrontierImpl;
 
 public class FrontierImplTest {
 

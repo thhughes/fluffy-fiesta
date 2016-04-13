@@ -8,12 +8,12 @@ import org.junit.Test;
 import hanto.common.HantoException;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.hantoboard.HantoBoard;
-import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
-import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
-import hanto.studentThhughes.common.movecounter.MoveCounterImpl;
-import hanto.studentThhughes.common.movevalidator.MoveRealPieceValidator;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
+import hanto.studentthhughes.common.movevalidator.MoveRealPieceValidator;
 
 public class MoveRealPieceValidatorTester {
 

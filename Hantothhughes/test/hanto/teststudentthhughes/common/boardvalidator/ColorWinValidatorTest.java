@@ -10,12 +10,12 @@ import hanto.common.HantoException;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
-import hanto.studentThhughes.common.gamestate.PlayerWinCalculator;
-import hanto.studentThhughes.common.hantoboard.HantoBoard;
-import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
-import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.gamestate.PlayerWinCalculator;
+import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 
 public class ColorWinValidatorTest {
 	private static GameStateCalculator cv;

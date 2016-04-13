@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.colormanager.ColorManager;
+import hanto.studentthhughes.common.colormanager.ColorManager;
 
 public class ColorManagerTest {
 	private static ColorManager cm; 

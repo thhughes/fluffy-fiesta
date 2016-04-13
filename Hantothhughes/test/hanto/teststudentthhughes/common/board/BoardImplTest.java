@@ -10,10 +10,10 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentThhughes.common.hantoboard.HantoBoard;
-import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
-import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 
 public class BoardImplTest {
 	private static HantoBoard theBoard;

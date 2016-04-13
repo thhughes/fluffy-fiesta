@@ -7,9 +7,9 @@ import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.gamestate.GameStateCalculator;
-import hanto.studentThhughes.common.gamestate.EndOfGameCalculator;
-import hanto.studentThhughes.common.movecounter.MoveCounter;
+import hanto.studentthhughes.common.gamestate.EndOfGameCalculator;
+import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class TerminalMoveCheckTest {
 	private class dummyCounter implements MoveCounter{

@@ -10,9 +10,9 @@ import org.junit.Test;
 import static hanto.common.HantoPieceType.*;
 
 import hanto.common.*;
-import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
-import hanto.studentThhughes.common.movevalidator.MoveValidator;
-import hanto.studentThhughes.common.movevalidator.PieceValidator;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.movevalidator.MoveValidator;
+import hanto.studentthhughes.common.movevalidator.PieceValidator;
 
 public class PieceValidatorTest {
 

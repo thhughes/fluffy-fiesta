@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
-import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 
 public class HantoCoordinateImplTest {
 	
