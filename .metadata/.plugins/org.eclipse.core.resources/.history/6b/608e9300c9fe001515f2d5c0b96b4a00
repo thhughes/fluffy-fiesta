@@ -1,0 +1,5 @@
+package hanto.studentThhughes.common.hantoPiece;
+
+public class HantoPieceFactory {
+
+}

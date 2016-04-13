@@ -1,0 +1,10 @@
+package hanto.studentThhughes.common.moveCalculator;
+
+import java.util.Queue;
+
+import hanto.common.HantoCoordinate;
+
+public interface MoveCalculator {
+	
+	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting);
+}

@@ -1,0 +1,15 @@
+package hanto.Test.studentThhughes.common.hantoPiece;
+
+import org.junit.Test;
+
+public class SinglMoveTest {
+
+	
+	
+	
+	@Test
+	public void testNotNull()
+	{
+		assertNotNull(new SinglMoveCalculator());
+	}
+}

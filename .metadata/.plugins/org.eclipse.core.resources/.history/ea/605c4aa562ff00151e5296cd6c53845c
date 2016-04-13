@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package hanto.studentThhughes.common.moveCalculator;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import hanto.common.HantoCoordinate;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl.*;
+
+/**
+ * @author Troy
+ *
+ */
+public class NMoveCalculator implements MoveCalculator {
+
+	int size;
+	public NMoveCalculator(int calcSize)
+	{
+		size = calcSize;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hanto.studentThhughes.common.moveCalculator.MoveCalculator#calcMoveCoordinates(hanto.common.HantoCoordinate)
+	 */
+	@Override
+	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting) {
+		Queue<HantoCoordinateImpl> coordinates = new LinkedList<HantoCoordinateImpl>();
+		HantoCoordinateImpl inputCoord = new HantoCoordinateImpl(starting);
+		if (size > 1)
+		{
+			coordinates = hantoCoordToImpl(inputCoord.getNeighbors());
+		}else if(size == 1)
+		{
+			coordinates = implToCoord(inputCoord.getNeighbors());
+		}
+		
+		return implToCoord(coordinates);
+	}
+	
+	private Queue<HantoCoordinateImpl> hantoCoordToImpl(Queue<HantoCoordinate> someList)
+	{
+		Queue<HantoCoordinateImpl> coordinates = new LinkedList<HantoCoordinateImpl>();
+		for(HantoCoordinate hc : someList)
+		{
+			coordinates.add(new HantoCoordinateImpl(hc));
+		}
+		return coordinates;
+	}
+	
+	private Queue<HantoCoordinate> implToCoord(Queue<HantoCoordinateImpl> someList)
+	{
+		Queue<HantoCoordinate> coordinates = new LinkedList<HantoCoordinate>();
+		for(HantoCoordinateImpl hc : someList)
+		{
+			coordinates.add(new HantoCoordinateImpl(hc));
+		}
+		return coordinates;
+	}
+
+	
+
+}

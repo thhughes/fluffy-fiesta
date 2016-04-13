@@ -51,6 +51,5 @@ public class HantoPieceImpl implements HantoPiece
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
-
 	
 }

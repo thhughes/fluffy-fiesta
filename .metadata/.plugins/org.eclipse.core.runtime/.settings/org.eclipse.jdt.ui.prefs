@@ -10,7 +10,7 @@ org.eclipse.jdt.ui.editor.tab.width=
 org.eclipse.jdt.ui.formatterprofiles.version=12
 org.eclipse.jdt.ui.javadoclocations.migrated=true
 org.eclipse.jdt.ui.text.code_templates_migrated=true
-org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="filecomment_context" deleted\="false" description\="Comment for created Java files" enabled\="true" id\="org.eclipse.jdt.ui.text.codetemplates.filecomment" name\="filecomment">/*******************************************************************************\n * This files was developed for CS4233\: Object-Oriented Analysis &amp; Design. The course was\n * taken at Worcester Polytechnic Institute. All rights reserved. This program and the\n * accompanying materials are made available under the terms of the Eclipse Public License\n * v1.0 which accompanies this distribution, and is available at\n * http\://www.eclipse.org/legal/epl-v10.html\n *******************************************************************************/</template></templates>
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 org.eclipse.jdt.ui.text.templates_migrated=true
 org.eclipse.jface.textfont=1|Monaco|11.0|0|COCOA|1|;

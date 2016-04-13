@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package hanto.studentThhughes.common.moveCalculator;
+
+import java.util.Queue;
+
+import hanto.common.HantoCoordinate;
+
+/**
+ * @author Troy
+ *
+ */
+public class NMoveCalculator implements MoveCalculator {
+
+	int size;
+	public NMoveCalculator(int calcSize)
+	{
+		size = calcSize;
+	}
+	
+	/* (non-Javadoc)
+	 * @see hanto.studentThhughes.common.moveCalculator.MoveCalculator#calcMoveCoordinates(hanto.common.HantoCoordinate)
+	 */
+	@Override
+	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

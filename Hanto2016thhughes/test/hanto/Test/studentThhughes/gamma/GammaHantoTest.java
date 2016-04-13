@@ -1,10 +1,8 @@
 package hanto.Test.studentThhughes.gamma;
 
-import static hanto.common.HantoPieceType.BUTTERFLY;
-import static hanto.common.HantoPieceType.SPARROW;
-import static hanto.common.HantoPlayerColor.BLUE;
-import static hanto.common.MoveResult.DRAW;
-import static hanto.common.MoveResult.OK;
+import static hanto.common.HantoPieceType.*;
+import static hanto.common.HantoPlayerColor.*;
+import static hanto.common.MoveResult.*;
 import static org.junit.Assert.*;
 
 import org.junit.Before;

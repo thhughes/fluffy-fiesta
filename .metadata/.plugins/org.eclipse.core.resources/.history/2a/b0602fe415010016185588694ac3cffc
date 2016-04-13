@@ -1,0 +1,15 @@
+package hanto.studentThhughes.common.moveCalculator;
+
+import java.util.Queue;
+
+import hanto.common.HantoCoordinate;
+import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+
+public class SingleMoveCalculator implements MoveCalculator{
+
+	@Override
+	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting) {
+		return (new HantoCoordinateImpl(starting)).getNeighbors();
+	}
+	
+}

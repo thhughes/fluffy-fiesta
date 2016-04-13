@@ -1,0 +1,5 @@
+package hanto.studentThhughes.common.hantoPiece.pieceMovement;
+
+public interface PieceMovement {
+
+}
