@@ -8,7 +8,7 @@
 package hanto.studentThhughes.common.movevalidator;
 
 import hanto.common.*;
-import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -36,7 +36,7 @@ public interface MoveValidator {
 	 * @return
 	 * 			boolean : true if the move is valid
 	 */
-	boolean isValidMove(Board theBoard, HantoPiece piece, 
+	boolean isValidMove(HantoBoard theBoard, HantoPiece piece, 
 			MoveCounter counter,HantoCoordinate to,HantoCoordinate from);
 	
 	

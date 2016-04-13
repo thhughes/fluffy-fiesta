@@ -9,7 +9,7 @@ package hanto.studentThhughes.common.gamestate;
 
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -34,7 +34,7 @@ public class EndOfGameCalculator implements GameStateCalculator {
 	 * @see hanto.studentThhughes.common.boardValidator.BoardValidator#getOutcome(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.MoveCounter)
 	 */
 	@Override
-	public MoveResult getOutcome(Board theBoard, MoveCounter counter) {
+	public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
 		MoveResult result = MoveResult.OK;
 		if(counter.getNumberMoves(HantoPlayerColor.RED) == terminalNumber &&
 				counter.getNumberMoves(HantoPlayerColor.BLUE) == terminalNumber){

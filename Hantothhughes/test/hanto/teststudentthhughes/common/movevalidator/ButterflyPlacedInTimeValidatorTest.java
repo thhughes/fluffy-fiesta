@@ -10,9 +10,9 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 import hanto.studentThhughes.common.movecounter.MoveCounterImpl;
@@ -35,14 +35,14 @@ public class ButterflyPlacedInTimeValidatorTest {
 		}
 	}
 
-	Board theBoard;
+	HantoBoard theBoard;
 	MoveValidator mv;
 	MoveCounter mc;
 	
 	@Before
 	public void setup() throws HantoException{
 		mc = new dummyCounter();
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.SPARROW), 
 				new HantoCoordinateImpl(0,0));
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.RED,HantoPieceType.SPARROW), 

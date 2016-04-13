@@ -8,21 +8,21 @@ import org.junit.Test;
 import hanto.common.HantoException;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movevalidator.ButterflyChecker;
 import hanto.studentThhughes.common.movevalidator.MoveValidator;
 
 public class ButterflyCheckerTest {
 
-	Board theBoard;
+	HantoBoard theBoard;
 	MoveValidator mv;
 	
 	@Before
 	public void setup() throws HantoException{
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		mv = new ButterflyChecker();
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY), 
 				new HantoCoordinateImpl(0,0));

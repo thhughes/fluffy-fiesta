@@ -10,9 +10,9 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 import hanto.studentThhughes.common.movevalidator.*;
@@ -35,7 +35,7 @@ public class FristMoveValidatorTest {
 		
 	}
 	
-	private static Board theBoard;
+	private static HantoBoard theBoard;
 	private static MoveCounter counter;
 	private static MoveValidator mv;
 	private static HantoPiece hp1;
@@ -47,7 +47,7 @@ public class FristMoveValidatorTest {
 	
 	@Before
 	public void setup(){
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		counter = new dummyCounter();
 		mv = new FirstMoveValidator();
 		hp1 = new HantoPieceImpl(HantoPlayerColor.BLUE, HantoPieceType.BUTTERFLY);

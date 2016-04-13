@@ -10,13 +10,13 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 
 public class BoardImplTest {
-	private static Board theBoard;
+	private static HantoBoard theBoard;
 	private static HantoPiece PA;
 	private static HantoPiece PB;
 	private static HantoCoordinate CA;
@@ -25,7 +25,7 @@ public class BoardImplTest {
 	
 	@Before
 	public void setup(){
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		PA = new HantoPieceImpl(HantoPlayerColor.RED,HantoPieceType.SPARROW);
 		PB = new HantoPieceImpl(HantoPlayerColor.RED,HantoPieceType.BUTTERFLY);
 		CA = new HantoCoordinateImpl(0,0);
@@ -112,7 +112,7 @@ public class BoardImplTest {
 	@Test// 11
 	public void testCopyConstructor() throws HantoException{
 		theBoard.placeOnBoard(PA, CB);
-		Board newBoard = new BoardImpl(theBoard);
+		HantoBoard newBoard = new HantoBoardImpl(theBoard);
 		assertTrue(newBoard.isLocationOccupied(CB));
 		assertFalse(newBoard.isLocationOccupied(CA));
 		assertEquals(theBoard.getFromBoard(CB).getColor(),

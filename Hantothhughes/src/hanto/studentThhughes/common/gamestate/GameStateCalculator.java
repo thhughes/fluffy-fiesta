@@ -8,7 +8,7 @@
 package hanto.studentThhughes.common.gamestate;
 
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -29,5 +29,5 @@ public interface GameStateCalculator {
 	 * @return MoveResult
 	 * 					This returns the result of the board based off of the outcome. 
 	 */
-	MoveResult getOutcome(Board theBoard, MoveCounter counter);
+	MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter);
 }

@@ -38,3 +38,6 @@
 1460560712107	Rename type 'BoardValidator'
 1460560735663	Rename type 'ColorWinValidator'
 1460560754865	Rename type 'TerminalMoveCheck'
+1460560799460	Rename package 'hanto.studentThhughes.common.board'
+1460560813909	Rename type 'Board'
+1460560824746	Rename type 'BoardImpl'

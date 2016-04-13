@@ -16,8 +16,8 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -42,7 +42,7 @@ public class PlayerWinCalculator implements GameStateCalculator {
 	 * @see hanto.studentThhughes.common.boardValidator.BoardValidator#getOutcome(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.moveCounter.MoveCounter)
 	 */
 	@Override
-	public MoveResult getOutcome(Board theBoard, MoveCounter counter) {
+	public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
 		MoveResult result = MoveResult.OK;
 		Map<HantoCoordinate, HantoPiece> playerPiece = getRivalMap(theBoard);
 		HantoCoordinateImpl butterfly = null;
@@ -74,7 +74,7 @@ public class PlayerWinCalculator implements GameStateCalculator {
 		return result;
 	}
 	
-	private Map<HantoCoordinate, HantoPiece> getRivalMap(Board theBoard){
+	private Map<HantoCoordinate, HantoPiece> getRivalMap(HantoBoard theBoard){
 		Map<HantoCoordinate, HantoPiece> result;
 		if(playerColor == HantoPlayerColor.RED){
 			result = theBoard.getPlayerPieces(HantoPlayerColor.BLUE);

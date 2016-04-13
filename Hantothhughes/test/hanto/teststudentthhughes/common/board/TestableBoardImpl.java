@@ -13,20 +13,20 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.gamestate.GameStateCalculator;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 
 /**
  * @author Troy
  *
  */
-public class TestableBoardImpl implements Board {
+public class TestableBoardImpl implements HantoBoard {
 
 
-	private Board theBoard;
+	private HantoBoard theBoard;
 	HantoCoordinate hc1;
 	HantoCoordinate hc2;
 	HantoCoordinate hc3;
@@ -40,7 +40,7 @@ public class TestableBoardImpl implements Board {
 	
 	public TestableBoardImpl() throws HantoException{
 		
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		
 		hc1 = new HantoCoordinateImpl(0,0); // B
 		hc2 = new HantoCoordinateImpl(0,1); // R

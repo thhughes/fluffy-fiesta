@@ -10,11 +10,11 @@ import hanto.common.HantoException;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.gamestate.GameStateCalculator;
 import hanto.studentThhughes.common.gamestate.PlayerWinCalculator;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 
 public class ColorWinValidatorTest {
@@ -27,7 +27,7 @@ public class ColorWinValidatorTest {
 	private static HantoCoordinate hc6;
 	private static HantoCoordinate hc7;
 	
-	private static Board theBoard;
+	private static HantoBoard theBoard;
 	
 	@Before
 	public void setup(){
@@ -39,7 +39,7 @@ public class ColorWinValidatorTest {
 		hc6 = new HantoCoordinateImpl(0,-1);
 		hc7 = new HantoCoordinateImpl(-1,0);
 		
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 	}
 	
 	@Test //1 

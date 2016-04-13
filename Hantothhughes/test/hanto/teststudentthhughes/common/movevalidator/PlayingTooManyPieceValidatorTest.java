@@ -10,9 +10,9 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 import hanto.studentThhughes.common.movevalidator.MoveValidator;
@@ -21,13 +21,13 @@ import hanto.teststudentthhughes.common.board.TestableBoardImpl;
 
 public class PlayingTooManyPieceValidatorTest {
 	
-	private static Board theBoard;
+	private static HantoBoard theBoard;
 	private static MoveValidator mv;
 	private static MoveCounter mc;
 	
 	@Before
 	public void setup() throws HantoException{
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		mv = new PlayingTooManyPieceValidator(2);
 		
 	}

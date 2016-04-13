@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -42,7 +42,7 @@ public class AggregateGameStateCalculator implements GameStateCalculator {
 	 * @see hanto.studentThhughes.common.boardValidator.BoardValidator#getOutcome(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.moveCounter.MoveCounter)
 	 */
 	@Override
-	public MoveResult getOutcome(Board theBoard, MoveCounter counter) {
+	public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
 		Queue<MoveResult> results = new LinkedList<MoveResult>();
 		
 		for(GameStateCalculator validator: validatorList){

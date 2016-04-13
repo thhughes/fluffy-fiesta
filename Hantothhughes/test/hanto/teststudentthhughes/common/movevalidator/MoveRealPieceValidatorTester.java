@@ -8,21 +8,21 @@ import org.junit.Test;
 import hanto.common.HantoException;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentThhughes.common.movevalidator.MoveRealPieceValidator;
 
 public class MoveRealPieceValidatorTester {
 
-	Board theBoard;
+	HantoBoard theBoard;
 	
 	
 	@Before
 	public void setup() throws HantoException{
-		theBoard = new BoardImpl();
+		theBoard = new HantoBoardImpl();
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY),
 				new HantoCoordinateImpl(0,0));
 	}

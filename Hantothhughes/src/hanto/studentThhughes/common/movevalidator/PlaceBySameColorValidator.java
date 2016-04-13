@@ -14,8 +14,8 @@ import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPlayerColor;
-import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -28,7 +28,7 @@ public class PlaceBySameColorValidator implements MoveValidator {
 	 * @see hanto.studentThhughes.common.moveValidator.MoveValidator#isValidMove(hanto.studentThhughes.common.board.Board, hanto.studentThhughes.common.frontier.Frontier, hanto.common.HantoPiece, hanto.studentThhughes.common.moveCounter.MoveCounter, hanto.common.HantoCoordinate, hanto.common.HantoCoordinate)
 	 */
 	@Override
-	public boolean isValidMove(Board theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
+	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		
 		

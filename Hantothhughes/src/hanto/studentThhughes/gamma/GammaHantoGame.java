@@ -14,13 +14,13 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
-import hanto.studentThhughes.common.board.BoardImpl;
 import hanto.studentThhughes.common.colormanager.ColorManager;
 import hanto.studentThhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentThhughes.common.frontier.Frontier;
 import hanto.studentThhughes.common.frontier.FrontierImpl;
 import hanto.studentThhughes.common.gamestate.GameStateCalculator;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
+import hanto.studentThhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentThhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentThhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentThhughes.common.movevalidator.MoveValidator;
@@ -33,7 +33,7 @@ public class GammaHantoGame implements HantoGame {
 
 	private ColorManager hantoColorManager;
 	private Frontier hantoFrontier = new FrontierImpl();
-	private Board hantoBoard = new BoardImpl();
+	private HantoBoard hantoBoard = new HantoBoardImpl();
 	private MoveCounterImpl hantoMC = new MoveCounterImpl();
 	private MoveValidator hantoMV;
 	private GameStateCalculator hantoBV;

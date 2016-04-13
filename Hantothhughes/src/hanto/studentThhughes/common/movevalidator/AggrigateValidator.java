@@ -13,7 +13,7 @@ import java.util.Queue;
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
-import hanto.studentThhughes.common.board.Board;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 /**
@@ -32,7 +32,7 @@ public class AggrigateValidator implements MoveValidator {
 	}
 
 	@Override
-	public boolean isValidMove(Board theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
+	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = true;
 		for(MoveValidator mv : validatorList){
 			if(!mv.isValidMove(theBoard, piece, counter, to,from)){

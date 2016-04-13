@@ -6,9 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.MoveResult;
-import hanto.studentThhughes.common.board.Board;
 import hanto.studentThhughes.common.gamestate.AggregateGameStateCalculator;
 import hanto.studentThhughes.common.gamestate.GameStateCalculator;
+import hanto.studentThhughes.common.hantoboard.HantoBoard;
 import hanto.studentThhughes.common.movecounter.MoveCounter;
 
 public class AggragateBoardValidatorTest {
@@ -20,7 +20,7 @@ public class AggragateBoardValidatorTest {
 			res = custResult;
 		}
 		@Override
-		public MoveResult getOutcome(Board theBoard, MoveCounter counter) {
+		public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
 			return res;
 		}
 	}
