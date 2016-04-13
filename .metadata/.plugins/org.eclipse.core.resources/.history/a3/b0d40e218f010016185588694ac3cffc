@@ -109,13 +109,13 @@ public class GammaHantoGame implements HantoGame {
 		
 		// Increment the team's move
 		hantoMC.incrementNumberMoves(curColor);
-		safePlace(movePiece,from,to);
+		managePlace(movePiece,from,to);
 		
 		// Toggel the color
 		hantoColorManager.toggelCurrentColor();
 	}
 	
-	private void safePlace(HantoPiece movePiece, HantoCoordinate from, HantoCoordinate to) throws HantoException
+	private void managePlace(HantoPiece movePiece, HantoCoordinate from, HantoCoordinate to) throws HantoException
 	{
 		HantoCoordinateImpl safeTo = new HantoCoordinateImpl(to);
 		if(from == null){
