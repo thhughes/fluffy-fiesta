@@ -14,3 +14,22 @@
 1460559335838	Rename package 'hanto.Test.studentThhughes.common.hantoPiece'
 1460559341779	Rename package 'hanto.Test.studentThhughes.common.moveCalculator'
 1460559346887	Rename package 'hanto.Test.studentThhughes.common.moveValidator'
+1460559432909	Rename package 'hanto.Test.studentThhughes'
+1460559485710	Copy package
+1460559521985	Move compilation unit
+1460559549687	Copy package
+1460559567703	Copy package
+1460559602897	Delete element
+1460559644640	Delete element
+1460559687890	Rename package 'hanto.Test.studentThhughes.common'
+1460559715311	Rename package 'hanto.Test.studentThhughes.common.board'
+1460559731359	Rename package 'hanto.Test.studentThhughes.common.boardvalidator'
+1460559739684	Rename package 'hanto.Test.studentThhughes.common.colormanager'
+1460559752998	Rename package 'hanto.Test.studentThhughes.common.coordinate'
+1460559763105	Rename package 'hanto.Test.studentThhughes.common.frontier'
+1460559770446	Rename package 'hanto.Test.studentThhughes.common.hantopiece'
+1460559777717	Rename package 'hanto.Test.studentThhughes.common.movecalculator'
+1460559790040	Rename package 'hanto.Test.studentThhughes.common.movevalidator'
+1460559803578	Rename package 'hanto.Test.studentThhughes.gamma'
+1460559810887	Delete element
+1460559822281	Delete elements
