@@ -1,5 +1,0 @@
-package hanto.studentThhughes.common.moveChecker;
-
-public interface MoveValidator {
-
-}

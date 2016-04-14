@@ -81,6 +81,15 @@ public interface HantoBoard {
 	 */
 	Map<HantoCoordinate,HantoPiece> getPlayerPieces(HantoPlayerColor color);
 	
-	
+	/**
+	 * Function finds the path from one hex to another hex and avoids obstacles
+	 * that are on the board (obstacles being occupied hex's)
+	 * @param start
+	 * 				HantoCoordinate representing the start of the search
+	 * @param end
+	 * 				HantoCoordinate representing the end of the search
+	 * @return
+	 * 			List<HantoCoordinate> where the first entry is the start and the last entry is the end
+	 */
 	List<HantoCoordinate> getPath(HantoCoordinate start,HantoCoordinate end);
 }

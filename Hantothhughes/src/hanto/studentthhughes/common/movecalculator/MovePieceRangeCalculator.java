@@ -9,7 +9,7 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.movecalculator;
 
-import java.util.Queue;
+import java.util.List;
 
 import hanto.common.HantoCoordinate;
 /**
@@ -25,5 +25,5 @@ public interface MovePieceRangeCalculator {
 	 * @param starting
 	 * @return
 	 */
-	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting);
+	public List<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting);
 }

@@ -138,6 +138,18 @@ public class HantoBoardImpl implements HantoBoard {
 		return pathFromTree(aStarTree, new HantoCoordinateImpl(start), new HantoCoordinateImpl(end));
 	}
 
+	/**
+	 * Converts an aStar tree to a path
+	 * 
+	 * @param aStarTree
+	 * 				Map<HantoCoordinateImpl, HantoCoordinateImpl> where it's structured as to<key> from<value>
+	 * @param start
+	 * 				HantoCoordinateImpl
+	 * @param end
+	 * 				HantoCoordinateImpl
+	 * @return
+	 * 			List<HantoCoordinate>
+	 */
 	private List<HantoCoordinate> pathFromTree(
 			Map<HantoCoordinateImpl, HantoCoordinateImpl> aStarTree, HantoCoordinateImpl start,
 			HantoCoordinateImpl end) {
@@ -152,7 +164,17 @@ public class HantoBoardImpl implements HantoBoard {
 		
 		return path;
 	}
-
+	
+	/**
+	 * AStar implementation for HantoCoordinates
+	 * @param start
+	 * 				HantoCoordinate
+	 * @param end
+	 * 				HantoCoordinate
+	 * @return
+	 * 			Map<HantoCoordinateImpl, HantoCoordinateImpl> Stored as to->from, meaning if 
+	 * 			the system travels from a->b, b will be the key for a. 
+	 */
 	private Map<HantoCoordinateImpl, HantoCoordinateImpl> aStar(HantoCoordinate start, HantoCoordinate end) {
 		PriorityQueue<Node> frontier = makePriorityQueue();
 		frontier.add(new Node(new Integer(0), new HantoCoordinateImpl(start)));
@@ -186,6 +208,13 @@ public class HantoBoardImpl implements HantoBoard {
 		return came_from;
 	}
 
+	/**
+	 * This get's the nonOccupied neighbors of a given list of neighbors
+	 * @param neighbors
+	 * 				Queue<HantoCoordinate>
+	 * @return
+	 * 			Queue<HantoCoordinateImpl> of nodes that are not occupied.
+	 */
 	private Queue<HantoCoordinateImpl> getOpenNeighbors(Queue<HantoCoordinate> neighbors) {
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc:  neighbors){
@@ -197,11 +226,19 @@ public class HantoBoardImpl implements HantoBoard {
 	}
 
 	
-	
+	/**
+	 * Factory method for a Priority Queue of Nodes
+	 * 
+	 * @return
+	 */
 	private PriorityQueue<Node> makePriorityQueue(){
 		return new PriorityQueue<Node>(10, makeComparator());
 	}
 	
+	/**
+	 * Factory method for a node comparator
+	 * @return
+	 */
 	private Comparator<Node> makeComparator() {
 		// TODO Auto-generated method stub
 		return new Comparator<Node>(){
@@ -211,6 +248,12 @@ public class HantoBoardImpl implements HantoBoard {
 		};
 	}
 
+	/**
+	 * Node class for aStar
+	 * 
+	 * @author Troy
+	 *
+	 */
 	class Node{
 		private Integer priority;
 		private HantoCoordinateImpl location;

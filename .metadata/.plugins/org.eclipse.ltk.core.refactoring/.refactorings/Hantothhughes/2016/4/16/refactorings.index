@@ -101,3 +101,7 @@
 1460582635917	Rename local variable 'newHci'
 1460588662942	Rename local variable 'path'
 1460592449424	Rename method 'hcToImpl'
+1460634678725	Delete element
+1460634686626	Delete element
+1460637722338	Rename local variable 'shared'
+1460637732439	Rename local variable 'shared'

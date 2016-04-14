@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DeltaUniqueTests" project="Hantothhughes" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.016">
+    <testcase name="canPlaceACrab" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.01"/>
+    <testcase name="redWinsWhenBlueSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="crabMovesThreePlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.003"/>
+    <testcase name="gameEndsAfterSomeoneSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.001"/>
+    <testcase name="crabMovesTwoPlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.001"/>
+    <testcase name="crabMovesOnePlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.001"/>
+    <testcase name="blueWinsWhenRedSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -159,6 +159,18 @@ public class BoardImplTest {
 		TestPathContents(path,hc(0,-1),hc(-1,0),hc(-1,1),hc(-1,2),hc(0,2));
 	}
 	
+	@Test
+	public void testPathBetweenNeighboringPointsTestLength() throws HantoException{
+		List<HantoCoordinate> path = theBoard.getPath(new HantoCoordinateImpl(0,0), new HantoCoordinateImpl(0,1));
+		assertEquals(path.size(),2);
+	}
+	
+	@Test
+	public void testPathBetweenNeighboringPointsTestValues() throws HantoException{
+		List<HantoCoordinate> path = theBoard.getPath(new HantoCoordinateImpl(0,0), new HantoCoordinateImpl(0,1));
+		TestPathContents(path,hc(0,0),hc(0,1));
+	}
+	
 	
 	// Helper Functions
 	private HantoCoordinateImpl hc(int x, int y) {
@@ -182,6 +194,8 @@ public class BoardImplTest {
 		}
 		assertEquals(path.size(),counter);
 	}
+	
+	
 	
 	
 	

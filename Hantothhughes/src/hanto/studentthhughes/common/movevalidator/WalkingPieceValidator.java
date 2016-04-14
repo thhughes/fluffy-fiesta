@@ -8,6 +8,7 @@
 package hanto.studentthhughes.common.movevalidator;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
@@ -25,18 +26,18 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
  */
 public class WalkingPieceValidator implements MoveValidator {
 	
-	MovePieceRangeCalculator rangeCalc;
 	HantoCoordinateImpl toImpl;
 	HantoCoordinateImpl fromImpl;
+	int maxDistance;
 	
 	
 	public WalkingPieceValidator(){
-		rangeCalc = new NHexMoveCalculator(1);
+		maxDistance = 1;
 	}
 
-	public WalkingPieceValidator(int maxDistance)
+	public WalkingPieceValidator(int maxDist)
 	{
-		rangeCalc = new NHexMoveCalculator(maxDistance);
+		maxDistance = maxDist;
 		
 	}
 	
@@ -51,15 +52,40 @@ public class WalkingPieceValidator implements MoveValidator {
 		if(from == null){
 			result = true;
 		}else{
-			setCoordinatImpls(to,from);
-			Queue<HantoCoordinateImpl> shared = getSharedPoints(toImpl,fromImpl);
-			result = checkTwoEmptySpacesNearDestination(theBoard, shared);
+			List<HantoCoordinate> path = theBoard.getPath(from, to);
+			result = checkPathForRoomToWalk(theBoard, path);
+			result = result && ((path.size()-1) <= maxDistance);   // NOTE: PATH INCLUDES THE STARTING NODE, so must remove it to get 'moves'
 		}
 
 		return result;
 	}
 
-	private boolean checkTwoEmptySpacesNearDestination(HantoBoard theBoard, Queue<HantoCoordinateImpl> shared) {
+	/**
+	 * Checks every hex-hex movement to ensure that there is enough room to walk that
+	 * distance.
+	 * @param theBoard
+	 * @param path
+	 * @return
+	 */
+	private boolean checkPathForRoomToWalk(HantoBoard theBoard, List<HantoCoordinate> path) {
+		boolean result = true;
+		
+		for(int i = 0; i < (path.size() - 1); i++){
+			Queue<HantoCoordinateImpl> sharedList = getSharedPoints(new HantoCoordinateImpl(path.get(i)),
+																	new HantoCoordinateImpl(path.get(i+1)));
+			result = result && containsEmptySharedSpace(theBoard, sharedList);
+		}
+		return result;
+	}
+
+	/**
+	 * Checks if the given Queue<HantoCoordinateImpl contains at least 1 empty hex
+	 * @param theBoard
+	 * @param shared
+	 * @return
+	 */
+	private boolean containsEmptySharedSpace(HantoBoard theBoard, Queue<HantoCoordinateImpl> shared)
+	{
 		boolean result = false;
 		for(HantoCoordinateImpl hci : shared){
 			if(!theBoard.isLocationOccupied(hci)){
@@ -69,7 +95,13 @@ public class WalkingPieceValidator implements MoveValidator {
 		}
 		return result;
 	}
-
+	
+	/**
+	 * Creates a Queue<HantoCoordinateImpl> of points shared between the two input coordinates
+	 * @param to
+	 * @param from
+	 * @return
+	 */
 	private Queue<HantoCoordinateImpl> getSharedPoints(HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		Queue<HantoCoordinateImpl> sharedPoints = new LinkedList<HantoCoordinateImpl>();
 		Queue<HantoCoordinateImpl> toNeighbors = toImplList(to.getNeighbors());
@@ -77,8 +109,8 @@ public class WalkingPieceValidator implements MoveValidator {
 		
 		for(HantoCoordinateImpl toHC : toNeighbors){
 			for(HantoCoordinateImpl fromHC : fromNeighbors){
-				if(toHC.equals(fromHC) && !sharedPoints.contains(to)){
-					sharedPoints.add(to);
+				if(toHC.equals(fromHC) && !sharedPoints.contains(toHC)){
+					sharedPoints.add(toHC);
 				}
 			}
 		}
@@ -86,6 +118,11 @@ public class WalkingPieceValidator implements MoveValidator {
 		return sharedPoints;
 	}
 
+	/**
+	 * convert queue of HantoCoordinate to queue HantoCoordinateImpl
+	 * @param neighbors
+	 * @return
+	 */
 	private Queue<HantoCoordinateImpl> toImplList(Queue<HantoCoordinate> neighbors) {
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc : neighbors){
@@ -94,12 +131,6 @@ public class WalkingPieceValidator implements MoveValidator {
 		return implList;
 	}
 
-	private void setCoordinatImpls(HantoCoordinate to, HantoCoordinate from) {
-		toImpl = new HantoCoordinateImpl(to);
-		fromImpl = new HantoCoordinateImpl(from);
-		
-		
-	}
 
 	/* (non-Javadoc)
 	 * @see hanto.studentthhughes.common.movevalidator.MoveValidator#invalidError()

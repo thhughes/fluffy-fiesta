@@ -131,6 +131,42 @@ public class DeltaUniqueTests {
 		checkPieceAt(-1,1,BLUE,CRAB);
 	}
 	
+	@Test
+	public void crabMovesThreePlace() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,0,-1), md(SPARROW,0,2),
+				md(CRAB,-1,-1), md(SPARROW,0,3),
+				md(CRAB,-1,-1,-1,2));
+		checkPieceAt(-1,2,BLUE,CRAB);
+	}
+	
+	@Test(expected=HantoException.class)
+	public void crabMovesFourPlace() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,0,-1), md(SPARROW,0,2),
+				md(CRAB,-1,-1), md(SPARROW,0,3),
+				md(CRAB,-1,-1,-1,3));
+	}
+	@Test
+	public void butterflyMovesOneHex() throws HantoException
+	{
+		makeMoves(md(SPARROW,0,0), md(BUTTERFLY,0,1), 
+				md(BUTTERFLY,-1,0), md(SPARROW,0,2),
+				md(BUTTERFLY,-1,0,-1,1));
+		checkPieceAt(-1,1,BLUE,BUTTERFLY);
+		
+	}
+	
+	@Test(expected=HantoException.class)
+	public void butterflyMovesTwoHex() throws HantoException
+	{
+		makeMoves(md(SPARROW,0,0), md(BUTTERFLY,0,1), 
+				md(BUTTERFLY,-1,0), md(SPARROW,0,2),
+				md(BUTTERFLY,-1,0,-1,2));
+		
+	}
 	
 	
 	
@@ -147,6 +183,12 @@ public class DeltaUniqueTests {
 	
 	
 	
+	/*
+	 * NOTE: Most, if not all, of the below testing helper functions must be attributed 
+	 * to Gary Pollice, I did not write them. I am just using them because they make
+	 * life infinitely easier and I'm sad I didn't thing/implement similar myself 
+	 * earlier. 
+	 */
 	
 	// Helper methods
 	private HantoCoordinate makeCoordinate(int x, int y)

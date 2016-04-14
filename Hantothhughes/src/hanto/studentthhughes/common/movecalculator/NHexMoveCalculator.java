@@ -8,6 +8,7 @@
 package hanto.studentthhughes.common.movecalculator;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
@@ -30,7 +31,7 @@ public class NHexMoveCalculator implements MovePieceRangeCalculator {
 	 * @see hanto.studentThhughes.common.moveCalculator.MoveCalculator#calcMoveCoordinates(hanto.common.HantoCoordinate)
 	 */
 	@Override
-	public Queue<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting) {
+	public List<HantoCoordinate> calcMoveCoordinates(HantoCoordinate starting) {
 		Queue<HantoCoordinateImpl> nodesToGetSurroundings = new LinkedList<HantoCoordinateImpl>();
 		Queue<HantoCoordinateImpl> reachableCoordinates = new LinkedList<HantoCoordinateImpl>();
 		HantoCoordinateImpl inputCoord = new HantoCoordinateImpl(starting);
@@ -61,9 +62,9 @@ public class NHexMoveCalculator implements MovePieceRangeCalculator {
 		return implToCoord(reachableCoordinates);
 	}
 	
-	private Queue<HantoCoordinateImpl> hantoCoordToImpl(Queue<HantoCoordinate> someList)
+	private List<HantoCoordinateImpl> hantoCoordToImpl(Queue<HantoCoordinate> someList)
 	{
-		Queue<HantoCoordinateImpl> coordinates = new LinkedList<HantoCoordinateImpl>();
+		List<HantoCoordinateImpl> coordinates = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc : someList)
 		{
 			coordinates.add(new HantoCoordinateImpl(hc));
@@ -71,9 +72,9 @@ public class NHexMoveCalculator implements MovePieceRangeCalculator {
 		return coordinates;
 	}
 	
-	private Queue<HantoCoordinate> implToCoord(Queue<HantoCoordinateImpl> someList)
+	private List<HantoCoordinate> implToCoord(Queue<HantoCoordinateImpl> someList)
 	{
-		Queue<HantoCoordinate> coordinates = new LinkedList<HantoCoordinate>();
+		List<HantoCoordinate> coordinates = new LinkedList<HantoCoordinate>();
 		for(HantoCoordinateImpl hc : someList)
 		{
 			coordinates.add(new HantoCoordinateImpl(hc));
