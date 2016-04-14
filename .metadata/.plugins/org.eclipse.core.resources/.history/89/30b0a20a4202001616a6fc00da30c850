@@ -99,8 +99,7 @@ public class HantoMoveValidatorFactory {
 						new WalkingPieceValidator(1)));
 				mv.addValidator(new TwoSpacesFreeToWalkValidator());
 				mv.addValidator(new MoveRealPieceValidator());
-				mv.addValidator(new PlayingTooManyPieceValidator(6)); // Need to refactor this the number of pieces
-																		// Use the pieceSpecific MoveValidator
+				mv.addValidator(new PlayingTooManyPieceValidator(6));
 			default:
 				break;
 		}

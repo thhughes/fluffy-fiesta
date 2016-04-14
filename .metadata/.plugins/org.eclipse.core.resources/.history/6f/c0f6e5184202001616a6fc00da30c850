@@ -38,7 +38,7 @@ Order of Op:
  X Fix Bugs
  X Implement surrender
  X Implement crabs allowed
- X Implement crabs walking 3 hexes
+ - Implement crabs walking 3 hexes
  - Refactor validator's
  	:: Group similar functions into one class that runs checks
  - Implement Sparrows allowed
