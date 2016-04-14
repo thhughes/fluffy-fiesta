@@ -1,5 +1,0 @@
-package hanto.studentThhughes.common.frontier;
-
-public interface Frontier {
-
-}

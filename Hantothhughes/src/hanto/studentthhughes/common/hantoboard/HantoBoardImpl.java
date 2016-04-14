@@ -189,7 +189,7 @@ public class HantoBoardImpl implements HantoBoard {
 	private Queue<HantoCoordinateImpl> getOpenNeighbors(Queue<HantoCoordinate> neighbors) {
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc:  neighbors){
-			if(!theBoard.containsKey(hc)){
+			if(!isLocationOccupied(hc)){
 				implList.add(new HantoCoordinateImpl(hc));
 			}	
 		}

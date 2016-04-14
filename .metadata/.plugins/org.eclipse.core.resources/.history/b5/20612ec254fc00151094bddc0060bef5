@@ -1,5 +1,0 @@
-package hanto.studentThhughes.common.board;
-
-public interface Board {
-
-}

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="hanto.studentThhughes.common.HantoCoordinateImpl"/>
-<fullyQualifiedTypeName name="hanto.studentThhughes.common.HantoPieceImpl"/>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="hanto.common.HantoGameID"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.frontier.Frontier"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.frontier.FrontierImpl"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.beta.BetaHantoGameRefactored"/>
@@ -15,12 +10,10 @@
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.HantoMoveValidatorFactory"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.PieceValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.FirstMoveValidator"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.MoveCounter"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.gamma.GammaHantoGame"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.PlaceBySameColorValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.TwoSpacesFreeToWalkValidator"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.boardValidator.AggragateBoardValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.boardValidator.TerminalMoveCheck"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.HantoBoardValidatorFactory"/>
@@ -33,7 +26,6 @@
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.MoveRealPieceValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.board.Board"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.board.BoardImpl"/>
-<fullyQualifiedTypeName name="hanto.common.HantoException"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.MoveValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.LimitMoveLengthToOneValidator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveValidator.ButterflyChecker"/>
@@ -45,13 +37,27 @@
 <fullyQualifiedTypeName name="hanto.common.HantoPiece"/>
 <fullyQualifiedTypeName name="hanto.common.HantoPieceType"/>
 <fullyQualifiedTypeName name="hanto.common.HantoPlayerColor"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="hanto.common.HantoCoordinate"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveCalculator.SingleMoveCalculator"/>
-<fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveCalculator.MoveCalculator"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.coordinate.HantoCoordinateImpl"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.common.moveCalculator.NMoveCalculator"/>
 <fullyQualifiedTypeName name="hanto.studentThhughes.HantoGameFactory"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.common.hantoboard.HantoBoard"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="hanto.common.HantoException"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.delta.DeltaHantoGame"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.common.movecalculator.MovePieceRangeCalculator"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.common.movecalculator.NHexMoveCalculator"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.common.coordinate.HantoCoordinateImpl"/>
+<fullyQualifiedTypeName name="java.util.Queue"/>
+<fullyQualifiedTypeName name="hanto.studentthhughes.common.movevalidator.WalkingPieceValidator"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

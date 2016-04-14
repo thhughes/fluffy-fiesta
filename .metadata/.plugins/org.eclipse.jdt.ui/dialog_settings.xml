@@ -63,6 +63,13 @@
 		<item value="true" key="InstanceOf"/>
 		<item value="false" key="FinalModifier"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
+		<item value="596" key="DIALOG_WIDTH"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
+		<item value="261" key="DIALOG_HEIGHT"/>
+		<item value="19" key="DIALOG_X_ORIGIN"/>
+		<item value="93" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="RenameInformationPopup">
 	</section>
 	<section name="quick_assist_proposal_size">
@@ -71,10 +78,22 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="JavaSearchPage">
-		<item value="1" key="HISTORY_SIZE"/>
+		<item value="2" key="HISTORY_SIZE"/>
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="11" key="INCLUDE_MASK"/>
 		<section name="HISTORY0">
+			<item value="false" key="isCaseSensitive"/>
+			<item value="" key="javaElement"/>
+			<item value="0" key="scope"/>
+			<item value="11" key="includeMask"/>
+			<item value="hanto.studentthhughes" key="pattern"/>
+			<item value="2" key="limitTo"/>
+			<item value="0" key="matchLocations"/>
+			<item value="2" key="searchFor"/>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
 			<item value="false" key="isCaseSensitive"/>
 			<item value="" key="javaElement"/>
 			<item value="0" key="scope"/>
