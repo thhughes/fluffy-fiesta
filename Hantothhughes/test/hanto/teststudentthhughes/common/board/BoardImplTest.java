@@ -2,6 +2,8 @@ package hanto.teststudentthhughes.common.board;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -121,5 +123,14 @@ public class BoardImplTest {
 				newBoard.getFromBoard(CB).getType());
 		
 		
+	}
+	
+	@Test
+	public void testPathCalculation() throws HantoException
+	{
+		List<HantoCoordinate> path = theBoard.getPath(new HantoCoordinateImpl(0,-1), new HantoCoordinateImpl(0,5));
+		for (HantoCoordinate hc : path){
+			System.out.println("The path goes from:"+hc.getX()+" "+hc.getY());
+		}
 	}
 }

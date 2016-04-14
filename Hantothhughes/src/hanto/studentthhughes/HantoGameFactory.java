@@ -13,6 +13,7 @@ package hanto.studentthhughes;
 import hanto.common.*;
 import hanto.studentthhughes.common.HantoGameStateCalculatorFactory;
 import hanto.studentthhughes.common.HantoMoveValidatorFactory;
+import hanto.studentthhughes.delta.DeltaHantoGame;
 import hanto.studentthhughes.alpha.AlphaHantoGame;
 import hanto.studentthhughes.beta.BetaHantoGame;
 import hanto.studentthhughes.gamma.GammaHantoGame;
@@ -74,6 +75,11 @@ public class HantoGameFactory
 				break;
 			case GAMMA_HANTO:
 				game = new GammaHantoGame(movesFirst,
+						mValidatorFactory.makeHantoValidator(gameId),
+						gsCalculatorFactory.makeHantoValidator(gameId));
+				break;
+			case DELTA_HANTO:
+				game = new DeltaHantoGame(movesFirst,
 						mValidatorFactory.makeHantoValidator(gameId),
 						gsCalculatorFactory.makeHantoValidator(gameId));
 				break;

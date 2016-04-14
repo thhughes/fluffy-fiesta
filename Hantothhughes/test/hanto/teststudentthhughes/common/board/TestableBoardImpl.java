@@ -4,6 +4,7 @@
 package hanto.teststudentthhughes.common.board;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Before;
@@ -99,6 +100,13 @@ public class TestableBoardImpl implements HantoBoard {
 	@Override
 	public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 		return theBoard.getPlayerPieces(color);
+	}
+
+
+	@Override
+	public List<HantoCoordinate> getPath(HantoCoordinate start, HantoCoordinate end) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

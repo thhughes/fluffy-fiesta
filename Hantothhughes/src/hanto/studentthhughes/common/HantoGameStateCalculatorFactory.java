@@ -54,6 +54,11 @@ public class HantoGameStateCalculatorFactory {
 				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.RED));
 				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.BLUE));
 				break;
+			case DELTA_HANTO:
+				mv = new AggregateGameStateCalculator();
+				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.RED));
+				mv.addValidator(new PlayerWinCalculator(HantoPlayerColor.BLUE));
+				break;
 			
 			default:
 				break;

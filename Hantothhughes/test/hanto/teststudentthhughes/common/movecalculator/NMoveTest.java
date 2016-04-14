@@ -9,24 +9,24 @@ import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.movecalculator.MoveCalculator;
-import hanto.studentthhughes.common.movecalculator.NMoveCalculator;
+import hanto.studentthhughes.common.movecalculator.MovePieceRangeCalculator;
+import hanto.studentthhughes.common.movecalculator.NHexMoveCalculator;
 
 public class NMoveTest {
 	
-	MoveCalculator mc;
+	MovePieceRangeCalculator mc;
 	
 	@Test
 	public void testNotNull()
 	{
-		assertNotNull(new NMoveCalculator(1));
+		assertNotNull(new NHexMoveCalculator(1));
 	}
 	
 	
 	@Test
 	public void testSixResponsesFromNMoveCalculatorOfOne()
 	{
-		mc = new NMoveCalculator(1);
+		mc = new NHexMoveCalculator(1);
 		Queue<HantoCoordinate> coordinateList = mc.calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		assertTrue(6 == coordinateList.size()); 
 	}
@@ -35,7 +35,7 @@ public class NMoveTest {
 	public void sampleSinglePointInList()
 	{
 		Queue<HantoCoordinate> coordinateList = 
-				(new NMoveCalculator(1)).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
+				(new NHexMoveCalculator(1)).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		// Converts output to HantoCoordinateImpl's
 		for (HantoCoordinate hc: coordinateList){
@@ -50,7 +50,7 @@ public class NMoveTest {
 	public void sampleSinglePointNotInList()
 	{
 		Queue<HantoCoordinate> coordinateList = 
-				(new NMoveCalculator(1)).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
+				(new NHexMoveCalculator(1)).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		// Converts output to HantoCoordinateImpl's
 		for (HantoCoordinate hc: coordinateList){
@@ -64,7 +64,7 @@ public class NMoveTest {
 	@Test
 	public void testEighteenPointsInNMoveCalculatorOfTwo()
 	{
-		mc = new NMoveCalculator(2);
+		mc = new NHexMoveCalculator(2);
 		Queue<HantoCoordinate> coordinateList = mc.calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		assertTrue(18 == coordinateList.size()); 
 	}
@@ -72,7 +72,7 @@ public class NMoveTest {
 	@Test
 	public void samplePointInNMoveCalculatorOfTwo()
 	{
-		mc = new NMoveCalculator(2);
+		mc = new NHexMoveCalculator(2);
 		Queue<HantoCoordinate> coordinateList = mc.calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		// Converts output to HantoCoordinateImpl's
@@ -88,7 +88,7 @@ public class NMoveTest {
 	@Test
 	public void samplePointNotNMoveCalculatorOfTwo()
 	{
-		mc = new NMoveCalculator(2);
+		mc = new NHexMoveCalculator(2);
 		Queue<HantoCoordinate> coordinateList = mc.calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		// Converts output to HantoCoordinateImpl's

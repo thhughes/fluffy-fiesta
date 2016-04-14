@@ -19,6 +19,8 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
 /**
  * @author Troy
  *
+ *
+ *REFACTOR NOTICE:: This is only used in gamma and will be taken out. 
  */
 public class LimitMoveLengthToOneValidator implements MoveValidator {
 
@@ -29,7 +31,7 @@ public class LimitMoveLengthToOneValidator implements MoveValidator {
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		boolean result = true;
-		if(from != null){
+		if(moveIsAMove(from)){
 			Queue<HantoCoordinate> neighbors = (new HantoCoordinateImpl(to)).getNeighbors();
 			for(HantoCoordinate hc : neighbors){
 				if((new HantoCoordinateImpl(hc)).equals(new HantoCoordinateImpl(from))){
@@ -41,6 +43,10 @@ public class LimitMoveLengthToOneValidator implements MoveValidator {
 			
 		}
 		return result;
+	}
+
+	private boolean moveIsAMove(HantoCoordinate from) {
+		return from != null;
 	}
 
 	/* (non-Javadoc)

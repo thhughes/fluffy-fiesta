@@ -25,6 +25,7 @@ import hanto.studentthhughes.common.movevalidator.PieceValidator;
 import hanto.studentthhughes.common.movevalidator.PlaceBySameColorValidator;
 import hanto.studentthhughes.common.movevalidator.PlayingTooManyPieceValidator;
 import hanto.studentthhughes.common.movevalidator.TwoSpacesFreeToWalkValidator;
+import hanto.studentthhughes.common.movevalidator.WalkingPieceValidator;
 
 /**
  * This is a factory for MoveValidator
@@ -52,6 +53,7 @@ public class HantoMoveValidatorFactory {
 	 * 			MoveValidator : of the hantoGameId Passed
 	 */
 	public MoveValidator makeHantoValidator(HantoGameID gameID){
+		Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
 		AggrigateValidator mv = null;
 		switch (gameID) {
 			case ALPHA_HANTO:
@@ -59,7 +61,7 @@ public class HantoMoveValidatorFactory {
 			case BETA_HANTO:
 				break;
 			case GAMMA_HANTO:
-				Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
+				valid.clear();
 				valid.add(HantoPieceType.SPARROW);
 				valid.add(HantoPieceType.BUTTERFLY);
 				
@@ -76,7 +78,24 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new MoveRealPieceValidator());
 				mv.addValidator(new PlayingTooManyPieceValidator(6));
 				break;
-			
+			case DELTA_HANTO:
+				valid.clear();
+				valid.add(HantoPieceType.SPARROW);
+				valid.add(HantoPieceType.BUTTERFLY);
+				valid.add(HantoPieceType.CRAB);
+				
+				mv = new AggrigateValidator();
+				
+				mv.addValidator(new LocationValidator());
+				mv.addValidator(new PieceValidator(valid));
+				mv.addValidator(new FirstMoveValidator());
+				mv.addValidator(new CorrectNumberOfButterflyValidator());
+				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
+				mv.addValidator(new PlaceBySameColorValidator());
+				mv.addValidator(new WalkingPieceValidator());
+				mv.addValidator(new TwoSpacesFreeToWalkValidator());
+				mv.addValidator(new MoveRealPieceValidator());
+				mv.addValidator(new PlayingTooManyPieceValidator(6));
 			default:
 				break;
 		}

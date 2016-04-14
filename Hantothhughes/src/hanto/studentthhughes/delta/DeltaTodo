@@ -15,10 +15,10 @@ Implementations:
  
 BugFix's:
  - Run Pollice's tests and find errors
- 	:: Cannot move a sparrow if there is no butterfly 				(x1)
- 	:: Cannot move a sparrow to an occupied hex 					(x1)
- 	:: Butterfly must be placed by the 4th move. for both players 	(x2)
- 	:: Try to move a piece that the color didn't have				(x1)
+ 	? Cannot move a sparrow if there is no butterfly : Not sure what this tests for
+ 	X Cannot move a sparrow to an occupied hex 						(x1)
+ 	X Butterfly must be placed by the 4th move. for both players 	(x2)
+ 	X Try to move a piece that the color didn't have				(x1)
  
  
 Refactor Needs:
@@ -30,12 +30,14 @@ Refactor Needs:
  	:: around 13 lines of code. 
  - Create player state? 
  	:: something that manages a player and their state (the pieces played etc)
- 
+ - Move Validation:
+ 	:: Variability should be grouped around piece type and game type
+ 	:: currently only wrapped around piece type.
  
 Order of Op:
- - Fix Bugs
- - Implement surrender
- - Implement crabs allowed
+ X Fix Bugs
+ X Implement surrender
+ X Implement crabs allowed
  - Implement crabs walking 3 hexes
  - Refactor validator's
  	:: Group similar functions into one class that runs checks

@@ -7,6 +7,7 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.hantoboard;
 
+import java.util.List;
 import java.util.Map;
 
 import hanto.common.*;
@@ -79,4 +80,7 @@ public interface HantoBoard {
 	 * 			Map of the pieces from HantoCoordinate to HantoPiece. All pieces will have the same color. 
 	 */
 	Map<HantoCoordinate,HantoPiece> getPlayerPieces(HantoPlayerColor color);
+	
+	
+	List<HantoCoordinate> getPath(HantoCoordinate start,HantoCoordinate end);
 }

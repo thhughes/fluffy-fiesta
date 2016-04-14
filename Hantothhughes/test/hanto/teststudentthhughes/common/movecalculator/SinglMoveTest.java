@@ -9,17 +9,17 @@ import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.movecalculator.MoveCalculator;
-import hanto.studentthhughes.common.movecalculator.SingleMoveCalculator;
+import hanto.studentthhughes.common.movecalculator.MovePieceRangeCalculator;
+import hanto.studentthhughes.common.movecalculator.SingleHexMoveCalculator;
 public class SinglMoveTest {
 
-	MoveCalculator mc;
+	MovePieceRangeCalculator mc;
 	
 	
 	@Test
 	public void testNotNull()
 	{
-		assertNotNull(new SingleMoveCalculator());
+		assertNotNull(new SingleHexMoveCalculator());
 	}
 	
 	
@@ -27,7 +27,7 @@ public class SinglMoveTest {
 	public void testSixResponsesFromSingleMoveCalculator()
 	{
 		Queue<HantoCoordinate> coordinateList = 
-				(new SingleMoveCalculator()).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
+				(new SingleHexMoveCalculator()).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		assertTrue(6 == coordinateList.size()); 
 	}
 	
@@ -35,7 +35,7 @@ public class SinglMoveTest {
 	public void sampleSinglePointInList()
 	{
 		Queue<HantoCoordinate> coordinateList = 
-				(new SingleMoveCalculator()).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
+				(new SingleHexMoveCalculator()).calcMoveCoordinates(new HantoCoordinateImpl(0,0));
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for (HantoCoordinate hc: coordinateList){
 			implList.add(new HantoCoordinateImpl(hc));

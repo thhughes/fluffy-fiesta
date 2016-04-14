@@ -1,0 +1,48 @@
+Delta Hanto TODO::
+Due Date: 4/18/16 @ 11:59 PM
+
+Implementations: 
+ - Surrender : Player has the right to surrender at any time
+ 	:: pass all null to make move to surrender
+ 	:: returns other player wins to do that
+ 	
+ - Piece Restrictions
+ 	:: 1 Butterfly		<Walk 1 hex>
+ 	:: 4 Sparrows 		<Fly >
+ 	:: 4 Crabs    		<Walk up to 3 hexes>  
+ 
+ 
+ 
+BugFix's:
+ - Run Pollice's tests and find errors
+ 	? Cannot move a sparrow if there is no butterfly : Not sure what this tests for
+ 	X Cannot move a sparrow to an occupied hex 						(x1)
+ 	X Butterfly must be placed by the 4th move. for both players 	(x2)
+ 	X Try to move a piece that the color didn't have				(x1)
+ 
+ 
+Refactor Needs:
+ - Do commonality and Variablility analysis 
+ 	:: Need to find what's common amongst all hanto games
+ 	:: encapsulate those commonalities into a base class so that 
+ 	:: :: your data is better distributed -- Start working towards a template pattern
+ - Group validators/checkers such that classes are not built 
+ 	:: around 13 lines of code. 
+ - Create player state? 
+ 	:: something that manages a player and their state (the pieces played etc)
+ 
+ 
+Order of Op:
+ X Fix Bugs
+ - Implement surrender
+ - Implement crabs allowed
+ - Implement crabs walking 3 hexes
+ - Refactor validator's
+ 	:: Group similar functions into one class that runs checks
+ - Implement Sparrows allowed
+ - Implement sparrow flight
+ 	:: Will need refactoring of validators.
+ - Continue with refactoring... 
+
+
+ 

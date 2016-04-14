@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -56,6 +57,11 @@ public class PieceValidatorTest {
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 			
 			return playerMap;
+		}
+		@Override
+		public List<HantoCoordinate> getPath(HantoCoordinate start, HantoCoordinate end) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 		
 	}
