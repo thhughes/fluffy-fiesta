@@ -8,14 +8,12 @@
 package hanto.studentthhughes.common.hantoboard;
 
 import java.util.List;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.Set;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
@@ -29,35 +27,18 @@ import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
  */
 public class HantoBoardImpl implements HantoBoard {
 
-	private static final int Node = 0;
 	Map<HantoCoordinateImpl,HantoPiece> theBoard;
-	Map<HantoCoordinate,HantoPiece> dumbBoard;
 	Map<HantoCoordinate,HantoPiece> redBoard;
 	Map<HantoCoordinate,HantoPiece> blueBoard;
 	
 	
 	public HantoBoardImpl(){
 		theBoard = new HashMap<HantoCoordinateImpl,HantoPiece>();
-		dumbBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		redBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		blueBoard = new HashMap<HantoCoordinate,HantoPiece>();
 		
 	}
 	
-	/**
-	 * Copy Constructor of a BoardImpl from any board type
-	 * @param someBoard
-	 */
-	public HantoBoardImpl(HantoBoard someBoard){
-		this.redBoard = someBoard.getPlayerPieces(HantoPlayerColor.RED);
-		this.blueBoard = someBoard.getPlayerPieces(HantoPlayerColor.BLUE);
-		this.dumbBoard = someBoard.getPlayerPieces(null);
-		theBoard = new HashMap<HantoCoordinateImpl,HantoPiece>();
-		
-		for(HantoCoordinate hc : this.dumbBoard.keySet()){
-			theBoard.put(new HantoCoordinateImpl(hc), dumbBoard.get(hc));
-		}
-	}
 
 	
 	/* (non-Javadoc)
@@ -78,7 +59,6 @@ public class HantoBoardImpl implements HantoBoard {
 		}
 		theBoard.put(new HantoCoordinateImpl(where), piece);
 		playerBoard.put(new HantoCoordinateImpl(where), piece);
-		dumbBoard.put(new HantoCoordinateImpl(where), piece);
 		return true;
 	}
 
@@ -117,7 +97,6 @@ public class HantoBoardImpl implements HantoBoard {
 		Map<HantoCoordinate, HantoPiece> playerBoard = getPlayerPieces(theBoard.get(new HantoCoordinateImpl(where)).getColor());
 		
 		theBoard.remove(new HantoCoordinateImpl(where));
-		dumbBoard.remove(new HantoCoordinateImpl(where));
 		playerBoard.remove(new HantoCoordinateImpl(where));
 		return true;
 	}
@@ -125,12 +104,23 @@ public class HantoBoardImpl implements HantoBoard {
 	@Override
 	public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 		if(color == null){
-			return dumbBoard;
+			return simpleHCVersionOfTheBoard();
 		}else if(color == HantoPlayerColor.RED){
 			return redBoard;
 		}
 		return blueBoard;
 	}
+
+	private Map<HantoCoordinate, HantoPiece> simpleHCVersionOfTheBoard() {
+		Map<HantoCoordinate, HantoPiece> simpleMap = new HashMap<HantoCoordinate, HantoPiece>();
+		for(HantoCoordinateImpl hci : theBoard.keySet())
+		{
+			simpleMap.put(hci, theBoard.get(hci));
+		}
+		return simpleMap;
+	}
+
+
 
 	@Override
 	public List<HantoCoordinate> getPath(HantoCoordinate start, HantoCoordinate end) {
@@ -153,6 +143,7 @@ public class HantoBoardImpl implements HantoBoard {
 	private List<HantoCoordinate> pathFromTree(
 			Map<HantoCoordinateImpl, HantoCoordinateImpl> aStarTree, HantoCoordinateImpl start,
 			HantoCoordinateImpl end) {
+		
 		List<HantoCoordinate> path = new LinkedList<HantoCoordinate>();
 		HantoCoordinateImpl current = end;
 		path.add(current);
@@ -176,6 +167,7 @@ public class HantoBoardImpl implements HantoBoard {
 	 * 			the system travels from a->b, b will be the key for a. 
 	 */
 	private Map<HantoCoordinateImpl, HantoCoordinateImpl> aStar(HantoCoordinate start, HantoCoordinate end) {
+		
 		PriorityQueue<Node> frontier = makePriorityQueue();
 		frontier.add(new Node(new Integer(0), new HantoCoordinateImpl(start)));
 		
@@ -216,6 +208,7 @@ public class HantoBoardImpl implements HantoBoard {
 	 * 			Queue<HantoCoordinateImpl> of nodes that are not occupied.
 	 */
 	private Queue<HantoCoordinateImpl> getOpenNeighbors(Queue<HantoCoordinate> neighbors) {
+		
 		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc:  neighbors){
 			if(!isLocationOccupied(hc)){

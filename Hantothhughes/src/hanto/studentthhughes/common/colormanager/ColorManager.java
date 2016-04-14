@@ -39,7 +39,7 @@ public class ColorManager {
 	/**
 	 * toggel the internal state of the color
 	 */
-	public void toggelCurrentColor(){
+	public void toggleCurrentColor(){
 		if (currentColor == BLUE){
 			currentColor = RED;
 		}else{

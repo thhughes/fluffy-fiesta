@@ -18,7 +18,7 @@ import hanto.studentthhughes.common.colormanager.ColorManager;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.frontier.Frontier;
 import hanto.studentthhughes.common.frontier.FrontierImpl;
-import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
@@ -112,7 +112,7 @@ public class GammaHantoGame implements HantoGame {
 		safePlace(movePiece,from,to);
 		
 		// Toggel the color
-		hantoColorManager.toggelCurrentColor();
+		hantoColorManager.toggleCurrentColor();
 	}
 	
 	private void safePlace(HantoPiece movePiece, HantoCoordinate from, HantoCoordinate to) throws HantoException

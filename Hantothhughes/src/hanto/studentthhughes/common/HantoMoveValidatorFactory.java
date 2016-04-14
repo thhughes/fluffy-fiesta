@@ -13,7 +13,7 @@ import java.util.Queue;
 
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
-import hanto.studentthhughes.common.movevalidator.AggrigateValidator;
+import hanto.studentthhughes.common.movevalidator.MasterValidator;
 import hanto.studentthhughes.common.movevalidator.CorrectNumberOfButterflyValidator;
 import hanto.studentthhughes.common.movevalidator.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.movevalidator.FirstMoveValidator;
@@ -55,7 +55,7 @@ public class HantoMoveValidatorFactory {
 	 */
 	public MoveValidator makeHantoValidator(HantoGameID gameID){
 		Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
-		AggrigateValidator mv = null;
+		MasterValidator mv = null;
 		switch (gameID) {
 			case ALPHA_HANTO:
 				break;
@@ -66,7 +66,7 @@ public class HantoMoveValidatorFactory {
 				valid.add(HantoPieceType.SPARROW);
 				valid.add(HantoPieceType.BUTTERFLY);
 				
-				mv = new AggrigateValidator();
+				mv = new MasterValidator();
 				
 				mv.addValidator(new LocationValidator());
 				mv.addValidator(new PieceValidator(valid));
@@ -85,7 +85,7 @@ public class HantoMoveValidatorFactory {
 				valid.add(HantoPieceType.BUTTERFLY);
 				valid.add(HantoPieceType.CRAB);
 				
-				mv = new AggrigateValidator();
+				mv = new MasterValidator();
 				
 				mv.addValidator(new LocationValidator());
 				mv.addValidator(new PieceValidator(valid));

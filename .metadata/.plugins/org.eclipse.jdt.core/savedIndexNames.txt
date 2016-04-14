@@ -16,6 +16,5 @@ INDEX VERSION 1.127+/Users/Troy/Documents/GitRepos/fluffy-fiesta/.metadata/.plug
 1613657645.index
 1241108903.index
 107623037.index
-344822983.index
 1582146473.index
 1271342938.index

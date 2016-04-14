@@ -25,7 +25,7 @@ public class ColorManagerTest {
 	public void testToggleOnce(){
 		cm = new ColorManager(HantoPlayerColor.BLUE);
 		assertEquals(HantoPlayerColor.BLUE, cm.getCurrentColor());
-		cm.toggelCurrentColor();
+		cm.toggleCurrentColor();
 		assertEquals(HantoPlayerColor.RED, cm.getCurrentColor());
 	}
 	
@@ -33,9 +33,9 @@ public class ColorManagerTest {
 	public void testToggleTwice(){
 		cm = new ColorManager(HantoPlayerColor.BLUE);
 		assertEquals(HantoPlayerColor.BLUE, cm.getCurrentColor());
-		cm.toggelCurrentColor();
+		cm.toggleCurrentColor();
 		assertEquals(HantoPlayerColor.RED, cm.getCurrentColor());
-		cm.toggelCurrentColor();
+		cm.toggleCurrentColor();
 		assertEquals(HantoPlayerColor.BLUE, cm.getCurrentColor());
 		
 	}

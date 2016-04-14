@@ -7,8 +7,8 @@ import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentthhughes.common.gamestate.EndOfGameCalculator;
-import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.gamestatecalculator.EndOfGameCalculator;
+import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class TerminalMoveCheckTest {

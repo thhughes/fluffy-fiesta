@@ -16,9 +16,7 @@ import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
 import hanto.studentthhughes.common.colormanager.ColorManager;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.frontier.Frontier;
-import hanto.studentthhughes.common.frontier.FrontierImpl;
-import hanto.studentthhughes.common.gamestate.GameStateCalculator;
+import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
@@ -128,16 +126,13 @@ public class DeltaHantoGame implements HantoGame {
 	
 	private void placePiece(HantoPieceType pieceType, HantoCoordinate from, HantoCoordinate to) throws HantoException
 	{		
-		// Create the piece for internal hashing
 		HantoPlayerColor curColor = hantoColorManager.getCurrentColor();
 		HantoPiece movePiece = new HantoPieceImpl(curColor, pieceType);
 		
-		// Increment the team's move
 		hantoMC.incrementNumberMoves(curColor);
 		safePlace(movePiece,from,to);
 		
-		// Toggel the color
-		hantoColorManager.toggelCurrentColor();
+		hantoColorManager.toggleCurrentColor();
 	}
 	
 	private void safePlace(HantoPiece movePiece, HantoCoordinate from, HantoCoordinate to) throws HantoException
@@ -147,7 +142,6 @@ public class DeltaHantoGame implements HantoGame {
 			hantoBoard.placeOnBoard(movePiece, safeTo);
 			
 		}else{
-			// Remove things first:
 			hantoBoard.removeFromBoard(new HantoCoordinateImpl(from));
 			hantoBoard.placeOnBoard(movePiece, safeTo);
 			

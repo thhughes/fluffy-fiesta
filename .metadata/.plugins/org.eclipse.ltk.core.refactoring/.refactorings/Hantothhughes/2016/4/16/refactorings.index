@@ -105,3 +105,11 @@
 1460634686626	Delete element
 1460637722338	Rename local variable 'shared'
 1460637732439	Rename local variable 'shared'
+1460660233240	Rename type 'AggrigateValidator'
+1460660382820	Rename method 'toggelCurrentColor'
+1460666066281	Extract method 'initializeCurrentPieceMap'
+1460666214677	Copy compilation unit
+1460671498011	Delete element
+1460671698749	Rename type 'AggregateValidator'
+1460671763623	Rename package 'hanto.studentthhughes.common.gamestate'
+1460671779652	Rename type 'AggregateGameStateCalculator'
