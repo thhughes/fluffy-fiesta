@@ -5,7 +5,7 @@
  * v1.0 which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *******************************************************************************/
-package hanto.studentthhughes.gamma;
+package hanto.studentthhughes.delta;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoGame;
@@ -19,11 +19,20 @@ import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
  * @author Troy
  *
  */
-public class GammaHantoGame extends TemplateHantoGame implements HantoGame {
+public class DeltaHantoGame extends TemplateHantoGame implements HantoGame {
 
-	public GammaHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse) {
+	/**
+	 * Constructor of a DeltaHantoGame
+	 * 
+	 * @param firstMovePlayer
+	 * @param tav
+	 * @param gse
+	 */
+	public DeltaHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse) {
 		super(firstMovePlayer, tav, gse);
+		canSurrender = true;
 	}
+
 
 	/* (non-Javadoc)
 	 * @see hanto.common.HantoGame#getPieceAt(hanto.common.HantoCoordinate)
@@ -33,5 +42,13 @@ public class GammaHantoGame extends TemplateHantoGame implements HantoGame {
 		return super.getPieceAt(where);
 	}
 
+	/* (non-Javadoc)
+	 * @see hanto.common.HantoGame#getPrintableBoard()
+	 */
+	@Override
+	public String getPrintableBoard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

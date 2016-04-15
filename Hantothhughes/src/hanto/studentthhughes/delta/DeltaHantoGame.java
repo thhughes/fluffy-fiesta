@@ -42,13 +42,5 @@ public class DeltaHantoGame extends TemplateHantoGame implements HantoGame {
 		return super.getPieceAt(where);
 	}
 
-	/* (non-Javadoc)
-	 * @see hanto.common.HantoGame#getPrintableBoard()
-	 */
-	@Override
-	public String getPrintableBoard() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }
