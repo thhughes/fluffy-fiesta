@@ -14,12 +14,10 @@ import java.util.Queue;
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
 import hanto.studentthhughes.common.turnactionvalidator.MasterActionValidator;
-import hanto.studentthhughes.common.turnactionvalidator.PieceSpecificMoveValidator;
+import hanto.studentthhughes.common.turnactionvalidator.PieceSpecificTurnActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
-import hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks.GeneralPieceValidator;
+import hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks.GeneralActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.FlyingValidator;
-import hanto.studentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidator;
-import hanto.studentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.WalkingValidator;
 import hanto.studentthhughes.common.turnactionvalidator.placecheckers.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.turnactionvalidator.placecheckers.CorrectNumberOfPieceTypeValidator;
@@ -62,7 +60,7 @@ public class HantoTurnActionValidatorFactory {
 		Queue<HantoPieceType> valid = buildValidList(gameID);
 		setPieceMaximumAndMovementDistance(gameID);
 		
-		MasterActionValidator mv = new MasterActionValidator();
+		MasterActionValidator mav = new MasterActionValidator();
 		
 		switch (gameID) {
 			case ALPHA_HANTO:
@@ -70,50 +68,46 @@ public class HantoTurnActionValidatorFactory {
 			case BETA_HANTO:
 				break;
 			case GAMMA_HANTO:
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
 						HantoPieceType.BUTTERFLY,max_num_butterfly));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
 						HantoPieceType.SPARROW,max_num_sparrow));
 				
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.BUTTERFLY,
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.BUTTERFLY,
 						new WalkingValidator(max_move_dist_butterfly)));
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.SPARROW,
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.SPARROW,
 						new WalkingValidator(max_move_dist_sparrow)));
 
-				mv.addValidator(new GeneralPieceValidator(valid));
+				mav.addValidator(new GeneralActionValidator(valid));
 				
-				mv.addValidator(new MoveIsContiguousValidator());
-				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
-				mv.addValidator(new MovePieceOnBoardValidator());
+				mav.addValidator(new FirstMoveValidator());
+				mav.addValidator(new ButterflyPlacedInTimeValidator(4));
 				break;
 			case DELTA_HANTO:
 				
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
 						HantoPieceType.BUTTERFLY,max_num_butterfly));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
 						HantoPieceType.SPARROW,max_num_sparrow));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
 						HantoPieceType.CRAB,max_num_crab));
 				
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.CRAB,
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.CRAB,
 						new WalkingValidator(max_move_dist_crab)));
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.BUTTERFLY,
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.BUTTERFLY,
 						new WalkingValidator(max_move_dist_butterfly)));
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.SPARROW,
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.SPARROW,
 						new FlyingValidator(max_move_dist_sparrow)));
 				
-				mv.addValidator(new GeneralPieceValidator(valid));
+				mav.addValidator(new GeneralActionValidator(valid));
 				
-				mv.addValidator(new MoveIsContiguousValidator());
-				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
-				mv.addValidator(new MovePieceOnBoardValidator());
+				mav.addValidator(new FirstMoveValidator());
+				mav.addValidator(new ButterflyPlacedInTimeValidator(4));
 				
 			default:
 				break;
 		}
-		return mv;
+		return mav;
 	}
 
 	private Queue<HantoPieceType> buildValidList(HantoGameID gameID) {

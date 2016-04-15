@@ -11,7 +11,7 @@
 package hanto.studentthhughes;
 
 import hanto.common.*;
-import hanto.studentthhughes.common.HantoGameStateCalculatorFactory;
+import hanto.studentthhughes.common.HantoGameStateEvaluatorFactory;
 import hanto.studentthhughes.common.HantoTurnActionValidatorFactory;
 import hanto.studentthhughes.delta.DeltaHantoGame;
 import hanto.studentthhughes.alpha.AlphaHantoGame;
@@ -64,7 +64,7 @@ public class HantoGameFactory
 	 */
 	public  HantoGame makeHantoGame(HantoGameID gameId, HantoPlayerColor movesFirst) {
 		HantoTurnActionValidatorFactory mValidatorFactory = HantoTurnActionValidatorFactory.getInstance();
-		HantoGameStateCalculatorFactory gsCalculatorFactory = HantoGameStateCalculatorFactory.getInstance();
+		HantoGameStateEvaluatorFactory gsCalculatorFactory = HantoGameStateEvaluatorFactory.getInstance();
 		HantoGame game = null;
 		switch (gameId) {
 			case ALPHA_HANTO:

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GeneralActionValidatorTest" project="Hantothhughes" tests="14" started="14" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.001">
+    <testcase name="testPlacingNextToTeammatePiece" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testPlacingAValidPieceSparrow" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testPlacingAValidPieceCrab" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMovingPieceToNonContiguousHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMoveingPieceToEmptyLocation" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testPlacingNextToOpponentPiece" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMovingPieceToContiguousPiece" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testPlacingINValidPieceCrab" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMoveingPieceToOccupiedLocation" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testPlacingNextToOpponentPieceWhenCounterSyasItsFirstTurn" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.001"/>
+    <testcase name="testInvalidErrorException" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMoveingPieceWithDifferentType" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMoveingPieceWithDifferentColor" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+    <testcase name="testMoveingFromLocationThatHasNoPiece" classname="hanto.teststudentthhughes.common.turnactionvalidator.moveandplacecheckers.GeneralActionValidatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

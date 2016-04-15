@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GammaHantoAcceptanceTest" project="Hantothhughes" tests="21" started="21" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0">
+    <testcase name="bluePlacesButterflyFirst" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="redSelfLoses" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToMoveWhenNotEnoughSpace" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToUseTooManyButterflies" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="blueWins" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveByFirstPlayer" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="moveToDisconnectConfiguration" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="moveFromEmptyHex" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="moveSparrowToOccupiedHex" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToPlacePieceNextToOpponent" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="blueMovesSparrow" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToMoveWrongColorPiece" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveBySecondPlayer" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToMoveTooFar" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToMoveWrongPieceType" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToUseTooManySparrows" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="moveButterflyToSameHex" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="drawAfterTwentyTurns" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToMoveAfterGameIsOver" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="tryToUsePieceNotInGame" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+    <testcase name="redPlacesSparrowFirst" classname="hanto.teststudentthhughes.gamma.GammaHantoAcceptanceTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -186,3 +186,24 @@
 1460728527763	Delete element
 1460728534548	Delete element
 1460730606047	Rename type 'LocationValidator'
+1460740986223	Rename type 'HantoGameStateCalculatorFactory'
+1460741759181	Extract method 'isPieceAtFromPieceToBeMoved'
+1460741863487	Rename local variable 'mv'
+1460741955631	Rename package 'hanto.teststudentthhughes.common.turnactionvalidator.moveandplace'
+1460741994305	Rename type 'GeneralPieceValidator'
+1460742317284	Rename method 'isPieceAtFromPieceToBeMoved'
+1460744929842	Delete element
+1460744984109	Delete elements
+1460745016133	Delete elements
+1460745261919	Delete element
+1460745415556	Rename field 'hantoMV'
+1460745423530	Rename field 'hantoBV'
+1460746425651	Extract local variable 'pieceImpl'
+1460746438138	Rename local variable 'pieceImpl'
+1460746671524	Rename method 'placePiece'
+1460746833929	Rename field 'hantoMC'
+1460746842493	Rename field 'MoveCounter'
+1460747722280	Copy compilation unit
+1460748557622	Rename type 'PieceSpecificMoveValidator'
+1460748569460	Rename type 'PieceSpecificActionValidator'
+1460750689768	Rename method 'placePieceOnBoard'

@@ -34,6 +34,7 @@ public abstract class AbsTurnActionValidator implements TurnActionValidator {
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		playerColor = piece.getColor();
+		validResult = true;
 		
 		if(isMoveAPlace(from)){
 			handlePlaceCheck(theBoard,piece,new MoveCounterImpl(counter),new HantoCoordinateImpl(to));

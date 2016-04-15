@@ -1,0 +1,71 @@
+package hanto.studentthhughes;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoGame;
+import hanto.common.HantoPiece;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.common.MoveResult;
+import hanto.studentthhughes.common.colormanager.ColorManager;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
+
+public abstract class TemplateHantoGame implements HantoGame {
+	
+	protected ColorManager hantoColorManager;
+	protected HantoBoard hantoBoard = new HantoBoardImpl();
+	protected MoveCounterImpl hantoMC = new MoveCounterImpl();
+	protected TurnActionValidator actionValidator;
+	protected GameStateEvaluator gameStateEvaluator;
+	protected boolean gameOver = false;
+	protected boolean canSurrender = false;
+	protected MoveResult surrenderOutcome = null;
+	
+	
+	/**
+	 * Constructor for a hanto game: 
+	 * @param firstMovePlayer
+	 * 					HantoPlayerColor : player who goes first
+	 * @param mValidator
+	 * 					MoveValidator :
+	 * @param bValidator
+	 * 					BoardValidator :
+	 */
+	public TemplateHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse){
+		hantoColorManager = new ColorManager(firstMovePlayer);
+		actionValidator = tav;
+		gameStateEvaluator = gse;
+		
+	}
+
+	@Override
+	public MoveResult makeMove(HantoPieceType pieceType, HantoCoordinate from, HantoCoordinate to)
+			throws HantoException {
+		if(gameOver){
+			handleGameOver();
+		}
+		return null;
+	}
+
+	protected void handleGameOver() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public HantoPiece getPieceAt(HantoCoordinate where) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPrintableBoard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
