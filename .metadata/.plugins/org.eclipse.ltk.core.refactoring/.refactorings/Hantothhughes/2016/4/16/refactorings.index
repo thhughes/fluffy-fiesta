@@ -207,3 +207,4 @@
 1460748557622	Rename type 'PieceSpecificMoveValidator'
 1460748569460	Rename type 'PieceSpecificActionValidator'
 1460750689768	Rename method 'placePieceOnBoard'
+1460750968498	Copy compilation unit

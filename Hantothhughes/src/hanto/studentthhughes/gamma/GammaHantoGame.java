@@ -23,7 +23,6 @@ public class GammaHantoGame extends TemplateHantoGame implements HantoGame {
 
 	public GammaHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse) {
 		super(firstMovePlayer, tav, gse);
-		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
