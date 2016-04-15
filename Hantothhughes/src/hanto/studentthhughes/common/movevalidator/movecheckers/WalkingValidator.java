@@ -14,7 +14,9 @@ import java.util.Queue;
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoPiece;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder.AStarWalking;
+import hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder.PathBuilder;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentthhughes.common.movevalidator.AbsMoveValidator;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
@@ -30,6 +32,7 @@ public class WalkingValidator extends AbsMoveValidator implements MoveValidator 
 	HantoCoordinateImpl toImpl;
 	HantoCoordinateImpl fromImpl;
 	int maxDistance;
+	PathBuilder astarWalker = new AStarWalking();
 	
 	public WalkingValidator(){
 		maxDistance = 1;
@@ -48,7 +51,7 @@ public class WalkingValidator extends AbsMoveValidator implements MoveValidator 
 	protected void handleMoveCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		if(!theBoard.isLocationOccupied(to)){
-			List<HantoCoordinate> path = theBoard.getPath(from, to);
+			List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
 			validResult = checkPathForRoomToWalk(theBoard, path);
 			validResult = validResult && ((path.size()-1) <= maxDistance);   // NOTE: PATH INCLUDES THE STARTING NODE, so must remove it to get 'moves
 		}else{

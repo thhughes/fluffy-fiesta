@@ -3,11 +3,8 @@
  */
 package hanto.teststudentthhughes.common.board;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.junit.Before;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
@@ -15,9 +12,8 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
-import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 
 /**
@@ -103,10 +99,5 @@ public class TestableBoardImpl implements HantoBoard {
 	}
 
 
-	@Override
-	public List<HantoCoordinate> getPath(HantoCoordinate start, HantoCoordinate end) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

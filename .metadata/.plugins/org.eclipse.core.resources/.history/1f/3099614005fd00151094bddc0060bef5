@@ -1,5 +1,0 @@
-package hanto.Test.studentThhughes.common.boardValidator;
-
-public class TerminalMoveCheckTest {
-	private class dummyCounter
-}

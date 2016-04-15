@@ -12,7 +12,7 @@ import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPlayerColor;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 

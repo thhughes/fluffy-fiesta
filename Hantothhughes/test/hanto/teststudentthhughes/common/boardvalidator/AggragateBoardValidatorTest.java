@@ -7,8 +7,8 @@ import org.junit.Test;
 
 import hanto.common.MoveResult;
 import hanto.studentthhughes.common.gamestatecalculator.MasterGameStateCalculator;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class AggragateBoardValidatorTest {

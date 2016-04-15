@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
@@ -14,8 +13,7 @@ import static hanto.common.HantoPieceType.*;
 
 import hanto.common.*;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
-import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
@@ -59,11 +57,7 @@ public class PieceValidatorTest {
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
 			return playerMap;
 		}
-		@Override
-		public List<HantoCoordinate> getPath(HantoCoordinate start, HantoCoordinate end) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+
 		
 	}
 

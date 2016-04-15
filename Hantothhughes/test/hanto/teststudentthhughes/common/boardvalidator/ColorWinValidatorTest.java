@@ -13,8 +13,8 @@ import hanto.common.MoveResult;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
 import hanto.studentthhughes.common.gamestatecalculator.PlayerWinCalculator;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
-import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 
 public class ColorWinValidatorTest {

@@ -39,7 +39,7 @@ Order of Op:
  X Implement surrender
  X Implement crabs allowed
  X Implement crabs walking 3 hexes
- - Refactor validator's
+ X Refactor validator's
  	:: Group similar functions into one class that runs checks
  - Implement Sparrows allowed
  - Implement sparrow flight
@@ -48,28 +48,6 @@ Order of Op:
  
  
  
-Move Validator Refactoring:
- B ButterflyPlacedInTimeValidator :: butterfly placed by n turn (alpha/beta/gamma/delta)
- B CurrectOfButterflyValidator    :: checks that there is only one butterfly  			   :: Refactor 
- 									 														  into a system for checking any piece type. 
- P FirstMoveValidator 			  :: Validator for first and second move.
-Rem LimitMoveLengthToOneValidator  :: Validator to check move length 		 			   :: Refactor
- 									 														  into system for checking any piece type and the number
- M MoveRealPieceValidator 		  :: Checks to make sure that a piece you're going to move is 
- 									 on the board in the 'from' location
- B PieceValidator				  :: Checks that this is a valid piece 
- B PlayingTooManyPiecesValidator  :: Calculates the number of pieces that can be played
- 								 	 and checks that it's correct
- M TwoSpacesFreeToWalkValidator   :: Checks that there are two places avaiable for walking :: Refactor
- 																							  into a system for all walking
- M WaslkingPieceValidator 		  :: Checks if there is a path to walk and that the system 
- 								  	 make it there 
- 								  	 BUG :: cannot walk to self point. 
-
-To Merge: 
- - Playing Too Many Pieces + Real Piece 
-
-Butterfly Placement Rules 
 
 
 

@@ -8,7 +8,7 @@
 package hanto.studentthhughes.common.gamestatecalculator;
 
 import hanto.common.MoveResult;
-import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 /**

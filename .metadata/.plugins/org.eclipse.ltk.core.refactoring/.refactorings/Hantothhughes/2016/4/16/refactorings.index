@@ -143,3 +143,15 @@
 1460689388512	Extract method 'checkForGameover'
 1460689593696	Extract method 'makeSafeFromCoordinate'
 1460689665062	Extract method 'buildOutcomeResult'
+1460690158004	Delete element
+1460690179264	Rename package 'hanto.studentthhughes.common.hantoboard'
+1460723688751	Rename type 'AStar'
+1460723889090	Change method 'getPath'
+1460724015623	Move compilation unit
+1460724042864	Change method 'aStar'
+1460724058468	Change method 'aStar'
+1460724127317	Change method 'getOpenNeighbors'
+1460724163375	Rename method 'getOpenNeighbors'
+1460724688368	Rename type 'AStarAroundPieceObstacles'
+1460724839392	Extract local variable 'currentNeighbor'
+1460725150812	Rename package 'hanto.teststudentthhughes.common.board.pathplanner'

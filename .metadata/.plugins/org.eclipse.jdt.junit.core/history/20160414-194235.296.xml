@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ButterflyPlacedInTimeValidatorTest" project="Hantothhughes" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="14.159">
-    <testcase name="testAddingButterflyInTime" classname="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="10.301"/>
-    <testcase name="testNotAddingButterflyWhenItsTheLastTurn" classname="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="2.606"/>
-    <testcase name="testInvalidError" classname="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="0.001"/>
-    <testcase name="testNotNull" classname="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="0.0"/>
-    <testcase name="testAddingPieceToThingThatAlreadyHasButterfly" classname="hanto.teststudentthhughes.common.movevalidator.ButterflyPlacedInTimeValidatorTest" time="1.251"/>
-  </testsuite>
-</testrun>

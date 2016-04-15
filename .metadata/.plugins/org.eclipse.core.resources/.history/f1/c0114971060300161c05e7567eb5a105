@@ -1,0 +1,10 @@
+package hanto.studentthhughes.common.hantoboardandboardtools;
+
+public abstract class AStar {
+
+	public AStar(){
+		
+	}
+	
+	
+}
