@@ -1,0 +1,5 @@
+package hanto.studentthhughes.common.movevalidator.movecheckers;
+
+public class FlyingValidator {
+
+}

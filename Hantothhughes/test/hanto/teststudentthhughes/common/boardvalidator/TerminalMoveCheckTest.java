@@ -7,8 +7,8 @@ import org.junit.Test;
 
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
-import hanto.studentthhughes.common.gamestatecalculator.EndOfGameCalculator;
-import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
+import hanto.studentthhughes.common.gamestateevaluator.MaxTurnCountEvaluator;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class TerminalMoveCheckTest {
@@ -36,12 +36,12 @@ public class TerminalMoveCheckTest {
 	
 	
 	private static MoveCounter counter;
-	private static GameStateCalculator bv;
+	private static GameStateEvaluator bv;
 	
 	@Before
 	public void setup(){
 		counter  = new dummyCounter(0);
-		bv = new EndOfGameCalculator(2);
+		bv = new MaxTurnCountEvaluator(2);
 	}
 	
 	@Test //1 

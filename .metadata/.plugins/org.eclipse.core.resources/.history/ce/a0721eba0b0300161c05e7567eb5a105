@@ -1,0 +1,5 @@
+package hanto.teststudentthhughes.common.board.pathbuilder;
+
+public class AStarFlyingTest {
+
+}

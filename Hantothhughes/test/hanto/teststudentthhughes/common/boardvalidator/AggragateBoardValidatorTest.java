@@ -6,14 +6,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import hanto.common.MoveResult;
-import hanto.studentthhughes.common.gamestatecalculator.MasterGameStateCalculator;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
+import hanto.studentthhughes.common.gamestateevaluator.MasterGameStateEvaluator;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
-import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 public class AggragateBoardValidatorTest {
 
-	class dummyValidator implements GameStateCalculator{
+	class dummyValidator implements GameStateEvaluator{
 		
 		MoveResult res;
 		public dummyValidator(MoveResult custResult){
@@ -25,7 +25,7 @@ public class AggragateBoardValidatorTest {
 		}
 	}
 	
-	private static MasterGameStateCalculator av;
+	private static MasterGameStateEvaluator av;
 	private static dummyValidator ok;
 	private static dummyValidator bw;
 	private static dummyValidator rw;
@@ -33,7 +33,7 @@ public class AggragateBoardValidatorTest {
 	
 	@Before
 	public void setup(){
-		av = new MasterGameStateCalculator();
+		av = new MasterGameStateEvaluator();
 		ok = new dummyValidator(MoveResult.OK);
 		bw = new dummyValidator(MoveResult.BLUE_WINS);
 		rw = new dummyValidator(MoveResult.RED_WINS);

@@ -1,0 +1,22 @@
+package hanto.studentthhughes.common.movevalidator.movecheckers;
+
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder.AStarFlying;
+import hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder.PathBuilder;
+
+public class FlyingValidator {
+
+	HantoCoordinateImpl toImpl;
+	HantoCoordinateImpl fromImpl;
+	int maxDistance;
+	PathBuilder astarWalker = new AStarFlying();
+	
+	public FlyingValidator(){
+		maxDistance = 1;
+	}
+
+	public FlyingValidator(int maxDist)
+	{
+		maxDistance = maxDist;
+	}
+}

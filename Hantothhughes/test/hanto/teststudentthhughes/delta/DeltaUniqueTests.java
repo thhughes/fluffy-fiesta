@@ -168,6 +168,49 @@ public class DeltaUniqueTests {
 		
 	}
 	
+	@Test
+	public void sparrowMovesOneHex() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,-1,0), md(SPARROW,0,2),
+				md(SPARROW, 0,-1),md(SPARROW,0,3),
+				md(SPARROW,-1,0,-1,1));
+		checkPieceAt(-1,1,BLUE,SPARROW);
+		
+	}
+	
+	@Test
+	public void sparrowMovesTwoHex() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,-1,0), md(SPARROW,0,2),
+				md(SPARROW, 0,-1),md(SPARROW,0,3),
+				md(SPARROW,-1,0,-1,2));
+		checkPieceAt(-1,2,BLUE,SPARROW);
+		
+	}
+	
+	@Test
+	public void sparrowFlysTwoHex() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,-1,0), md(SPARROW,0,2),
+				md(SPARROW, 0,-1),md(SPARROW,0,3),
+				md(SPARROW,-1,0,1,0));
+		checkPieceAt(1,0,BLUE,SPARROW);
+		
+	}
+	
+	@Test(expected=HantoException.class)
+	public void sparrowFlysFourHex() throws HantoException
+	{
+		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
+				md(SPARROW,-1,0), md(SPARROW,0,2),
+				md(SPARROW, 0,-1),md(SPARROW,0,3),
+				md(SPARROW,-1,0,3,0));
+		
+	}
+	
 	
 	
 	

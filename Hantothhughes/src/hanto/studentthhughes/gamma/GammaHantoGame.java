@@ -18,12 +18,12 @@ import hanto.studentthhughes.common.colormanager.ColorManager;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.frontier.Frontier;
 import hanto.studentthhughes.common.frontier.FrontierImpl;
-import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
-import hanto.studentthhughes.common.movevalidator.MoveValidator;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 
 /**
  * @author Troy
@@ -34,8 +34,8 @@ public class GammaHantoGame implements HantoGame {
 	private ColorManager hantoColorManager;
 	private HantoBoard hantoBoard = new HantoBoardImpl();
 	private MoveCounterImpl hantoMC = new MoveCounterImpl();
-	private MoveValidator hantoMV;
-	private GameStateCalculator hantoBV;
+	private TurnActionValidator hantoMV;
+	private GameStateEvaluator hantoBV;
 	private boolean gameOver = false;
 	
 	
@@ -48,7 +48,7 @@ public class GammaHantoGame implements HantoGame {
 	 * @param bValidator
 	 * 					BoardValidator :
 	 */
-	public GammaHantoGame(HantoPlayerColor firstMovePlayer, MoveValidator mValidator, GameStateCalculator bValidator){
+	public GammaHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator mValidator, GameStateEvaluator bValidator){
 		hantoColorManager = new ColorManager(firstMovePlayer);
 		hantoMV = mValidator;
 		hantoBV = bValidator;

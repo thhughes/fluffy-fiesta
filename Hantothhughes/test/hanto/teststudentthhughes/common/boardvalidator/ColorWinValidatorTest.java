@@ -11,14 +11,14 @@ import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
-import hanto.studentthhughes.common.gamestatecalculator.GameStateCalculator;
-import hanto.studentthhughes.common.gamestatecalculator.PlayerWinCalculator;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
+import hanto.studentthhughes.common.gamestateevaluator.PlayerButterflySurroundedEvaluator;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 
 public class ColorWinValidatorTest {
-	private static GameStateCalculator cv;
+	private static GameStateEvaluator cv;
 	private static HantoCoordinate hc1;
 	private static HantoCoordinate hc2;
 	private static HantoCoordinate hc3;
@@ -44,18 +44,18 @@ public class ColorWinValidatorTest {
 	
 	@Test //1 
 	public void testConstructorNotNull(){
-		assertNotNull(new PlayerWinCalculator(HantoPlayerColor.BLUE));
+		assertNotNull(new PlayerButterflySurroundedEvaluator(HantoPlayerColor.BLUE));
 	}
 	
 	@Test //2
 	public void testBoardWIthNoButterfly(){
-		cv = new PlayerWinCalculator(HantoPlayerColor.BLUE);
+		cv = new PlayerButterflySurroundedEvaluator(HantoPlayerColor.BLUE);
 		assertEquals(cv.getOutcome(theBoard, null),MoveResult.OK);
 	}
 	
 	@Test //3
 	public void testBoardWithOneButterflyAndNoSparrows() throws HantoException{
-		cv = new PlayerWinCalculator(HantoPlayerColor.BLUE);
+		cv = new PlayerButterflySurroundedEvaluator(HantoPlayerColor.BLUE);
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.RED,
 				HantoPieceType.BUTTERFLY), hc1);
 		assertEquals(cv.getOutcome(theBoard, null),MoveResult.OK);
@@ -63,7 +63,7 @@ public class ColorWinValidatorTest {
 	
 	@Test //4
 	public void testBoardWithOneButterflyAndSurrounded() throws HantoException{
-		cv = new PlayerWinCalculator(HantoPlayerColor.RED);
+		cv = new PlayerButterflySurroundedEvaluator(HantoPlayerColor.RED);
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,
 				HantoPieceType.BUTTERFLY), hc1);
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,
@@ -85,7 +85,7 @@ public class ColorWinValidatorTest {
 	
 	@Test //4
 	public void testBoardWithOneButterflyAndSurroundedWithBothTeamsPieces() throws HantoException{
-		cv = new PlayerWinCalculator(HantoPlayerColor.RED);
+		cv = new PlayerButterflySurroundedEvaluator(HantoPlayerColor.RED);
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,
 				HantoPieceType.BUTTERFLY), hc1);
 		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.RED,

@@ -1,0 +1,5 @@
+package hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder;
+
+public class AStarFlying extends AStarTemplate implements PathBuilder {
+
+}
