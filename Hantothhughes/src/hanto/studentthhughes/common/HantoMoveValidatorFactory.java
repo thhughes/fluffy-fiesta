@@ -14,18 +14,14 @@ import java.util.Queue;
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
 import hanto.studentthhughes.common.movevalidator.MasterValidator;
-import hanto.studentthhughes.common.movevalidator.FirstMoveValidator;
-import hanto.studentthhughes.common.movevalidator.LimitMoveLengthToOneValidator;
-import hanto.studentthhughes.common.movevalidator.LocationValidator;
-import hanto.studentthhughes.common.movevalidator.MoveRealPieceValidator;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
-import hanto.studentthhughes.common.movevalidator.PieceValidator;
-import hanto.studentthhughes.common.movevalidator.PlaceBySameColorValidator;
-import hanto.studentthhughes.common.movevalidator.PlayingTooManyPieceValidator;
-import hanto.studentthhughes.common.movevalidator.TwoSpacesFreeToWalkValidator;
-import hanto.studentthhughes.common.movevalidator.WalkingPieceValidator;
+import hanto.studentthhughes.common.movevalidator.dualchecks.GeneralPieceValidator;
+import hanto.studentthhughes.common.movevalidator.movecheckers.LocationValidator;
+import hanto.studentthhughes.common.movevalidator.movecheckers.MoveRealPieceValidator;
+import hanto.studentthhughes.common.movevalidator.movecheckers.WalkingValidator;
 import hanto.studentthhughes.common.movevalidator.placecheckers.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.movevalidator.placecheckers.CorrectNumberOfPieceTypeValidator;
+import hanto.studentthhughes.common.movevalidator.placecheckers.FirstMoveValidator;
 import hanto.teststudentthhughes.common.movevalidator.PieceSpecificMoveValidator;
 
 /**
@@ -35,6 +31,14 @@ import hanto.teststudentthhughes.common.movevalidator.PieceSpecificMoveValidator
  */
 public class HantoMoveValidatorFactory {
 
+	int max_num_butterfly;
+	int max_num_sparrow;
+	int max_num_crab;
+	
+	int max_move_dist_butterfly;
+	int max_move_dist_sparrow;
+	int max_move_dist_crab;
+	
 	private static final HantoMoveValidatorFactory instance = new HantoMoveValidatorFactory();
 	
 	
@@ -54,59 +58,102 @@ public class HantoMoveValidatorFactory {
 	 * 			MoveValidator : of the hantoGameId Passed
 	 */
 	public MoveValidator makeHantoValidator(HantoGameID gameID){
-		Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
-		MasterValidator mv = null;
+		Queue<HantoPieceType> valid = buildValidList(gameID);
+		setPieceMaximumAndMovementDistance(gameID);
+		
+		MasterValidator mv = new MasterValidator();
+		
 		switch (gameID) {
 			case ALPHA_HANTO:
 				break;
 			case BETA_HANTO:
 				break;
 			case GAMMA_HANTO:
-				valid.clear();
-				valid.add(HantoPieceType.SPARROW);
-				valid.add(HantoPieceType.BUTTERFLY);
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.BUTTERFLY,max_num_butterfly));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.SPARROW,max_num_sparrow));
 				
-				mv = new MasterValidator();
+				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.BUTTERFLY,
+						new WalkingValidator(max_move_dist_butterfly)));
+				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.SPARROW,
+						new WalkingValidator(max_move_dist_sparrow)));
+
+				mv.addValidator(new GeneralPieceValidator(valid));
 				
 				mv.addValidator(new LocationValidator());
-				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.BUTTERFLY,1));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.SPARROW,5));
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
-				mv.addValidator(new PlaceBySameColorValidator());
-				mv.addValidator(new LimitMoveLengthToOneValidator());
-				mv.addValidator(new TwoSpacesFreeToWalkValidator());
 				mv.addValidator(new MoveRealPieceValidator());
-				mv.addValidator(new PlayingTooManyPieceValidator(6));
 				break;
 			case DELTA_HANTO:
-				valid.clear();
-				valid.add(HantoPieceType.SPARROW);
-				valid.add(HantoPieceType.BUTTERFLY);
-				valid.add(HantoPieceType.CRAB);
 				
-				mv = new MasterValidator();
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.BUTTERFLY,max_num_butterfly));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.SPARROW,max_num_sparrow));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.CRAB,max_num_crab));
+				
+				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.CRAB,
+						new WalkingValidator(max_move_dist_crab)));
+				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.BUTTERFLY,
+						new WalkingValidator(max_move_dist_butterfly)));
+				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.SPARROW,
+						new WalkingValidator(max_move_dist_sparrow)));
+				
+				mv.addValidator(new GeneralPieceValidator(valid));
 				
 				mv.addValidator(new LocationValidator());
-				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.BUTTERFLY,1));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.SPARROW,5));
-				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.CRAB,4));
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
-				mv.addValidator(new PlaceBySameColorValidator());
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.CRAB,
-						new WalkingPieceValidator(3)));
-				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.BUTTERFLY,
-						new WalkingPieceValidator(1)));
-				mv.addValidator(new TwoSpacesFreeToWalkValidator());
 				mv.addValidator(new MoveRealPieceValidator());
-				mv.addValidator(new PlayingTooManyPieceValidator(6)); // Need to refactor this the number of pieces
-																		// Use the pieceSpecific MoveValidator
+				
 			default:
 				break;
 		}
 		return mv;
+	}
+
+	private Queue<HantoPieceType> buildValidList(HantoGameID gameID) {
+		Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
+		
+		switch(gameID){
+		case GAMMA_HANTO:
+			valid.clear();
+			valid.add(HantoPieceType.SPARROW);
+			valid.add(HantoPieceType.BUTTERFLY);
+			break;
+		case DELTA_HANTO:
+			valid.clear();
+			valid.add(HantoPieceType.SPARROW);
+			valid.add(HantoPieceType.BUTTERFLY);
+			valid.add(HantoPieceType.CRAB);
+			break;
+		default:	
+		}
+		return valid;
+	}
+	
+	private void setPieceMaximumAndMovementDistance(HantoGameID gameID){
+		switch(gameID){
+		case GAMMA_HANTO:
+			 max_num_butterfly = 1;
+			 max_num_sparrow = 5;
+			
+			 max_move_dist_butterfly = 1;
+			 max_move_dist_sparrow = 3;
+			break;
+		case DELTA_HANTO:
+			max_num_butterfly = 1;
+			 max_num_sparrow = 5;
+			 max_num_crab = 4;
+			
+			 max_move_dist_butterfly = 1;
+			 max_move_dist_sparrow = 3;
+			 max_move_dist_crab = 3;
+			break;
+		default:	
+		}
 	}
 }

@@ -121,3 +121,22 @@
 1460678233139	Rename local variable 'numberButterflies'
 1460679015778	Rename type 'ButterflyCheckerTest'
 1460679868755	Move compilation unit
+1460682033539	Move compilation unit
+1460682075107	Delete element
+1460683161202	Rename local variable 'to'
+1460683219786	Rename method 'checkIfPlaceLocationIsNotOccupied'
+1460683356275	Rename package 'hanto.studentthhughes.common.movevalidator.movechecker'
+1460683369748	Move compilation unit
+1460683798330	Move compilation unit
+1460683950437	Rename type 'PieceValidator'
+1460683960931	Move compilation unit
+1460685513377	Extract method 'getOccupiedNeighborColors'
+1460686054254	Rename local variable 'to'
+1460686255123	Delete element
+1460686351036	Delete element
+1460686369176	Delete element
+1460687098742	Extract method 'buildValidList'
+1460688303970	Delete element
+1460688309575	Delete element
+1460688341060	Delete element
+1460688408681	Delete element

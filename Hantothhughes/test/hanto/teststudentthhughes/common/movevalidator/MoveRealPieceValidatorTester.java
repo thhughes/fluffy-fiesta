@@ -13,7 +13,7 @@ import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
-import hanto.studentthhughes.common.movevalidator.MoveRealPieceValidator;
+import hanto.studentthhughes.common.movevalidator.movecheckers.MoveRealPieceValidator;
 
 public class MoveRealPieceValidatorTester {
 
@@ -43,7 +43,7 @@ public class MoveRealPieceValidatorTester {
 	{
 		boolean result = (new MoveRealPieceValidator()).isValidMove(theBoard,
 				new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY), 
-				null, 
+				new MoveCounterImpl(), 
 				new HantoCoordinateImpl(0,1), null);
 		assertTrue(result);
 	}

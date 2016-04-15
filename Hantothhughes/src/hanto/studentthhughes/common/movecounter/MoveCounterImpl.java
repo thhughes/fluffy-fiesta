@@ -78,5 +78,16 @@ public class MoveCounterImpl implements MoveCounter{
 	public boolean isFirstMoveOfGame(){
 		return (red == 0) && (blue == 0);
 	}
+	
+	/**
+	 * Returns boolean if both red and blue have gone
+	 * greater than 1 time. 
+	 * 
+	 * @return
+	 * 			boolean : True if red and blue have gone more than once.
+	 */
+	public boolean bothPlayersHaveGoneMoreThanOnce(){
+		return (red > 0) && (blue > 0);
+	}
 
 }

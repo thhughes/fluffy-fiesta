@@ -15,9 +15,11 @@ import static hanto.common.HantoPieceType.*;
 import hanto.common.*;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
+import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
-import hanto.studentthhughes.common.movevalidator.PieceValidator;
+import hanto.studentthhughes.common.movevalidator.dualchecks.GeneralPieceValidator;
 
 public class PieceValidatorTest {
 	
@@ -55,7 +57,6 @@ public class PieceValidatorTest {
 
 		@Override
 		public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
-			
 			return playerMap;
 		}
 		@Override
@@ -70,14 +71,15 @@ public class PieceValidatorTest {
 	
 	@Test // 1
 	public void testValidatorWithNoArgs(){
-		validator = new PieceValidator();
+		validator = new GeneralPieceValidator();
 		assertNotNull(validator);
 	}
 	
 	@Test // 2 
 	public void testValidatorWithEmptyList(){
-		validator = new PieceValidator(new LinkedList<HantoPieceType>());
-		assertFalse(validator.isValidMove(null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
+		validator = new GeneralPieceValidator(new LinkedList<HantoPieceType>());
+		assertFalse(validator.isValidMove(null, new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), 
+				new MoveCounterImpl(), new HantoCoordinateImpl(0,0), null));
 	}
 	
 	@Test //3 
@@ -85,8 +87,9 @@ public class PieceValidatorTest {
 		Queue<HantoPieceType> validList = new LinkedList<HantoPieceType>();
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
-		validator = new PieceValidator(validList);
-		assertTrue(validator.isValidMove(new dummyBoard(), new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), null, null, null));
+		validator = new GeneralPieceValidator(validList);
+		assertTrue(validator.isValidMove(new dummyBoard(), new HantoPieceImpl(HantoPlayerColor.BLUE,BUTTERFLY), 
+				new MoveCounterImpl(), new HantoCoordinateImpl(0,0), null));
 
 	}
 	
@@ -95,14 +98,16 @@ public class PieceValidatorTest {
 		Queue<HantoPieceType> validList = new LinkedList<HantoPieceType>();
 		validList.add(BUTTERFLY);
 		validList.add(SPARROW);
-		validator = new PieceValidator(validList);
-		assertFalse(validator.isValidMove(null, new HantoPieceImpl(HantoPlayerColor.BLUE,CRAB), null, null, null));
+		validator = new GeneralPieceValidator(validList);
+		assertFalse(validator.isValidMove(new dummyBoard(), new HantoPieceImpl(HantoPlayerColor.BLUE,CRAB), 
+				new MoveCounterImpl(), 
+				new HantoCoordinateImpl(0,0), null));
 
 	}
 	
 	@Test(expected=HantoException.class) //5
 	public void testFailureMessage() throws HantoException{
-		validator = new PieceValidator();
+		validator = new GeneralPieceValidator();
 		validator.invalidError();
 	}
 		

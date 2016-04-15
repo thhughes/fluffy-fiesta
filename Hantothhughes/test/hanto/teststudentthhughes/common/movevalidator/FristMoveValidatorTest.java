@@ -16,6 +16,7 @@ import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movevalidator.*;
+import hanto.studentthhughes.common.movevalidator.placecheckers.FirstMoveValidator;
 
 public class FristMoveValidatorTest {
 	

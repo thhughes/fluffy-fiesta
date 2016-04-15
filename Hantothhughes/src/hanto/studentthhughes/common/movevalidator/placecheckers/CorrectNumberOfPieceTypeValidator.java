@@ -13,7 +13,6 @@ import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
-import hanto.common.HantoPlayerColor;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboard.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
@@ -33,12 +32,25 @@ public class CorrectNumberOfPieceTypeValidator extends AbsMoveValidator implemen
 	HantoPieceType pieceType;
 	int maxNumberOfPiece;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param hpt
+	 * 				HantoPieceType 
+	 * @param maxNum
+	 * 				int representing the number of moves that piece can take
+	 */
 	public CorrectNumberOfPieceTypeValidator(HantoPieceType hpt, int maxNum){
 		pieceType = hpt;
 		maxNumberOfPiece = maxNum;
 		
 	}
 	
+	
+	/*
+	 * (non-Javadoc)
+	 * @see hanto.studentthhughes.common.movevalidator.AbsMoveValidator#isValidMove(hanto.studentthhughes.common.hantoboard.HantoBoard, hanto.common.HantoPiece, hanto.studentthhughes.common.movecounter.MoveCounter, hanto.common.HantoCoordinate, hanto.common.HantoCoordinate)
+	 */
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
 			HantoCoordinate from) {
 		if(piece.getType() == pieceType){
@@ -53,12 +65,18 @@ public class CorrectNumberOfPieceTypeValidator extends AbsMoveValidator implemen
 		
 		int numberOfPieces = countPieceTypesOnBoard(theBoard);
 		
-		validResult = (numberOfPieces+1 <= maxNumberOfPiece && 
-				piece.getType() == pieceType);
+		validResult = (numberOfPieces+1 <= maxNumberOfPiece && piece.getType() == pieceType);
 	}
 
 
-
+	
+	/**
+	 * Counts the number of pieces of a specific type on the board
+	 * @param theBoard
+	 * 					HantoBoard 
+	 * @return
+	 * 			int : number of 
+	 */
 	private int countPieceTypesOnBoard(HantoBoard theBoard) {
 		Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(playerColor).values();
 		int numberOfPieces = 0;

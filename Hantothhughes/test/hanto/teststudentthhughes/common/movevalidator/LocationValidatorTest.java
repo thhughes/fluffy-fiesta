@@ -10,8 +10,8 @@ import hanto.common.HantoException;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.frontier.Frontier;
 import hanto.studentthhughes.common.frontier.FrontierImpl;
-import hanto.studentthhughes.common.movevalidator.LocationValidator;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
+import hanto.studentthhughes.common.movevalidator.movecheckers.LocationValidator;
 
 public class LocationValidatorTest {
 
