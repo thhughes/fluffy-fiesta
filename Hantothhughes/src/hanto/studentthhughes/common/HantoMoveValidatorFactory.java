@@ -14,8 +14,6 @@ import java.util.Queue;
 import hanto.common.HantoGameID;
 import hanto.common.HantoPieceType;
 import hanto.studentthhughes.common.movevalidator.MasterValidator;
-import hanto.studentthhughes.common.movevalidator.CorrectNumberOfButterflyValidator;
-import hanto.studentthhughes.common.movevalidator.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.movevalidator.FirstMoveValidator;
 import hanto.studentthhughes.common.movevalidator.LimitMoveLengthToOneValidator;
 import hanto.studentthhughes.common.movevalidator.LocationValidator;
@@ -26,6 +24,8 @@ import hanto.studentthhughes.common.movevalidator.PlaceBySameColorValidator;
 import hanto.studentthhughes.common.movevalidator.PlayingTooManyPieceValidator;
 import hanto.studentthhughes.common.movevalidator.TwoSpacesFreeToWalkValidator;
 import hanto.studentthhughes.common.movevalidator.WalkingPieceValidator;
+import hanto.studentthhughes.common.movevalidator.placecheckers.ButterflyPlacedInTimeValidator;
+import hanto.studentthhughes.common.movevalidator.placecheckers.CorrectNumberOfPieceTypeValidator;
 import hanto.teststudentthhughes.common.movevalidator.PieceSpecificMoveValidator;
 
 /**
@@ -71,7 +71,8 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new LocationValidator());
 				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new CorrectNumberOfButterflyValidator());
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.BUTTERFLY,1));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.SPARROW,5));
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new PlaceBySameColorValidator());
 				mv.addValidator(new LimitMoveLengthToOneValidator());
@@ -90,7 +91,9 @@ public class HantoMoveValidatorFactory {
 				mv.addValidator(new LocationValidator());
 				mv.addValidator(new PieceValidator(valid));
 				mv.addValidator(new FirstMoveValidator());
-				mv.addValidator(new CorrectNumberOfButterflyValidator());
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.BUTTERFLY,1));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.SPARROW,5));
+				mv.addValidator(new CorrectNumberOfPieceTypeValidator(HantoPieceType.CRAB,4));
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new PlaceBySameColorValidator());
 				mv.addValidator(new PieceSpecificMoveValidator(HantoPieceType.CRAB,

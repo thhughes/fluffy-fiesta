@@ -16,8 +16,8 @@ import hanto.studentthhughes.common.hantoboard.HantoBoardImpl;
 import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
-import hanto.studentthhughes.common.movevalidator.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.movevalidator.MoveValidator;
+import hanto.studentthhughes.common.movevalidator.placecheckers.ButterflyPlacedInTimeValidator;
 
 public class ButterflyPlacedInTimeValidatorTest {
 	

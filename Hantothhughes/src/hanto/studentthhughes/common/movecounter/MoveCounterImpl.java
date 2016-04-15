@@ -7,7 +7,7 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.movecounter;
 
-import static hanto.common.HantoPlayerColor.RED;
+import static hanto.common.HantoPlayerColor.*;
 
 import hanto.common.HantoPlayerColor;
 
@@ -22,11 +22,31 @@ public class MoveCounterImpl implements MoveCounter{
 	int red;
 	int blue;
 	
+	/**
+	 * Constructor of the MoveCounter
+	 */
 	public MoveCounterImpl(){
 		red = 0;
 		blue = 0;
 	}
 	
+	/**
+	 * Copy constructor
+	 * 
+	 * @param otherCounter
+	 * 					MoveCounter Implementation
+	 * 
+	 */
+	public MoveCounterImpl(MoveCounter otherCounter)
+	{
+		this.red = otherCounter.getNumberMoves(RED);
+		this.blue = otherCounter.getNumberMoves(BLUE);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see hanto.studentthhughes.common.movecounter.MoveCounter#getNumberMoves(hanto.common.HantoPlayerColor)
+	 */
 	public int getNumberMoves(HantoPlayerColor player){
 		int result = -1;
 		if(player == RED){
@@ -37,12 +57,26 @@ public class MoveCounterImpl implements MoveCounter{
 		return result;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see hanto.studentthhughes.common.movecounter.MoveCounter#incrementNumberMoves(hanto.common.HantoPlayerColor)
+	 */
 	public void incrementNumberMoves(HantoPlayerColor player){
 		if(player == RED){
 			red++;
 		}else{
 			blue++;
 		}
+	}
+	
+	/**
+	 * Returns boolean if it is the first move of the game. 
+	 * 
+	 * @return
+	 * 			boolean : True if it's the first move of the game. 
+	 */
+	public boolean isFirstMoveOfGame(){
+		return (red == 0) && (blue == 0);
 	}
 
 }

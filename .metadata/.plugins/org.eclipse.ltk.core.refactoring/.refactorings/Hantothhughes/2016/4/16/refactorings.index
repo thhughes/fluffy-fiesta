@@ -113,3 +113,11 @@
 1460671698749	Rename type 'AggregateValidator'
 1460671763623	Rename package 'hanto.studentthhughes.common.gamestate'
 1460671779652	Rename type 'AggregateGameStateCalculator'
+1460676198626	Extract method 'hasPlayerPlacedButterfly'
+1460677636925	Move compilation unit
+1460677810064	Rename type 'CorrectNumberOfButterflyValidator'
+1460677836391	Rename type 'CorrectNumberOfPieceType'
+1460678142230	Extract method 'countPieceTypesOnBoard'
+1460678233139	Rename local variable 'numberButterflies'
+1460679015778	Rename type 'ButterflyCheckerTest'
+1460679868755	Move compilation unit
