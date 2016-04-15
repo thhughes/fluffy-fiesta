@@ -140,3 +140,6 @@
 1460688309575	Delete element
 1460688341060	Delete element
 1460688408681	Delete element
+1460689388512	Extract method 'checkForGameover'
+1460689593696	Extract method 'makeSafeFromCoordinate'
+1460689665062	Extract method 'buildOutcomeResult'

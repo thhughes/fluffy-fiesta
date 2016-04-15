@@ -32,6 +32,7 @@ import hanto.studentthhughes.common.movevalidator.MoveValidator;
 public class GammaHantoGame implements HantoGame {
 
 	private ColorManager hantoColorManager;
+	private Frontier hantoFrontier = new FrontierImpl();
 	private HantoBoard hantoBoard = new HantoBoardImpl();
 	private MoveCounterImpl hantoMC = new MoveCounterImpl();
 	private MoveValidator hantoMV;
