@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="WalkingValidatorTest" project="Hantothhughes" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0">
+    <testcase name="crabWalksTooFarOverObstacleThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksOneHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksTwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabFailsWalksOverObstacletwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -52,8 +52,8 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		if(!theBoard.isLocationOccupied(to)){
 			List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
-			validResult = checkPathForRoomToWalk(theBoard, path);
-			validResult = validResult && ((path.size()-1) <= maxDistance);   // NOTE: PATH INCLUDES THE STARTING NODE, so must remove it to get 'moves
+			validResult =  checkPathForRoomToWalk(theBoard, path) && 
+					((path.size()-1) <= maxDistance);   // NOTE: PATH INCLUDES THE STARTING NODE, so must remove it to get 'moves
 		}else{
 			validResult = false;
 		}

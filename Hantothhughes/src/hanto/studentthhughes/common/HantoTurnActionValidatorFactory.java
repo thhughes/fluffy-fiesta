@@ -18,7 +18,7 @@ import hanto.studentthhughes.common.turnactionvalidator.PieceSpecificMoveValidat
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks.GeneralPieceValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.FlyingValidator;
-import hanto.studentthhughes.common.turnactionvalidator.movecheckers.LocationValidator;
+import hanto.studentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.WalkingValidator;
 import hanto.studentthhughes.common.turnactionvalidator.placecheckers.ButterflyPlacedInTimeValidator;
@@ -82,7 +82,7 @@ public class HantoTurnActionValidatorFactory {
 
 				mv.addValidator(new GeneralPieceValidator(valid));
 				
-				mv.addValidator(new LocationValidator());
+				mv.addValidator(new MoveIsContiguousValidator());
 				mv.addValidator(new FirstMoveValidator());
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new MovePieceOnBoardValidator());
@@ -105,7 +105,7 @@ public class HantoTurnActionValidatorFactory {
 				
 				mv.addValidator(new GeneralPieceValidator(valid));
 				
-				mv.addValidator(new LocationValidator());
+				mv.addValidator(new MoveIsContiguousValidator());
 				mv.addValidator(new FirstMoveValidator());
 				mv.addValidator(new ButterflyPlacedInTimeValidator(4));
 				mv.addValidator(new MovePieceOnBoardValidator());
@@ -139,20 +139,20 @@ public class HantoTurnActionValidatorFactory {
 	private void setPieceMaximumAndMovementDistance(HantoGameID gameID){
 		switch(gameID){
 		case GAMMA_HANTO:
-			 max_num_butterfly = 1;
-			 max_num_sparrow = 5;
+			max_num_butterfly = 1;
+			max_num_sparrow = 5;
 			
-			 max_move_dist_butterfly = 1;
-			 max_move_dist_sparrow = 3;
+			max_move_dist_butterfly = 1;
+			max_move_dist_sparrow = 1;
 			break;
 		case DELTA_HANTO:
 			max_num_butterfly = 1;
-			 max_num_sparrow = 5;
-			 max_num_crab = 4;
+			max_num_sparrow = 4;
+			max_num_crab = 4;
 			
-			 max_move_dist_butterfly = 1;
-			 max_move_dist_sparrow = 3;
-			 max_move_dist_crab = 3;
+			max_move_dist_butterfly = 1;
+			max_move_dist_sparrow = 3;
+			max_move_dist_crab = 3;	
 			break;
 		default:	
 		}

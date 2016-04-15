@@ -18,10 +18,7 @@ public class FlyingValidator extends AbsTurnActionValidator implements TurnActio
 	HantoCoordinateImpl fromImpl;
 	int maxDistance;
 	PathBuilder astarFlyer = new AStarFlying();
-	
-	public FlyingValidator(){
-		maxDistance = 1;
-	}
+
 
 	public FlyingValidator(int maxDist)
 	{

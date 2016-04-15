@@ -182,3 +182,7 @@
 1460726785733	Move compilation unit
 1460726846916	Move compilation unit
 1460727306053	Rename type 'HantoMoveValidatorFactory'
+1460728392522	Rename package 'hanto.teststudentthhughes.common.boardvalidator'
+1460728527763	Delete element
+1460728534548	Delete element
+1460730606047	Rename type 'LocationValidator'

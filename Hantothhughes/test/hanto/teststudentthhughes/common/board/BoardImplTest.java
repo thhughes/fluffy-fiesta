@@ -109,6 +109,19 @@ public class BoardImplTest {
 		assertTrue(theBoard.isLocationOccupied(CB));
 	}
 	
+	@Test //11
+	public void getEntireBoardWhenNullIsSent() throws HantoException{
+		theBoard.placeOnBoard(PA, CA);
+		assertNotNull(theBoard.getPlayerPieces(null));
+		assertNotNull(theBoard.getPlayerPieces(null).get(CA));
+		assertEquals(theBoard.getPlayerPieces(null).get(CA),PA);
+	}
+	
+	@Test //12
+	public void getBlueBoard() throws HantoException{
+		assertNotNull(theBoard.getPlayerPieces(HantoPlayerColor.BLUE));
+	}
+	
 	
 	
 }

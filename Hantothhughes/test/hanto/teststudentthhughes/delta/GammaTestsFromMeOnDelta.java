@@ -228,25 +228,6 @@ public class GammaTestsFromMeOnDelta {
 		assertEquals(result,MoveResult.RED_WINS);
 	}
 	
-	@Test // 15
-	public void redAndBlueWinResultingInDraw() throws HantoException
-	{
-		MoveResult result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(0,0)); 	//b
-		result = game.makeMove(HantoPieceType.BUTTERFLY, null, new HantoCoordinateImpl(-1,0)); 			 	//r
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,0));			 		//b
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));				 //r
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(0,1));			 		//b
-		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(-2,1), new HantoCoordinateImpl(-1,1));				 //r
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,-1));			 		//b
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-1,-1));			 		//r
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(2,0));			 		//b
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,1));			 		//r
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(1,-2));			 		//b
-		result = game.makeMove(HantoPieceType.SPARROW, null, new HantoCoordinateImpl(-2,0));			 		//r
-		result = game.makeMove(HantoPieceType.SPARROW, new HantoCoordinateImpl(1,-2), new HantoCoordinateImpl(0,-1)); 		//b
-		assertEquals(MoveResult.DRAW,result);
-		
-	}
 	
 	@Test(expected=HantoException.class)  // 16
 	public void testGameOver() throws HantoException

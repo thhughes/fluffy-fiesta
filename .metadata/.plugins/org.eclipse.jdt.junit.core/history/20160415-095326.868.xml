@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.teststudentthhughes.common.colormanager" project="Hantothhughes" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.common.colormanager.ColorManagerTest" time="0.0">
+    <testcase name="testToggleOnce" classname="hanto.teststudentthhughes.common.colormanager.ColorManagerTest" time="0.0"/>
+    <testcase name="testToggleTwice" classname="hanto.teststudentthhughes.common.colormanager.ColorManagerTest" time="0.0"/>
+    <testcase name="testGetter" classname="hanto.teststudentthhughes.common.colormanager.ColorManagerTest" time="0.0"/>
+    <testcase name="testConstructor" classname="hanto.teststudentthhughes.common.colormanager.ColorManagerTest" time="0.0"/>
+  </testsuite>
+</testrun>

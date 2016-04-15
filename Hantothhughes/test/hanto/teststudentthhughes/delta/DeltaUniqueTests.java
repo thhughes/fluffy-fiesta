@@ -17,8 +17,6 @@ import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.common.MoveResult;
 import hanto.studentthhughes.HantoGameFactory;
-import hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta.MoveData;
-import hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta.TestHantoCoordinate;
 
 public class DeltaUniqueTests {
 

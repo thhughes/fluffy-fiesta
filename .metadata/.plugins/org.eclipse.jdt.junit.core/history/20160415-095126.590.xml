@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.teststudentthhughes.common.board.pathbuilder" project="Hantothhughes" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0">
+    <testcase name="testPathCalculationAvoidingObstacleLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+    <testcase name="testPathCalculationAvoidingObstacleValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+    <testcase name="testPathBuildFromStraightLineLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+    <testcase name="testPathBuildFromStraightLineValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+    <testcase name="testPathBetweenNeighboringPointsTestLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+    <testcase name="testPathBetweenNeighboringPointsTestValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarFlyingTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0">
+    <testcase name="testPathCalculationAvoidingObstacleLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+    <testcase name="testPathCalculationAvoidingObstacleValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+    <testcase name="testPathBuildFromStraightLineLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+    <testcase name="testPathBuildFromStraightLineValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+    <testcase name="testPathBetweenNeighboringPointsTestLength" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+    <testcase name="testPathBetweenNeighboringPointsTestValues" classname="hanto.teststudentthhughes.common.board.pathbuilder.AStarWalkingTest" time="0.0"/>
+  </testsuite>
+</testrun>

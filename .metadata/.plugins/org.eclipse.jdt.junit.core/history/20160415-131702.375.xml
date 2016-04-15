@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers" project="Hantothhughes" tests="22" started="22" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0">
+    <testcase name="crabWalksTooFarOverObstacleThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksOneHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksTwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabFailsWalksOverObstacletwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+    <testcase name="crabWalksToLocationThatIsOccupied" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.WalkingValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.001">
+    <testcase name="sparrowFlysOverObstacleThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysToLocationThatIsOccupied" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysTooFarOverObstacleThreeHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysOneHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysTwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+    <testcase name="sparrowFlysOverObstacletwoHex" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.FlyingValidatorTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0">
+    <testcase name="testMovingAPieceThatDoesntExist" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+    <testcase name="testMovingAPieceThatIsLocatedInAnOccupiedPlace" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+    <testcase name="testPlacingAPiece" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+    <testcase name="testInvalidError" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+    <testcase name="testMovingAPieceThatIsntTheTypeAtAnOccupiedLocation" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MovePieceOnBoardValidatorTester" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidatorTest" time="0.0">
+    <testcase name="testPlacingPieceOnNonContiguousLocation" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidatorTest" time="0.0"/>
+    <testcase name="testPlacingPieceOnContiguosFromFarAway" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidatorTest" time="0.0"/>
+    <testcase name="testPlacingPieceOnContiguosFromCloseUp" classname="hanto.teststudentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

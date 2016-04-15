@@ -1,0 +1,24 @@
+package hanto.teststudentthhughes.common.turnactionvalidator.movecheckers;
+
+import org.junit.Before;
+
+import hanto.common.HantoException;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
+import hanto.studentthhughes.common.turnactionvalidator.movecheckers.MoveIsContiguousValidator;
+
+public class MoveIsContiguousValidatorTest {
+
+	HantoBoard theBoard;
+	TurnActionValidator tav;
+	
+	@Before
+	public void setup() throws HantoException{
+		theBoard.placeOnBoard(new HantoPieceImpl(HantoPlayerColor.BLUE,HantoPieceType.BUTTERFLY), new HantoCoordinateImpl(0,0));
+		tav = new MoveIsContiguousValidator();
+	}
+}
