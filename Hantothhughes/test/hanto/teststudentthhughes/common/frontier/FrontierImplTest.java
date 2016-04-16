@@ -25,43 +25,43 @@ public class FrontierImplTest {
 	
 	@Test(expected=HantoException.class) //1 
 	public void addNothingToTheFrontier() throws HantoException{
-		theFrontier.addToFrontier(null);
+		theFrontier.canAddToFrontier(null);
 	}
 	
 	@Test(expected=HantoException.class) //1 
 	public void removeNothingFromFrontier() throws HantoException{
-		theFrontier.removeFromFrontier(null);
+		theFrontier.canRemoveFromFrontier(null);
 	}
 	
 	@Test //2
 	public void addSomethingToFrontier() throws HantoException{
-		assertTrue(theFrontier.addToFrontier(C2));
+		assertTrue(theFrontier.canAddToFrontier(C2));
 	}
 	
 	@Test(expected=HantoException.class) //3
 	public void removeSomethingThatsNotInFrontier() throws HantoException{
-		theFrontier.removeFromFrontier(C2);
+		theFrontier.canRemoveFromFrontier(C2);
 	}
 	
 	@Test // 4
 	public void testCheckingANullCoordinateIsInTheFrontier() throws HantoException{
-		assertFalse(theFrontier.inFrontier(null));
+		assertFalse(theFrontier.isInFrontier(null));
 	}
 	
 	@Test // 5
 	public void checkIfACoordinateIsIntheFrontier() throws HantoException{
-		assertTrue(theFrontier.inFrontier(C1));
+		assertTrue(theFrontier.isInFrontier(C1));
 	}
 	
 	@Test //6 
 	public void RemoveACoordinateFromTheFrontier() throws HantoException{
-		assertTrue(theFrontier.removeFromFrontier(C1));
+		assertTrue(theFrontier.canRemoveFromFrontier(C1));
 	}
 	
 	@Test(expected=HantoException.class) //7 
 	public void addSomethingToFrontierThatsAlreadythere() throws HantoException{
-		theFrontier.addToFrontier(C1);
-		theFrontier.addToFrontier(C1);
+		theFrontier.canAddToFrontier(C1);
+		theFrontier.canAddToFrontier(C1);
 	}
 		
 }

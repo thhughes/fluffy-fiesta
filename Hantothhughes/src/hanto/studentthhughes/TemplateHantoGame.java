@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * This files was developed for CS4233: Object-Oriented Analysis & Design. The course was
+ * taken at Worcester Polytechnic Institute. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License
+ * v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package hanto.studentthhughes;
 
 import hanto.common.HantoCoordinate;
@@ -16,6 +23,13 @@ import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 
+/**
+ * This is a template class for the HantoGame. While most of the variation for this
+ * will come in the GameStateEvaluator and TurnActionValidator that are passed into the class,
+ * there are other hooks added to allow the system to continue to expand.
+ * @author Troy
+ *
+ */
 public abstract class TemplateHantoGame implements HantoGame {
 	
 	protected ColorManager hantoColorManager;
@@ -37,12 +51,13 @@ public abstract class TemplateHantoGame implements HantoGame {
 	
 	/**
 	 * Constructor for a hanto game: 
+	 * 
 	 * @param firstMovePlayer
 	 * 					HantoPlayerColor : player who goes first
-	 * @param mValidator
-	 * 					MoveValidator :
-	 * @param bValidator
-	 * 					BoardValidator :
+	 * @param tav
+	 * 					TurnActionValidator :
+	 * @param gse
+	 * 					GameStateEvaluator :
 	 */
 	public TemplateHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse){
 		hantoColorManager = new ColorManager(firstMovePlayer);
@@ -55,15 +70,16 @@ public abstract class TemplateHantoGame implements HantoGame {
 	public MoveResult makeMove(HantoPieceType pieceType, HantoCoordinate from, HantoCoordinate to)
 			throws HantoException {
 
-		if(gameOver) 
+		if(gameOver){
 			handleGameOver();
+		}
 		
 		playerColor = hantoColorManager.getCurrentColor();
 		if(canSurrender && isPlayerSurrendering(pieceType, from, to)){
 			handleSurrender();
 		}else{
-			currentPiece = new HantoPieceImpl(hantoColorManager.getCurrentColor(),pieceType);
-			setCurrentCoordinates(to,from);
+			currentPiece = new HantoPieceImpl(hantoColorManager.getCurrentColor(), pieceType);
+			setCurrentCoordinates(to, from);
 			preActionValidators();
 			checkActionValidators();
 			postActionValidators();
@@ -84,24 +100,33 @@ public abstract class TemplateHantoGame implements HantoGame {
 		return hantoBoard.getFromBoard(where);
 	}
 	
-	
+	/**
+	 * Override this to add variety in future implementations if needed
+	 */	
 	protected void postGameStateEvaluation() {
-		// TODO Override this to add variety in future implementations if needed
+		//  Override this to add variety in future implementations if needed
 		
 	}
-
+	/**
+	 * Override this to add variety in future implementations if needed
+	 */
 	protected void preGameStateEvaluation() {
-		// TODO Override this to add variety in future implementations if needed
+		//  Override this to add variety in future implementations if needed
 		
 	}
-
+	/**
+	 * Override this to add variety in future implementations if needed
+	 */
 	protected void postActionValidators() {
-		// TODO Override this to add variety in future implementations if needed
+		//  Override this to add variety in future implementations if needed
 		
 	}
 
+	/**
+	 * Override this to add variety in future implementations if needed
+	 */
 	protected void preActionValidators() {
-		// TODO Override this to add variety in future implementations if needed
+		
 		
 	}
 
@@ -109,6 +134,7 @@ public abstract class TemplateHantoGame implements HantoGame {
 	 * This method checks all the game state evaluators to build a 
 	 * game state outcome for the action taken by this player
 	 * @return
+	 * 			MoveResult : that represents the result of the board state
 	 */
 	protected MoveResult checkGameStateEvaluators(){
 		MoveResult result;
@@ -124,18 +150,20 @@ public abstract class TemplateHantoGame implements HantoGame {
 	 * This function places a piece on the board.
 	 * 
 	 * @throws HantoException
-	 * 					If there is an error in the board implementation when trying to place the piece. 
+	 * 					If there is an error in the board 
+	 * implementation when trying to place the piece. 
 	 */
 	private void updateInternalState() throws HantoException
-	{		
+	{
 		moveCounter.incrementNumberMoves(playerColor);
 		updateBoardState();
 		hantoColorManager.toggleCurrentColor();
 	}
 	
 	/**
-	 * This function checks if the action type is a place or a move. If it is place it updates the board
-	 * by placing the 'safeTo' piece on the board. If it is a move, it removes the 'safeFrom' place and
+	 * This function checks if the action type is a place or a move. 
+	 * If it is place it updates the board by placing the 'safeTo' 
+	 * piece on the board. If it is a move, it removes the 'safeFrom' place and
 	 * places the 'safeTo' piece on the board. 
 	 * @throws HantoException
 	 */
@@ -151,7 +179,8 @@ public abstract class TemplateHantoGame implements HantoGame {
 	}
 	
 	/**
-	 * This method checks all of the action validators to ensure that the move that is about to be made is a valid move. 
+	 * This method checks all of the action validators to
+	 * ensure that the move that is about to be made is a valid move. 
 	 * 
 	 * @throws HantoException
 	 * 			Throws an exception if the action that the player wants to make is illegal.
@@ -175,15 +204,18 @@ public abstract class TemplateHantoGame implements HantoGame {
 	 * @throws HantoException
 	 * 				Throws exception if the 'to' location is null
 	 */
-	protected void setCurrentCoordinates(HantoCoordinate to, HantoCoordinate from) throws HantoException {
+	protected void setCurrentCoordinates(HantoCoordinate to,
+			HantoCoordinate from) throws HantoException {
 		safeTo = null;
 		safeFrom = null;
 		
-		if(to == null)
+		if(to == null){
 			throw new HantoException("Cannot do anything with a null to location");
+		}
 		safeTo = new HantoCoordinateImpl(to);
-		if(from != null)
+		if(from != null){
 			safeFrom = new HantoCoordinateImpl(from);
+		}
 		
 		
 	}
@@ -212,7 +244,8 @@ public abstract class TemplateHantoGame implements HantoGame {
 	 * @return
 	 * 			Boolean : True if the player is surrendering
 	 */
-	protected boolean isPlayerSurrendering(HantoPieceType pieceType, HantoCoordinate from, HantoCoordinate to) {
+	protected boolean isPlayerSurrendering(HantoPieceType pieceType, 
+			HantoCoordinate from, HantoCoordinate to) {
 		return (pieceType == null) && (from == null) && (to == null);
 	}
 

@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * This files was developed for CS4233: Object-Oriented Analysis & Design. The course was
+ * taken at Worcester Polytechnic Institute. All rights reserved. This program and the
+ * accompanying materials are made available under the terms of the Eclipse Public License
+ * v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *******************************************************************************/
 package hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder;
 
 import java.util.Comparator;
@@ -12,16 +19,22 @@ import hanto.common.HantoCoordinate;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 
+/**
+ * This is a template for the search algorithm aStar. The notable function to get 
+ * overridden in this the getNeighbors function. By overloading it it's possible to
+ * Drastically change how the algorithm searches. 
+ * @author Troy
+ *
+ */
 public abstract class AStarTemplate implements PathBuilder{
 
 	HantoCoordinateImpl start;
 	HantoCoordinateImpl end;
-	public AStarTemplate(){
-		
-	}
+
 	
 	
-	public List<HantoCoordinate> getPath(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end){
+	public List<HantoCoordinate> getPath(HantoBoard theBoard, 
+			HantoCoordinate start, HantoCoordinate end){
 		this.start = new HantoCoordinateImpl(start);
 		this.end = new HantoCoordinateImpl(end);
 		return makeAStarPath(theBoard, start, end);
@@ -38,18 +51,25 @@ public abstract class AStarTemplate implements PathBuilder{
 	 * @param end
 	 * 				HantoCoordinate representing the end of the search
 	 * @return
-	 * 			List<HantoCoordinate> where the first entry is the start and the last entry is the end
+	 * 			List<HantoCoordinate> where the first entry is the 
+	 * 			start and the last entry is the end
 	 */
-	protected List<HantoCoordinate> makeAStarPath(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end) {
-		Map<HantoCoordinateImpl, HantoCoordinateImpl> aStarTree = aStar(theBoard,start, end);
-		return pathFromTree(aStarTree, new HantoCoordinateImpl(start), new HantoCoordinateImpl(end));
+	protected List<HantoCoordinate> makeAStarPath(HantoBoard theBoard, 
+			HantoCoordinate start, HantoCoordinate end) {
+		
+		final Map<HantoCoordinateImpl, HantoCoordinateImpl> aStarTree = 
+				aStar(theBoard, start, end);
+		
+		return pathFromTree(aStarTree, 
+				new HantoCoordinateImpl(start), new HantoCoordinateImpl(end));
 	}
 
 	/**
 	 * Converts an aStar tree to a path
 	 * 
 	 * @param aStarTree
-	 * 				Map<HantoCoordinateImpl, HantoCoordinateImpl> where it's structured as to<key> from<value>
+	 * 				Map<HantoCoordinateImpl, HantoCoordinateImpl>
+	 *  where it's structured as to<key> from<value>
 	 * @param start
 	 * 				HantoCoordinateImpl
 	 * @param end
@@ -61,12 +81,12 @@ public abstract class AStarTemplate implements PathBuilder{
 			Map<HantoCoordinateImpl, HantoCoordinateImpl> aStarTree, HantoCoordinateImpl start,
 			HantoCoordinateImpl end) {
 		
-		List<HantoCoordinate> path = new LinkedList<HantoCoordinate>();
+		final List<HantoCoordinate> path = new LinkedList<HantoCoordinate>();
 		HantoCoordinateImpl current = end;
 		path.add(current);
 		
 		while(!current.equals(start)){
-			path.add(0,aStarTree.get(current));
+			path.add(0, aStarTree.get(current));
 			current = aStarTree.get(current);
 		}
 		
@@ -85,13 +105,17 @@ public abstract class AStarTemplate implements PathBuilder{
 	 * 			Map<HantoCoordinateImpl, HantoCoordinateImpl> Stored as to->from, meaning if 
 	 * 			the system travels from a->b, b will be the key for a. 
 	 */
-	protected Map<HantoCoordinateImpl, HantoCoordinateImpl> aStar(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end) {
+	protected Map<HantoCoordinateImpl, HantoCoordinateImpl> aStar(
+			HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end) {
 		
-		PriorityQueue<Node> frontier = makePriorityQueue();
+		final PriorityQueue<Node> frontier = makePriorityQueue();
 		frontier.add(new Node(new Integer(0), new HantoCoordinateImpl(start)));
 		
-		Map<HantoCoordinateImpl, HantoCoordinateImpl> came_from = new HashMap<HantoCoordinateImpl, HantoCoordinateImpl>();
-		Map<HantoCoordinateImpl, Integer> cost_so_far = new HashMap<HantoCoordinateImpl, Integer>();
+		final Map<HantoCoordinateImpl, HantoCoordinateImpl> came_from = 
+				new HashMap<HantoCoordinateImpl, HantoCoordinateImpl>();
+		
+		final Map<HantoCoordinateImpl, Integer> cost_so_far = 
+				new HashMap<HantoCoordinateImpl, Integer>();
 		
 		came_from.put(new HantoCoordinateImpl(start), null);
 		cost_so_far.put(new HantoCoordinateImpl(start), new Integer(0));
@@ -128,9 +152,10 @@ public abstract class AStarTemplate implements PathBuilder{
 	 * @return
 	 * 			Queue<HantoCoordinateImpl> of nodes that are not occupied.
 	 */
-	protected Queue<HantoCoordinateImpl> getLegalNeighbors(HantoBoard theBoard, Queue<HantoCoordinate> neighbors) {
+	protected Queue<HantoCoordinateImpl> getLegalNeighbors(
+			HantoBoard theBoard, Queue<HantoCoordinate> neighbors) {
 		
-		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
+		final Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc:  neighbors){
 			if(!theBoard.isLocationOccupied(hc)){
 				implList.add(new HantoCoordinateImpl(hc));
@@ -144,6 +169,7 @@ public abstract class AStarTemplate implements PathBuilder{
 	 * Factory method for a Priority Queue of Nodes
 	 * 
 	 * @return
+	 * 			PriorityQueue<Node> that represents the frontier of the search
 	 */
 	protected PriorityQueue<Node> makePriorityQueue(){
 		return new PriorityQueue<Node>(10, makeComparator());
@@ -152,6 +178,7 @@ public abstract class AStarTemplate implements PathBuilder{
 	/**
 	 * Factory method for a node comparator
 	 * @return
+	 * 			Comparator<Node> : to allow the system to compare two nodes
 	 */
 	protected Comparator<Node> makeComparator() {
 		return new Comparator<Node>(){
@@ -168,10 +195,17 @@ public abstract class AStarTemplate implements PathBuilder{
 	 *
 	 */
 	class Node{
-		private Integer priority;
-		private HantoCoordinateImpl location;
+		private final Integer priority;
+		private final HantoCoordinateImpl location;
 		
-		public Node(Integer p, HantoCoordinateImpl l){
+		/**
+		 * constructor
+		 * @param p
+		 * 			Integer : priority of this node
+		 * @param l
+		 * 			HantoCoordinateImpl : location 
+		 */
+		Node(Integer p, HantoCoordinateImpl l){
 			priority = p;
 			location = l;
 		}

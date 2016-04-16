@@ -24,7 +24,7 @@ import hanto.common.HantoCoordinate;
  */
 public class HantoCoordinateImpl implements HantoCoordinate
 {
-	final private int x, y;
+	private final int x, y;
 	
 	/**
 	 * The only constructor.
@@ -65,16 +65,16 @@ public class HantoCoordinateImpl implements HantoCoordinate
 	 * 			Queue<HantoCoordinates> surrounding this coordinat
 	 */
 	public Queue<HantoCoordinate> getNeighbors(){
-		Queue<HantoCoordinate> neighbors = new LinkedList<HantoCoordinate>();
-		int startX = x;
-		int startY = y;
+		final Queue<HantoCoordinate> neighbors = new LinkedList<HantoCoordinate>();
+		final int startX = x;
+		final int startY = y;
 		
-		neighbors.add(new HantoCoordinateImpl(startX,startY+1));
-		neighbors.add(new HantoCoordinateImpl(startX+1,startY));
-		neighbors.add(new HantoCoordinateImpl(startX,startY-1));
-		neighbors.add(new HantoCoordinateImpl(startX-1,startY));
-		neighbors.add(new HantoCoordinateImpl(startX-1,startY+1));
-		neighbors.add(new HantoCoordinateImpl(startX+1,startY-1));
+		neighbors.add(new HantoCoordinateImpl(startX, startY + 1));
+		neighbors.add(new HantoCoordinateImpl(startX + 1, startY));
+		neighbors.add(new HantoCoordinateImpl(startX, startY - 1));
+		neighbors.add(new HantoCoordinateImpl(startX - 1, startY));
+		neighbors.add(new HantoCoordinateImpl(startX - 1, startY + 1));
+		neighbors.add(new HantoCoordinateImpl(startX + 1, startY - 1));
 		
 		return neighbors;
 	}

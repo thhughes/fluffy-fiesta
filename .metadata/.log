@@ -11259,3 +11259,24 @@ java.lang.NullPointerException
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
+
+!ENTRY com.instantiations.common.core 2 0 2016-04-15 18:16:46.890
+!MESSAGE This version of CodePro Analytix and PlusPak was compiled for Eclipse 3.6 but is running on Eclipse 3.11.
+This version of EclipsePro Audit was compiled for Eclipse 3.6 but is running on Eclipse 3.11.
+This version of Shared was compiled for Eclipse 3.6 but is running on Eclipse 3.11.
+
+
+!ENTRY org.eclipse.ui 4 0 2016-04-15 19:16:27.954
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.ui 4 0 2016-04-15 19:16:46.312
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.ui 4 0 2016-04-15 19:16:49.922
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException

@@ -210,3 +210,7 @@
 1460750968498	Copy compilation unit
 1460751252074	Delete element
 1460751256480	Delete element
+1460762127522	Rename method 'hexIsValidForRed'
+1460762146934	Rename method 'addToFrontier'
+1460762154903	Rename method 'inFrontier'
+1460762164941	Rename method 'removeFromFrontier'

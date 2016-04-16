@@ -7,9 +7,8 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks;
 
-import java.util.Collection;
+
 import java.util.LinkedList;
-import java.util.Map;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
@@ -49,7 +48,8 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 	protected void handlePlaceCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to) {
 		validResult =  validResult && isValidPieceType(piece);
-		validResult =  validResult && pieceIsOnlyTouchingFriendlyPieces(theBoard,counter,piece.getColor(),to);
+		validResult =  validResult && 
+				pieceIsOnlyTouchingFriendlyPieces(theBoard, counter, piece.getColor(), to);
 		
 	}
 	
@@ -60,7 +60,7 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 		
 		validResult = validResult && (theBoard.isLocationOccupied(from));
 		validResult = validResult && !(theBoard.isLocationOccupied(to));
-		validResult = validResult && (isSameTypeAndColorOfPieceOnBoard(theBoard,piece,from));
+		validResult = validResult && (isSameTypeAndColorOfPieceOnBoard(theBoard, piece, from));
 		validResult = validResult && checkIfMoveIsToContiguousPeice(theBoard, to, from);
 		
 	
@@ -77,9 +77,12 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 	 * @param from
 	 * 				HantoPieceImpl : the location to check
 	 * @return
-	 * 			Boolean : True if the piece being placed is the same type and color as the piece on the board
+	 * 			Boolean : True if the piece being placed is the same type 
+	 * and color as the piece on the board
 	 */
-	private boolean isSameTypeAndColorOfPieceOnBoard(HantoBoard theBoard, HantoPiece piece, HantoCoordinateImpl from) {
+	private boolean isSameTypeAndColorOfPieceOnBoard(HantoBoard theBoard, 
+			HantoPiece piece, HantoCoordinateImpl from) {
+		
 		return theBoard.getFromBoard(from).getType() == piece.getType() && 
 				theBoard.getFromBoard(from).getColor() == piece.getColor();
 	}
@@ -104,7 +107,7 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 		boolean result = true;
 		
 		if(counter.bothPlayersHaveGoneMoreThanOnce()){
-			Queue<HantoPlayerColor> touchingPlayers = getOccupiedNeighborColors(theBoard, to);
+			final Queue<HantoPlayerColor> touchingPlayers = getOccupiedNeighborColors(theBoard, to);
 			
 			for(HantoPlayerColor hpc : touchingPlayers){
 				if(hpc != color){
@@ -127,8 +130,9 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 	 * @return
 	 * 		Queue<HantoPlayerColor> of the neighbors of the toCheck piece
 	 */
-	private Queue<HantoPlayerColor> getOccupiedNeighborColors(HantoBoard theBoard, HantoCoordinateImpl toCheck) {
-		Queue<HantoPlayerColor> touchingPlayers = new LinkedList<HantoPlayerColor>();
+	private Queue<HantoPlayerColor> getOccupiedNeighborColors(HantoBoard theBoard, 
+			HantoCoordinateImpl toCheck) {
+		final Queue<HantoPlayerColor> touchingPlayers = new LinkedList<HantoPlayerColor>();
 		
 		for(HantoCoordinate hc : toCheck.getNeighbors()){
 			if(theBoard.isLocationOccupied(hc)){
@@ -169,7 +173,7 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 			HantoCoordinateImpl oldLocation) {
 		
 		boolean result = false;
-		Queue<HantoCoordinate> neighbors = toCheck.getNeighbors();
+		final Queue<HantoCoordinate> neighbors = toCheck.getNeighbors();
 		
 		for(HantoCoordinate hc : neighbors){
 			if(theBoard.isLocationOccupied(new HantoCoordinateImpl(hc))){

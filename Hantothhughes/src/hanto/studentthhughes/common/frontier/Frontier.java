@@ -26,7 +26,7 @@ public interface Frontier {
 	 * 			Boolean : True if the object was correctly placed on the frontier
 	 * @throws HantoException
 	 */
-	boolean addToFrontier(HantoCoordinate place) throws HantoException;
+	boolean canAddToFrontier(HantoCoordinate place) throws HantoException;
 
 
 	/**
@@ -37,7 +37,7 @@ public interface Frontier {
 	 * @return
 	 * 			Boolean : True if there is something on the frontier.
 	 */
-	boolean inFrontier(HantoCoordinate place);
+	boolean isInFrontier(HantoCoordinate place);
 	
 	
 	/**
@@ -49,6 +49,6 @@ public interface Frontier {
 	 * 			Boolean : True if it was successfuly removed.
 	 * @throws HantoException
 	 */
-	boolean removeFromFrontier(HantoCoordinate place) throws HantoException;
+	boolean canRemoveFromFrontier(HantoCoordinate place) throws HantoException;
 	
 }

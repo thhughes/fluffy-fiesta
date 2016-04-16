@@ -17,6 +17,9 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 
 /**
+ *This is an abstract TurnActionValidator. This is to allow the turn validators
+ *to be templated out based off if the turn is a 'place' action or a 
+ *'move' action.
  * @author Troy
  *
  */
@@ -31,15 +34,19 @@ public abstract class AbsTurnActionValidator implements TurnActionValidator {
 	 * @see hanto.studentthhughes.common.movevalidator.MoveValidator#isValidMove(hanto.studentthhughes.common.hantoboard.HantoBoard, hanto.common.HantoPiece, hanto.studentthhughes.common.movecounter.MoveCounter, hanto.common.HantoCoordinate, hanto.common.HantoCoordinate)
 	 */
 	@Override
-	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
-			HantoCoordinate from) {
+	public boolean isValidMove(HantoBoard theBoard, 
+			HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		playerColor = piece.getColor();
 		validResult = true;
 		
 		if(isMoveAPlace(from)){
-			handlePlaceCheck(theBoard,piece,new MoveCounterImpl(counter),new HantoCoordinateImpl(to));
+			handlePlaceCheck(theBoard, piece,
+					new MoveCounterImpl(counter), new HantoCoordinateImpl(to));
 		}else{
-			handleMoveCheck(theBoard,piece,new MoveCounterImpl(counter),new HantoCoordinateImpl(to), new HantoCoordinateImpl(from));
+			handleMoveCheck(theBoard, piece,
+					new MoveCounterImpl(counter),
+					new HantoCoordinateImpl(to), 
+					new HantoCoordinateImpl(from));
 		}
 		return validResult;
 	}
@@ -93,6 +100,7 @@ public abstract class AbsTurnActionValidator implements TurnActionValidator {
 	 * @param from
 	 * 				HantoCoordinate of the location that the 
 	 * @return
+	 * 			Boolean : true if the piece is null, thus showing that this is a place move
 	 */
 	public boolean isMoveAPlace(HantoCoordinate from)
 	{

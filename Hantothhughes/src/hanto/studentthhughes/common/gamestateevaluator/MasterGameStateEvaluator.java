@@ -15,6 +15,11 @@ import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 import hanto.studentthhughes.common.movecounter.MoveCounter;
 
 /**
+ * This is a master gamestate evaluator. This means that the evaluator should be 
+ * instantiated as a MasterGameStateEvaluator so that the correct evaluators
+ * can be added to the evaluator so that the master 'getOutcome' function 
+ * can be run over a list of evaluators. 
+ * 
  * @author Troy
  *
  */
@@ -43,7 +48,7 @@ public class MasterGameStateEvaluator implements GameStateEvaluator {
 	 */
 	@Override
 	public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
-		Queue<MoveResult> results = new LinkedList<MoveResult>();
+		final Queue<MoveResult> results = new LinkedList<MoveResult>();
 		
 		for(GameStateEvaluator validator: validatorList){
 			results.add(validator.getOutcome(theBoard, counter));

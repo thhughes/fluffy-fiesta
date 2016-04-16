@@ -38,7 +38,8 @@ public class HantoTurnActionValidatorFactory {
 	int max_move_dist_sparrow;
 	int max_move_dist_crab;
 	
-	private static final HantoTurnActionValidatorFactory instance = new HantoTurnActionValidatorFactory();
+	private static final HantoTurnActionValidatorFactory instance = 
+			new HantoTurnActionValidatorFactory();
 	
 	
 	private HantoTurnActionValidatorFactory(){
@@ -57,10 +58,10 @@ public class HantoTurnActionValidatorFactory {
 	 * 			MoveValidator : of the hantoGameId Passed
 	 */
 	public TurnActionValidator makeHantoValidator(HantoGameID gameID){
-		Queue<HantoPieceType> valid = buildValidList(gameID);
+		final Queue<HantoPieceType> valid = buildValidList(gameID);
 		setPieceMaximumAndMovementDistance(gameID);
 		
-		MasterActionValidator mav = new MasterActionValidator();
+		final MasterActionValidator mav = new MasterActionValidator();
 		
 		switch (gameID) {
 			case ALPHA_HANTO:
@@ -69,9 +70,9 @@ public class HantoTurnActionValidatorFactory {
 				break;
 			case GAMMA_HANTO:
 				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
-						HantoPieceType.BUTTERFLY,max_num_butterfly));
+						HantoPieceType.BUTTERFLY, max_num_butterfly));
 				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
-						HantoPieceType.SPARROW,max_num_sparrow));
+						HantoPieceType.SPARROW, max_num_sparrow));
 				
 				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.BUTTERFLY,
 						new WalkingValidator(max_move_dist_butterfly)));
@@ -86,11 +87,11 @@ public class HantoTurnActionValidatorFactory {
 			case DELTA_HANTO:
 				
 				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
-						HantoPieceType.BUTTERFLY,max_num_butterfly));
+						HantoPieceType.BUTTERFLY, max_num_butterfly));
 				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
-						HantoPieceType.SPARROW,max_num_sparrow));
+						HantoPieceType.SPARROW, max_num_sparrow));
 				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
-						HantoPieceType.CRAB,max_num_crab));
+						HantoPieceType.CRAB, max_num_crab));
 				
 				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.CRAB,
 						new WalkingValidator(max_move_dist_crab)));
@@ -111,7 +112,7 @@ public class HantoTurnActionValidatorFactory {
 	}
 
 	private Queue<HantoPieceType> buildValidList(HantoGameID gameID) {
-		Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
+		final Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
 		
 		switch(gameID){
 		case GAMMA_HANTO:
@@ -125,7 +126,8 @@ public class HantoTurnActionValidatorFactory {
 			valid.add(HantoPieceType.BUTTERFLY);
 			valid.add(HantoPieceType.CRAB);
 			break;
-		default:	
+		default:
+			break;
 		}
 		return valid;
 	}

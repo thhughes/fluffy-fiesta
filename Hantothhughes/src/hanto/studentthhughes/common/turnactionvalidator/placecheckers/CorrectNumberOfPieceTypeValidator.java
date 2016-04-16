@@ -51,8 +51,8 @@ public class CorrectNumberOfPieceTypeValidator extends AbsTurnActionValidator im
 	 * (non-Javadoc)
 	 * @see hanto.studentthhughes.common.movevalidator.AbsMoveValidator#isValidMove(hanto.studentthhughes.common.hantoboard.HantoBoard, hanto.common.HantoPiece, hanto.studentthhughes.common.movecounter.MoveCounter, hanto.common.HantoCoordinate, hanto.common.HantoCoordinate)
 	 */
-	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
-			HantoCoordinate from) {
+	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, 
+			MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		if(piece.getType() == pieceType){
 			validResult = super.isValidMove(theBoard, piece, counter, to, from);
 		}
@@ -63,9 +63,9 @@ public class CorrectNumberOfPieceTypeValidator extends AbsTurnActionValidator im
 	public void handlePlaceCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to){
 		
-		int numberOfPieces = countPieceTypesOnBoard(theBoard);
+		final int numberOfPieces = countPieceTypesOnBoard(theBoard);
 		
-		validResult = (numberOfPieces+1 <= maxNumberOfPiece && piece.getType() == pieceType);
+		validResult = (numberOfPieces + 1 <= maxNumberOfPiece && piece.getType() == pieceType);
 	}
 
 
@@ -78,7 +78,8 @@ public class CorrectNumberOfPieceTypeValidator extends AbsTurnActionValidator im
 	 * 			int : number of 
 	 */
 	private int countPieceTypesOnBoard(HantoBoard theBoard) {
-		Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(playerColor).values();
+		final Collection<HantoPiece> playerPieces = 
+				theBoard.getPlayerPieces(playerColor).values();
 		int numberOfPieces = 0;
 		
 		for(HantoPiece hp : playerPieces){

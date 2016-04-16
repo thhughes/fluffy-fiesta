@@ -35,7 +35,7 @@ public class MasterActionValidator implements TurnActionValidator {
 	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to, HantoCoordinate from) {
 		boolean result = true;
 		for(TurnActionValidator mv : validatorList){
-			if(!mv.isValidMove(theBoard, piece, counter, to,from)){
+			if(!mv.isValidMove(theBoard, piece, counter, to, from)){
 				result = false;
 				try{
 					mv.invalidError();

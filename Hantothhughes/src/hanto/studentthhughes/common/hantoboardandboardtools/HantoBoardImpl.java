@@ -42,14 +42,16 @@ public class HantoBoardImpl implements HantoBoard {
 	 */
 	@Override
 	public boolean placeOnBoard(HantoPiece piece, HantoCoordinate where) throws HantoException {
-		if (piece == null) throw new HantoException("Board Exception: Cannot place null on board");
-		if (where == null) throw new HantoException("Board Exception: Cannot place piece at null on board");
-		HantoCoordinateImpl cleanPiece = new HantoCoordinateImpl(where);
+		if (piece == null) throw new HantoException("Board Exception: "
+				+ "Cannot place null on board");
+		if (where == null) throw new HantoException("Board Exception: "
+				+ "Cannot place piece at null on board");
+		final HantoCoordinateImpl cleanPiece = new HantoCoordinateImpl(where);
 		
 		if(theBoard.containsKey(cleanPiece)){
 			theBoard.remove(cleanPiece);
 		}
-		Map<HantoCoordinate,HantoPiece> playerBoard = getPlayerPieces(piece.getColor());
+		final Map<HantoCoordinate,HantoPiece> playerBoard = getPlayerPieces(piece.getColor());
 		if(playerBoard.containsKey(cleanPiece)){
 			playerBoard.remove(cleanPiece);
 		}
@@ -86,11 +88,16 @@ public class HantoBoardImpl implements HantoBoard {
 
 	@Override
 	public boolean removeFromBoard(HantoCoordinate where) throws HantoException {
-		if (where == null) throw new HantoException("Board Exception: Cannot get piece at null on board");
-		if (theBoard.isEmpty()) throw new HantoException("Board Exception: Cannot remove from empty board");
-		if (!theBoard.containsKey(new HantoCoordinateImpl(where))) throw new HantoException("Board Exception: Cannot remove piece that's not on board");
+		if (where == null) throw new HantoException("Board Exception: "
+				+ "Cannot get piece at null on board");
+		if (theBoard.isEmpty()) throw new HantoException("Board Exception: "
+				+ "Cannot remove from empty board");
+		if (!theBoard.containsKey(new HantoCoordinateImpl(where))) {
+			throw new HantoException("Board Exception: Cannot remove piece that's not on board");
+		}
 		
-		Map<HantoCoordinate, HantoPiece> playerBoard = getPlayerPieces(theBoard.get(new HantoCoordinateImpl(where)).getColor());
+		final Map<HantoCoordinate, HantoPiece> playerBoard = 
+				getPlayerPieces(theBoard.get(new HantoCoordinateImpl(where)).getColor());
 		
 		theBoard.remove(new HantoCoordinateImpl(where));
 		playerBoard.remove(new HantoCoordinateImpl(where));
@@ -99,16 +106,21 @@ public class HantoBoardImpl implements HantoBoard {
 
 	@Override
 	public Map<HantoCoordinate, HantoPiece> getPlayerPieces(HantoPlayerColor color) {
+		Map<HantoCoordinate, HantoPiece> result = null;
 		if(color == null){
-			return simpleHCVersionOfTheBoard();
+			result = simpleHCVersionOfTheBoard();
 		}else if(color == HantoPlayerColor.RED){
-			return redBoard;
+			result = redBoard;
+		}else{
+			result = blueBoard;
 		}
-		return blueBoard;
+		return result;
 	}
 
 	private Map<HantoCoordinate, HantoPiece> simpleHCVersionOfTheBoard() {
-		Map<HantoCoordinate, HantoPiece> simpleMap = new HashMap<HantoCoordinate, HantoPiece>();
+		final Map<HantoCoordinate, HantoPiece> simpleMap = 
+				new HashMap<HantoCoordinate, HantoPiece>();
+		
 		for(HantoCoordinateImpl hci : theBoard.keySet())
 		{
 			simpleMap.put(hci, theBoard.get(hci));

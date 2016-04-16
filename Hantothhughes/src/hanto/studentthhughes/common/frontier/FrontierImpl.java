@@ -33,7 +33,7 @@ public class FrontierImpl implements Frontier {
 	 * @see hanto.studentThhughes.common.frontier.Frontier#inFrontier(hanto.common.HantoCoordinate)
 	 */
 	@Override
-	public boolean inFrontier(HantoCoordinate place) {
+	public boolean isInFrontier(HantoCoordinate place) {
 		boolean result = false;
 		try {
 			if (place == null) throw new HantoException("Frontier Exception: cannot add null to frontier");
@@ -48,18 +48,18 @@ public class FrontierImpl implements Frontier {
 	 * @see hanto.studentThhughes.common.frontier.Frontier#removeFromFrontier(hanto.common.HantoCoordinate)
 	 */
 	@Override
-	public boolean removeFromFrontier(HantoCoordinate place) throws HantoException {
+	public boolean canRemoveFromFrontier(HantoCoordinate place) throws HantoException {
 		if (place == null) throw new HantoException("Frontier Exception: cannot add null to frontier");
-		if (!inFrontier(new HantoCoordinateImpl(place))) throw new HantoException("Frontier Exception: coordinate is not already in the frontier");
+		if (!isInFrontier(new HantoCoordinateImpl(place))) throw new HantoException("Frontier Exception: coordinate is not already in the frontier");
 		frontier.remove(new HantoCoordinateImpl(place));
 		
 		return true;
 	}
 
 	@Override
-	public boolean addToFrontier(HantoCoordinate place) throws HantoException {
+	public boolean canAddToFrontier(HantoCoordinate place) throws HantoException {
 		if (place == null) throw new HantoException("Frontier Exception: cannot add null to frontier");
-		if (inFrontier(new HantoCoordinateImpl(place))) throw new HantoException("Frontier Exception: coordinate is already in the frontier");
+		if (isInFrontier(new HantoCoordinateImpl(place))) throw new HantoException("Frontier Exception: coordinate is already in the frontier");
 		frontier.add(new HantoCoordinateImpl(place));
 		return true;
 	}

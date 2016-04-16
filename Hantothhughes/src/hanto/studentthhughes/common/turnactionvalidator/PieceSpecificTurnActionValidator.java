@@ -7,13 +7,12 @@
  *******************************************************************************/
 package hanto.studentthhughes.common.turnactionvalidator;
 
-import hanto.common.HantoCoordinate;
+
 import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
-import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 
 /**
@@ -29,6 +28,14 @@ public class PieceSpecificTurnActionValidator extends AbsTurnActionValidator imp
 	HantoPieceType type;
 	TurnActionValidator pieceMoveValidator;
 	
+	/**
+	 * Constructor
+	 * @param toCheck
+	 * 			HantoPieceType to check
+	 * @param toValidate
+	 * 			TurnActionValidator to evaluate when it's the peices turn
+	 * 
+	 */
 	public PieceSpecificTurnActionValidator(HantoPieceType toCheck, TurnActionValidator toValidate){
 		type = toCheck;
 		pieceMoveValidator = toValidate;

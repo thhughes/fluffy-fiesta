@@ -34,10 +34,18 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 	int maxDistance;
 	PathBuilder astarWalker = new AStarWalking();
 	
+	/**
+	 * Default constructor for maximum distance of one
+	 */
 	public WalkingValidator(){
 		maxDistance = 1;
 	}
 
+	/**
+	 * Constructor
+	 * @param maxDist
+	 * 				int : maximum distance that can be walked
+	 */
 	public WalkingValidator(int maxDist)
 	{
 		maxDistance = maxDist;
@@ -51,9 +59,12 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 	protected void handleMoveCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		if(!theBoard.isLocationOccupied(to)){
-			List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
-			validResult =  checkPathForRoomToWalk(theBoard, path) && 
-					((path.size()-1) <= maxDistance);   // NOTE: PATH INCLUDES THE STARTING NODE, so must remove it to get 'moves
+			final List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
+			
+			validResult =  checkPathForRoomToWalk(theBoard, path);
+			
+			// NOTE: PATH INCLUDES STARTING NODE : hence '-1'
+			validResult = validResult  && ((path.size() - 1) <= maxDistance);  
 		}else{
 			validResult = false;
 		}
@@ -73,8 +84,10 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 		boolean result = true;
 		
 		for(int i = 0; i < (path.size() - 1); i++){
-			Queue<HantoCoordinateImpl> sharedList = getSharedPoints(new HantoCoordinateImpl(path.get(i)),
-																	new HantoCoordinateImpl(path.get(i+1)));
+			final Queue<HantoCoordinateImpl> sharedList = 
+					getSharedPoints(new HantoCoordinateImpl(path.get(i)), 
+							new HantoCoordinateImpl(path.get(i + 1)));
+			
 			result = result && containsEmptySharedSpace(theBoard, sharedList);
 		}
 		return result;
@@ -110,10 +123,17 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 	 * @return
 	 * 			Queue<HantoCoordinateImpl> of the shared neighbors between to and from
 	 */
-	private Queue<HantoCoordinateImpl> getSharedPoints(HantoCoordinateImpl to, HantoCoordinateImpl from) {
-		Queue<HantoCoordinateImpl> sharedPoints = new LinkedList<HantoCoordinateImpl>();
-		Queue<HantoCoordinateImpl> toNeighbors = toImplList(to.getNeighbors());
-		Queue<HantoCoordinateImpl> fromNeighbors = toImplList(from.getNeighbors());
+	private Queue<HantoCoordinateImpl> getSharedPoints(HantoCoordinateImpl to, 
+			HantoCoordinateImpl from) {
+		
+		final Queue<HantoCoordinateImpl> sharedPoints = 
+				new LinkedList<HantoCoordinateImpl>();
+		
+		final Queue<HantoCoordinateImpl> toNeighbors = 
+				toImplList(to.getNeighbors());
+		
+		final Queue<HantoCoordinateImpl> fromNeighbors = 
+				toImplList(from.getNeighbors());
 		
 		for(HantoCoordinateImpl toHC : toNeighbors){
 			for(HantoCoordinateImpl fromHC : fromNeighbors){
@@ -135,7 +155,9 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 	 * 			Queue<HantoCoordinateImpl> 
 	 */
 	private Queue<HantoCoordinateImpl> toImplList(Queue<HantoCoordinate> neighbors) {
-		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
+		final Queue<HantoCoordinateImpl> implList = 
+				new LinkedList<HantoCoordinateImpl>();
+		
 		for(HantoCoordinate hc : neighbors){
 			implList.add(new HantoCoordinateImpl(hc));
 		}

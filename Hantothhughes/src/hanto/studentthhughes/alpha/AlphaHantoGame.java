@@ -52,7 +52,7 @@ public class AlphaHantoGame implements HantoGame
 			}
 			blueButterflyHex = to;
 		} else {
-			if (!hexIsValidForRed(to)) {
+			if (!isHexIsValidForRed(to)) {
 				throw new HantoException("Red cannot place a piece in that hex");
 			}
 			redButterflyHex = to;
@@ -69,7 +69,7 @@ public class AlphaHantoGame implements HantoGame
 	 * @param coordinate the coordinate to check
 	 * @return true if the coordinate is valid for Red
 	 */
-	private boolean hexIsValidForRed(HantoCoordinateImpl coordinate)
+	private boolean isHexIsValidForRed(HantoCoordinateImpl coordinate)
 	{
 		return (coordinate.equals(new HantoCoordinateImpl(0, 1))
 				|| coordinate.equals(new HantoCoordinateImpl(1, 0))

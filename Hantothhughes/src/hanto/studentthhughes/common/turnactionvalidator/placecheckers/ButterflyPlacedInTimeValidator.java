@@ -23,8 +23,8 @@ import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 
 /**
  * This class is a validator that will check to see if there are enough butterflies for 
- * a given player by a given turn. This check should only run when there is a place occuring, and will
- * return true when there is a move. 
+ * a given player by a given turn. This check should only run when there is a 
+ * place occuring, and will return true when there is a move. 
  *  
  * @author Troy
  *
@@ -38,7 +38,7 @@ public class ButterflyPlacedInTimeValidator extends AbsTurnActionValidator imple
 	 * 					int : max number of turns before you need a butterfly
 	 */
 	public ButterflyPlacedInTimeValidator(int numTurns){
-		numberOfTurns = new Integer(numTurns-1);
+		numberOfTurns = new Integer(numTurns - 1);
 	}
 	
 	
@@ -64,7 +64,9 @@ public class ButterflyPlacedInTimeValidator extends AbsTurnActionValidator imple
 	 */
 	private boolean hasPlayerPlacedButterfly(HantoBoard theBoard) {
 		
-		Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(playerColor).values();
+		final Collection<HantoPiece> playerPieces = 
+				theBoard.getPlayerPieces(playerColor).values();
+		
 		boolean playerHasButterfly = false;
 		
 		for (HantoPiece hp : playerPieces){
@@ -85,7 +87,8 @@ public class ButterflyPlacedInTimeValidator extends AbsTurnActionValidator imple
 
 	@Override
 	public void invalidError() throws HantoException {
-		throw new HantoException("Butterfly Placing Error: Must place butterfly by "+numberOfTurns.toString()+" Turns");
+		throw new HantoException("Butterfly Placing Error: "
+				+ "Must place butterfly by " + numberOfTurns.toString() + " Turns");
 		
 	}
 

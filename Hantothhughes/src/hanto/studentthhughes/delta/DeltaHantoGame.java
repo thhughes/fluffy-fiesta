@@ -16,17 +16,29 @@ import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 
 /**
+ * This is a delta hanto game implementation. 
+ * It relies on the TemplateHantoGame and the 
+ * TurnActionValidator and GameStateEvaluators that are created and passed to it. 
  * @author Troy
  *
  */
 public class DeltaHantoGame extends TemplateHantoGame implements HantoGame {
 
 	/**
-	 * Constructor of a DeltaHantoGame
+	 * Constructor of a DeltaHantoGame.
 	 * 
 	 * @param firstMovePlayer
+	 * 			HantoPlayerColor that represents the first player to move
 	 * @param tav
+	 * 		A TurnActionValidator that will be called to evaluate anytime 
+	 *a move is made. This is what will determine if the turn is a legal action
+	 *or if the action is illegal.
+	 *
 	 * @param gse
+	 * 		A GameStateEvaluator that will be called at the end of every 
+	 * action that is made. This is what will determine the outcome of an action
+	 * after it is made. Meaning, this decides if a player has won, or the game
+	 * is a draw.
 	 */
 	public DeltaHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse) {
 		super(firstMovePlayer, tav, gse);

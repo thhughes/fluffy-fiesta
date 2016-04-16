@@ -30,9 +30,10 @@ public class AStarWalking extends AStarTemplate implements PathBuilder {
 	 * @see hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder.AStarTemplate#getLegalNeighbors(hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard, java.util.Queue)
 	 */
 	@Override
-	protected Queue<HantoCoordinateImpl> getLegalNeighbors(HantoBoard theBoard, Queue<HantoCoordinate> neighbors) {
+	protected Queue<HantoCoordinateImpl> getLegalNeighbors(HantoBoard theBoard, 
+			Queue<HantoCoordinate> neighbors) {
 		
-		Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
+		final Queue<HantoCoordinateImpl> implList = new LinkedList<HantoCoordinateImpl>();
 		for(HantoCoordinate hc:  neighbors){
 			HantoCoordinateImpl currentNeighbor = new HantoCoordinateImpl(hc);
 			

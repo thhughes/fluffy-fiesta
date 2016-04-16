@@ -44,16 +44,16 @@ public class PlayerButterflySurroundedEvaluator implements GameStateEvaluator {
 	@Override
 	public MoveResult getOutcome(HantoBoard theBoard, MoveCounter counter) {
 		MoveResult result = MoveResult.OK;
-		Map<HantoCoordinate, HantoPiece> playerPiece = getRivalMap(theBoard);
+		final Map<HantoCoordinate, HantoPiece> playerPiece = getRivalMap(theBoard);
 		HantoCoordinateImpl butterfly = null;
 		for(HantoCoordinate hc: playerPiece.keySet()){
-			if(playerPiece.get(hc).getType()==HantoPieceType.BUTTERFLY){
+			if(playerPiece.get(hc).getType() == HantoPieceType.BUTTERFLY){
 				butterfly = new HantoCoordinateImpl(hc);
 				break;
 			}
 		}
 		if(butterfly != null){
-			Queue<HantoCoordinate> neighbors = butterfly.getNeighbors();
+			final Queue<HantoCoordinate> neighbors = butterfly.getNeighbors();
 			// Set the winning team
 			if(playerColor == HantoPlayerColor.RED){
 				result = MoveResult.RED_WINS;

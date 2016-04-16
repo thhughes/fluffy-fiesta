@@ -20,8 +20,8 @@ import hanto.studentthhughes.common.movecounter.MoveCounter;
 public interface GameStateEvaluator {
 
 	/**
-	 * This is a validator that checks the result of the board based off the input board and the number
-	 * of moves that have been taken. This returns 
+	 * This is a validator that checks the result of the board based off the input
+	 * board and the number of moves that have been taken. This returns 
 	 * @param theBoard
 	 * 				Board Implementation that gets checked for valid states
 	 * @param counter

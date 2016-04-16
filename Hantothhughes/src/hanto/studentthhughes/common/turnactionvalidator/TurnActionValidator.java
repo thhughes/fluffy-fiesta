@@ -37,7 +37,7 @@ public interface TurnActionValidator {
 	 * 			boolean : true if the move is valid
 	 */
 	boolean isValidMove(HantoBoard theBoard, HantoPiece piece, 
-			MoveCounter counter,HantoCoordinate to,HantoCoordinate from);
+			MoveCounter counter, HantoCoordinate to, HantoCoordinate from);
 	
 	
 	/**

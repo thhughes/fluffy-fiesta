@@ -39,8 +39,8 @@ public class MoveCounterImpl implements MoveCounter{
 	 */
 	public MoveCounterImpl(MoveCounter otherCounter)
 	{
-		this.red = otherCounter.getNumberMoves(RED);
-		this.blue = otherCounter.getNumberMoves(BLUE);
+		red = otherCounter.getNumberMoves(RED);
+		blue = otherCounter.getNumberMoves(BLUE);
 	}
 	
 	/*

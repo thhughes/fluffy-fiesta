@@ -48,8 +48,6 @@ public class HantoPieceImpl implements HantoPiece
 	{
 		return type;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+
 	
 }

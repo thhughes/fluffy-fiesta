@@ -75,9 +75,11 @@ public interface HantoBoard {
 	 * This returns a map of the pieces in play by a given player. This map is 
 	 * build with hantoCoordinates as the key and hantoPieces as the value.
 	 * @param color
-	 * 				HantoPlayerColor or null: If color, return the colors board. If null, dump the whole board
+	 * 				HantoPlayerColor or null: If color, return the colors board. 
+	 * If null, dump the whole board
 	 * @return
-	 * 			Map of the pieces from HantoCoordinate to HantoPiece. All pieces will have the same color. 
+	 * 			Map of the pieces from HantoCoordinate to HantoPiece. 
+	 * All pieces will have the same color. 
 	 */
 	Map<HantoCoordinate,HantoPiece> getPlayerPieces(HantoPlayerColor color);
 	
