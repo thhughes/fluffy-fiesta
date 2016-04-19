@@ -209,35 +209,6 @@ public class DeltaUniqueTests {
 		
 	}
 	
-	@Test(expected=HantoException.class)
-	public void testMovingCorrectPieceButterflyIsWrongPieceType() throws HantoException
-	{
-		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
-				md(SPARROW,-1,0), md(SPARROW,0,2),
-				md(SPARROW, 0,-1),md(SPARROW,0,3),
-				md(BUTTERFLY,-1,0,2,0));
-		
-	}
-	
-	@Test(expected=HantoException.class)
-	public void testMovingCorrectPieceCrabIsWrongPieceType() throws HantoException
-	{
-		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
-				md(SPARROW,-1,0), md(SPARROW,0,2),
-				md(SPARROW, 0,-1),md(SPARROW,0,3),
-				md(CRAB,-1,0,2,0));
-		
-	}
-	
-	@Test(expected=HantoException.class)
-	public void testMovingPieceInvalidLocation() throws HantoException
-	{
-		makeMoves(md(BUTTERFLY,0,0), md(BUTTERFLY,0,1), 
-				md(SPARROW,-1,0), md(SPARROW,0,2),
-				md(SPARROW, 0,-1),md(SPARROW,0,3),
-				md(SPARROW, 2, 0,-1,0));
-		
-	}
 	
 	
 	

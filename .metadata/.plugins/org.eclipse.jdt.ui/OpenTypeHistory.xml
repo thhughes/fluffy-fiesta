@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
+<typeInfo handle="=Hantothhughes/\/Library\/Java\/JavaVirtualMachines\/jdk1.8.0_73.jdk\/Contents\/Home\/jre\/lib\/rt.jar&lt;java.nio.file(Path.class[Path" modifiers="1537" timestamp="1454109346000"/>
+<typeInfo handle="=Hantothhughes/src&lt;hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder{PathBuilder.java[PathBuilder" modifiers="513" timestamp="1460759057000"/>
+<typeInfo handle="=Hantothhughes/src&lt;hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder{AStarTemplate.java[AStarTemplate" modifiers="1025" timestamp="1460839779000"/>
 <typeInfo handle="=Hantothhughes/src&lt;hanto.common{HantoGame.java[HantoGame" modifiers="513" timestamp="1456790548000"/>
-<typeInfo handle="=Hantothhughes/src&lt;hanto.studentthhughes.common.hantoboard{HantoBoard.java[HantoBoard" modifiers="513" timestamp="1460634059000"/>
-<typeInfo handle="=Hantothhughes/src&lt;hanto.studentthhughes.common.movevalidator{MoveValidator.java[MoveValidator" modifiers="513" timestamp="1460561476000"/>
-<typeInfo handle="=Hantothhughes/src&lt;hanto.studentthhughes.common.movevalidator{AbsMoveValidator.java[AbsMoveValidator" modifiers="1025" timestamp="1460677665000"/>
 </typeInfoHistroy>
