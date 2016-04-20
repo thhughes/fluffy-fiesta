@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DeltaHantoMasterTest" project="Hantothhughes" tests="67" started="67" failures="11" errors="1" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.014">
+    <testcase name="bluePlaysAfterRedResigns" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.002"/>
+    <testcase name="secondPlacementNextToBothPlaced" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabCantHaveDiscontinutiyWhileWalking" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.003">
+      <failure>java.lang.AssertionError: Only valid path has discontinuity
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.crabCantHaveDiscontinutiyWhileWalking(DeltaHantoMasterTest.java:796)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="bluePlacesDovePieceOnOriginAtStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redPlaysAfterBlueResigns" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redResignsRightAway" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="tryToMoveTwoSpaces" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="bluePlacesPieceCraneOnOriginAtStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="intermediteStepOfCrabWalkDoesNotHaveOpenPath" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="sparrowFliesBeforePlacingButterfly" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001">
+      <failure>java.lang.AssertionError: Can't move sparrow before butterfly placed
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.sparrowFliesBeforePlacingButterfly(DeltaHantoMasterTest.java:1057)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="tryToMoveWithDiscontinuousResult" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.002">
+      <failure>java.lang.AssertionError: Move would result in discontinuity. Exception should be thrown
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.tryToMoveWithDiscontinuousResult(DeltaHantoMasterTest.java:409)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="openingLargeEnoughForWalk" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001"/>
+    <testcase name="noMoveLimit" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="bluePlacesHorsePieceOnOriginAtStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redGoesFirstBlueWins" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabWalksOne" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabWalksTwo" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redGoesFirstRedWins" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabCantWalkToDiscontinusousHex" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="makeValidMoveAfterButterfly" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="onlyFiveCrabsBlue" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="getPrintableBoard" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertNotNull(Assert.java:712)
+	at org.junit.Assert.assertNotNull(Assert.java:722)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.getPrintableBoard(DeltaHantoMasterTest.java:1136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="sparrowLeavesDiscontinuity" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="exceptionAfterRedWins" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="openingLargeEnoughForWalkSecondTry" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="blueResignsAfterSomeTurns" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001"/>
+    <testcase name="tryToNotPlayButterflyByFourthTurn" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="secondPlayerTryToNotPlayButterflyByFourthTurn" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="tryToMoveSparrowBeforeButterflyPlayed" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <failure>java.lang.AssertionError: Cannot move before own butterfly played
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.tryToMoveSparrowBeforeButterflyPlayed(DeltaHantoMasterTest.java:384)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="tryToResignAfterGameOver" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="tryToRemovePiece" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redFirstTryToNotPlayButterflyByFourthTurn" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redResignsAfterSomeTurns" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="playNotAtOrigin" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redTriesToMoveOnTopOfBlue" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001">
+      <failure>java.lang.AssertionError: red should not be able to move on top of blue
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.redTriesToMoveOnTopOfBlue(DeltaHantoMasterTest.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="getPrintableBoardWithMove" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <failure>java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertNotNull(Assert.java:712)
+	at org.junit.Assert.assertNotNull(Assert.java:722)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.getPrintableBoardWithMove(DeltaHantoMasterTest.java:1142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="blueResignsRightAway" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="sparrowFliesAwayFromEverything" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="secondRoundPlacementNotAdjacent" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001">
+      <failure>java.lang.AssertionError: Pieces must be adjacent
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.secondRoundPlacementNotAdjacent(DeltaHantoMasterTest.java:261)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="bluePlacesPieceWhereRedWent" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <failure>java.lang.AssertionError: Blue tried to play in a spot already occupied
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.bluePlacesPieceWhereRedWent(DeltaHantoMasterTest.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="secondPlacementNotNextToOtherColor" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="secondPlacementNextToOnlyOtherColor" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="moveRedToNotConnectedWithOtherReds" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="onlyFiveCrabsRed" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="blueButterflySurrounded" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="playMoreSparrowsThanHavePlayerOne" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="playMoreSparrowsThanHavePlayerTwo" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="bluePlaysButterflyTwice" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redTriesToMoveWhenNoPiecesPlaced" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="exceptionAfterBlueWins" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redMakesInvalidSecondMove" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <failure>java.lang.AssertionError: Piece placement must be continuous
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.redMakesInvalidSecondMove(DeltaHantoMasterTest.java:190)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="playSparrowOnStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redButterflySurrounded" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="noPlaceToMove" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redMakesValidSecondMove" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabWalksTriesToWalkFour" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redFirstSecondPlayerTryToNotPlayButterflyByFourthTurn" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.001"/>
+    <testcase name="butterfliesSurroundedSimultaneously" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="correctPlacementOnStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="playCrabOnStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabWalksThree" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="crabWalksBeforePlacingButterfly" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <failure>java.lang.AssertionError: Can't move crab before butterfly placed
+	at org.junit.Assert.fail(Assert.java:88)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.crabWalksBeforePlacingButterfly(DeltaHantoMasterTest.java:1044)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</failure>
+    </testcase>
+    <testcase name="movePieceToSameSpot" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="sparrowCanLeaveHole" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="redPlacesSecondButterfly" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="fromNotNullOnStart" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0"/>
+    <testcase name="sparrowFliesFromSidesOfLine" classname="hanto.teststudentthhughes.delta.DeltaHantoMasterTest" time="0.0">
+      <error>hanto.common.HantoException: Move Validator Error
+	at hanto.studentthhughes.common.turnactionvalidator.AbsTurnActionValidator.invalidError(AbsTurnActionValidator.java:94)
+	at hanto.studentthhughes.common.turnactionvalidator.PieceSpecificTurnActionValidator.invalidError(PieceSpecificTurnActionValidator.java:61)
+	at hanto.studentthhughes.common.turnactionvalidator.MasterActionValidator.isValidMove(MasterActionValidator.java:41)
+	at hanto.studentthhughes.TemplateHantoGame.checkActionValidators(TemplateHantoGame.java:190)
+	at hanto.studentthhughes.TemplateHantoGame.makeMove(TemplateHantoGame.java:84)
+	at hanto.teststudentthhughes.delta.DeltaHantoMasterTest.sparrowFliesFromSidesOfLine(DeltaHantoMasterTest.java:817)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

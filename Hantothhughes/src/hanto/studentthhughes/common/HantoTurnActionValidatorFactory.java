@@ -147,7 +147,7 @@ public class HantoTurnActionValidatorFactory {
 			max_num_crab = 4;
 			
 			max_move_dist_butterfly = 1;
-			max_move_dist_sparrow = 3;
+			max_move_dist_sparrow = Integer.MAX_VALUE;
 			max_move_dist_crab = 3;	
 			break;
 		default:	

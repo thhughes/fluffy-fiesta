@@ -8,7 +8,9 @@
 package hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks;
 
 
+import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
@@ -17,7 +19,12 @@ import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.frontier.Frontier;
+import hanto.studentthhughes.common.frontier.FrontierImpl;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
 import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
 import hanto.studentthhughes.common.turnactionvalidator.AbsTurnActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
@@ -50,6 +57,9 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 		validResult =  validResult && isValidPieceType(piece);
 		validResult =  validResult && 
 				pieceIsOnlyTouchingFriendlyPieces(theBoard, counter, piece.getColor(), to);
+		validResult = validResult && !(theBoard.isLocationOccupied(to));
+  		validResult = validResult && checkIfPlaceIsToContiguousPeice(theBoard, to, counter);
+  		validResult = validResult && checkThatFirstPiecesAreContiguous(theBoard, new HantoCoordinateImpl(to), counter);
 		
 	}
 	
@@ -57,15 +67,63 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 	@Override
 	protected void handleMoveCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
+		if(hasPlayerPlayedButterflyYet(theBoard, counter, to)){
+			validResult = validResult && (theBoard.isLocationOccupied(from));
+			validResult = validResult && !(theBoard.isLocationOccupied(to));
+			validResult = validResult && (isSameTypeAndColorOfPieceOnBoard(theBoard, piece, from));
+			validResult = validResult && checkIfMoveIsToContiguousPeice(theBoard, to, from);
+			validResult = validResult && checkIfMovementDoesNotCreateTwoContiguousSPots(theBoard, to, from);
+		}else{
+			validResult = false;
+		}
 		
-		validResult = validResult && (theBoard.isLocationOccupied(from));
-		validResult = validResult && !(theBoard.isLocationOccupied(to));
-		validResult = validResult && (isSameTypeAndColorOfPieceOnBoard(theBoard, piece, from));
-		validResult = validResult && checkIfMoveIsToContiguousPeice(theBoard, to, from);
 		
 	
 	}
 	
+	private boolean checkIfMovementDoesNotCreateTwoContiguousSPots(HantoBoard theBoard, HantoCoordinateImpl to,
+			HantoCoordinateImpl from) {
+		
+		final Queue<HantoCoordinateImpl> frontier = new LinkedList<HantoCoordinateImpl>();
+		final List<HantoCoordinateImpl> totalList = new LinkedList<HantoCoordinateImpl>();
+		frontier.add(to);
+		totalList.add(to);
+		HantoCoordinateImpl curLocation;
+		
+		
+		while (true){
+			curLocation = frontier.poll();
+			if(curLocation == null){
+				break;
+			}
+			for(HantoCoordinate hc: curLocation.getNeighbors()){
+				HantoCoordinateImpl hci = new HantoCoordinateImpl(hc);
+				if(!totalList.contains(hci) && theBoard.isLocationOccupied(hci) && !hci.equals(from)){
+					frontier.add(hci);
+					totalList.add(hci);
+				}
+			}
+		}
+		
+		
+		return theBoard.getNumberOfPiecesOnBoard() == totalList.size();
+	}
+
+
+	private boolean hasPlayerPlayedButterflyYet(HantoBoard theBoard, MoveCounterImpl counter, HantoCoordinateImpl to) {
+		boolean result = false;
+		
+		final Collection<HantoPiece> playerPieces = theBoard.getPlayerPieces(playerColor).values();
+		for(HantoPiece hp : playerPieces){
+			if(hp.getType() == HantoPieceType.BUTTERFLY){
+				result = true;
+				break;
+			}
+		}
+		return result;
+	}
+
+
 	/**
 	 * Checks if the piece in the 'from' location of a move is the piece that the player is trying 
 	 * to move. This means ensures that the from location is occupied and that the piece in the 
@@ -185,6 +243,40 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 		}
 		return result;
 	}
+	
+	/**
+	 * Checks if a point is apart of a contiguous system board.
+	 * 
+	 * @param theBoard
+	 * 				HantoBoard
+	 * @param toCheck
+	 * 				HantoBoardImpl
+	 * @param oldLocation
+	 * 				HantoBoardImpl
+	 * @return
+	 * 			Boolean : true if the toCheck coordinate is apart of the 
+	 * 					  contiguous board in theBoard.
+	 */
+	private boolean checkIfPlaceIsToContiguousPeice(HantoBoard theBoard, HantoCoordinateImpl toCheck,
+			MoveCounterImpl counter) {
+		
+		
+		boolean result = false;
+		final Queue<HantoCoordinate> neighbors = toCheck.getNeighbors();
+		
+		if (counter.bothPlayersHaveGoneMoreThanOnce()){
+			for(HantoCoordinate hc : neighbors){
+				if(theBoard.isLocationOccupied(new HantoCoordinateImpl(hc)) ){
+					result = true;
+					break;
+				}
+			}
+		}else{
+			result = true;
+		}
+		
+		return result;
+	}
 
 	/**
 	 * Function compares two hanto coordinates
@@ -199,6 +291,22 @@ public class GeneralActionValidator extends AbsTurnActionValidator implements Tu
 		return (new HantoCoordinateImpl(coorda)).equals(new HantoCoordinateImpl(coordb));
 	}
 	
+	
+	private boolean checkThatFirstPiecesAreContiguous(HantoBoard theBoard, HantoCoordinateImpl toCheck,
+			MoveCounterImpl counter){
+		boolean result = true;
+		if(!counter.bothPlayersHaveGoneMoreThanOnce() &&
+				!counter.isFirstMoveOfGame()){
+			for(HantoCoordinate hc : toCheck.getNeighbors()){
+				if(theBoard.isLocationOccupied(hc)){
+					result = true;
+					break;
+				}
+				result = false;
+			}
+		}
+		return result;
+	}
 	
 	@Override
 	public void invalidError() throws HantoException {

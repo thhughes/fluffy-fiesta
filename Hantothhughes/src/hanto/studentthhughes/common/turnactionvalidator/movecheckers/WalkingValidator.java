@@ -62,6 +62,7 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 			final List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
 			
 			validResult =  checkPathForRoomToWalk(theBoard, path);
+			validResult = validResult && checkForContinuityOnPath(theBoard, path, from);
 			
 			// NOTE: PATH INCLUDES STARTING NODE : hence '-1'
 			validResult = validResult  && ((path.size() - 1) <= maxDistance);  
@@ -71,6 +72,35 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 		
 	}
 	
+	private boolean checkForContinuityOnPath(HantoBoard theBoard, List<HantoCoordinate> path,
+			HantoCoordinateImpl from) {
+		boolean result = true;
+		
+		
+		for(HantoCoordinate hc: path){
+			HantoCoordinateImpl hcImpl = new HantoCoordinateImpl(hc);
+			int count = 0;
+			count = countNumberOfConnectedPieces(theBoard, from, hcImpl);
+			
+			if(count == 0){
+				result = false;
+				break;
+			}
+		}
+		return result;
+	}
+
+	private int countNumberOfConnectedPieces(HantoBoard theBoard, HantoCoordinateImpl from, HantoCoordinateImpl hcImpl) {
+		int count = 0;
+		for(HantoCoordinate hcSurrounding: hcImpl.getNeighbors()){
+			if(theBoard.isLocationOccupied(hcSurrounding) &&
+					!(new HantoCoordinateImpl(hcSurrounding)).equals(from)){
+				count++;
+			}
+		}
+		return count;
+	}
+
 	/**
 	 * Checks every hex-hex movement to ensure that there is enough room to walk that
 	 * distance.

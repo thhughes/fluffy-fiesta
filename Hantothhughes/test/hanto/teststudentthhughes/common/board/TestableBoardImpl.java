@@ -99,5 +99,12 @@ public class TestableBoardImpl implements HantoBoard {
 	}
 
 
+	@Override
+	public int getNumberOfPiecesOnBoard() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
 
 }

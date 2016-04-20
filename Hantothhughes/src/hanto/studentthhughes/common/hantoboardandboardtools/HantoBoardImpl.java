@@ -85,7 +85,17 @@ public class HantoBoardImpl implements HantoBoard {
 		}
 		return result;
 	}
-
+	
+	
+	@Override
+	public int getNumberOfPiecesOnBoard(){
+		return theBoard.size();
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard#removeFromBoard(hanto.common.HantoCoordinate)
+	 */
 	@Override
 	public boolean removeFromBoard(HantoCoordinate where) throws HantoException {
 		if (where == null) throw new HantoException("Board Exception: "

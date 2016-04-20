@@ -83,5 +83,12 @@ public interface HantoBoard {
 	 */
 	Map<HantoCoordinate,HantoPiece> getPlayerPieces(HantoPlayerColor color);
 	
+	/**
+	 * Get's the number of pieces on the board.
+	 * 
+	 * @return 
+	 * 			int: number of pieces on the board
+	 */
+	int getNumberOfPiecesOnBoard();
 
 }
