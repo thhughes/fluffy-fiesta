@@ -18,6 +18,7 @@ import hanto.studentthhughes.common.turnactionvalidator.PieceSpecificTurnActionV
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.moveandplacechecks.GeneralActionValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.FlyingValidator;
+import hanto.studentthhughes.common.turnactionvalidator.movecheckers.JumpingValidator;
 import hanto.studentthhughes.common.turnactionvalidator.movecheckers.WalkingValidator;
 import hanto.studentthhughes.common.turnactionvalidator.placecheckers.ButterflyPlacedInTimeValidator;
 import hanto.studentthhughes.common.turnactionvalidator.placecheckers.CorrectNumberOfPieceTypeValidator;
@@ -33,10 +34,12 @@ public class HantoTurnActionValidatorFactory {
 	int max_num_butterfly;
 	int max_num_sparrow;
 	int max_num_crab;
+	int max_num_horse;
 	
 	int max_move_dist_butterfly;
 	int max_move_dist_sparrow;
 	int max_move_dist_crab;
+	int max_move_dist_horse;
 	
 	private static final HantoTurnActionValidatorFactory instance = 
 			new HantoTurnActionValidatorFactory();
@@ -63,9 +66,14 @@ public class HantoTurnActionValidatorFactory {
 		
 		final MasterActionValidator mav = new MasterActionValidator();
 		
+		// Add general validators:
+		mav.addValidator(new GeneralActionValidator(valid));
+		
+		mav.addValidator(new FirstMoveValidator());
+		mav.addValidator(new ButterflyPlacedInTimeValidator(4));
+		
 		switch (gameID) {
 			case ALPHA_HANTO:
-				break;
 			case BETA_HANTO:
 				break;
 			case GAMMA_HANTO:
@@ -79,10 +87,7 @@ public class HantoTurnActionValidatorFactory {
 				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.SPARROW,
 						new WalkingValidator(max_move_dist_sparrow)));
 
-				mav.addValidator(new GeneralActionValidator(valid));
 				
-				mav.addValidator(new FirstMoveValidator());
-				mav.addValidator(new ButterflyPlacedInTimeValidator(4));
 				break;
 			case DELTA_HANTO:
 				
@@ -99,11 +104,24 @@ public class HantoTurnActionValidatorFactory {
 						new WalkingValidator(max_move_dist_butterfly)));
 				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.SPARROW,
 						new FlyingValidator(max_move_dist_sparrow)));
+			
+			case EPSILON_HANTO:
 				
-				mav.addValidator(new GeneralActionValidator(valid));
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.BUTTERFLY, max_num_butterfly));
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.SPARROW, max_num_sparrow));
+				mav.addValidator(new CorrectNumberOfPieceTypeValidator(
+						HantoPieceType.CRAB, max_num_crab));
 				
-				mav.addValidator(new FirstMoveValidator());
-				mav.addValidator(new ButterflyPlacedInTimeValidator(4));
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.CRAB,
+						new WalkingValidator(max_move_dist_crab)));
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.BUTTERFLY,
+						new WalkingValidator(max_move_dist_butterfly)));
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.SPARROW,
+						new FlyingValidator(max_move_dist_sparrow)));
+				mav.addValidator(new PieceSpecificTurnActionValidator(HantoPieceType.HORSE,
+						new JumpingValidator()));
 				
 			default:
 				break;
@@ -111,6 +129,7 @@ public class HantoTurnActionValidatorFactory {
 		return mav;
 	}
 
+	
 	private Queue<HantoPieceType> buildValidList(HantoGameID gameID) {
 		final Queue<HantoPieceType> valid = new LinkedList<HantoPieceType>();
 		
@@ -125,6 +144,13 @@ public class HantoTurnActionValidatorFactory {
 			valid.add(HantoPieceType.SPARROW);
 			valid.add(HantoPieceType.BUTTERFLY);
 			valid.add(HantoPieceType.CRAB);
+			break;
+		case EPSILON_HANTO:
+			valid.clear();
+			valid.add(HantoPieceType.SPARROW);
+			valid.add(HantoPieceType.BUTTERFLY);
+			valid.add(HantoPieceType.CRAB);
+			valid.add(HantoPieceType.HORSE);
 			break;
 		default:
 			break;
@@ -149,6 +175,17 @@ public class HantoTurnActionValidatorFactory {
 			max_move_dist_butterfly = 1;
 			max_move_dist_sparrow = Integer.MAX_VALUE;
 			max_move_dist_crab = 3;	
+			break;
+		case EPSILON_HANTO:
+			max_num_butterfly = 1;
+			max_num_sparrow = 2;
+			max_num_crab = 6;
+			max_num_horse = 4;
+			
+			max_move_dist_butterfly = 1;
+			max_move_dist_sparrow = 5;
+			max_move_dist_crab = 1;
+			max_move_dist_horse = Integer.MAX_VALUE;	
 			break;
 		default:	
 		}

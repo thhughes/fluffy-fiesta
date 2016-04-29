@@ -1,0 +1,30 @@
+package hanto.teststudentthhughes.common;
+
+import org.junit.Before;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoPiece;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.studentthhughes.common.MoveData;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+
+public class MoveDataTest {
+
+	MoveData toTest;
+	HantoPiece piece;
+	HantoCoordinate to;
+	HantoCoordinate from;
+	
+	@Before
+	public void setup(){
+		piece = new HantoPieceImpl(HantoPlayerColor.BLUE, HantoPieceType.BUTTERFLY);
+		to = new HantoCoordinateImpl(0,0);
+		from = new HantoCoordinateImpl(0,1);
+		toTest = new MoveData(piece, to, from);
+
+	}
+	
+	
+}

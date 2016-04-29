@@ -59,7 +59,11 @@ public class HantoGameStateEvaluatorFactory {
 				mv.addValidator(new PlayerButterflySurroundedEvaluator(HantoPlayerColor.RED));
 				mv.addValidator(new PlayerButterflySurroundedEvaluator(HantoPlayerColor.BLUE));
 				break;
-			
+			case EPSILON_HANTO:
+				mv = new MasterGameStateEvaluator();
+				mv.addValidator(new PlayerButterflySurroundedEvaluator(HantoPlayerColor.RED));
+				mv.addValidator(new PlayerButterflySurroundedEvaluator(HantoPlayerColor.BLUE));
+				
 			default:
 				break;
 		}

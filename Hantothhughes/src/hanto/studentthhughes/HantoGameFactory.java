@@ -83,6 +83,11 @@ public class HantoGameFactory
 						mValidatorFactory.makeHantoValidator(gameId),
 						gsCalculatorFactory.makeHantoValidator(gameId));
 				break;
+			case EPSILON_HANTO:
+				game = new DeltaHantoGame(movesFirst,
+						mValidatorFactory.makeHantoValidator(gameId),
+						gsCalculatorFactory.makeHantoValidator(gameId));
+				break;
 		}
 		return game;
 	}

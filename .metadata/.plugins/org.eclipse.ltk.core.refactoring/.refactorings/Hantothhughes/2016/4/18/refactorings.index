@@ -3,3 +3,7 @@
 1461944524140	Extract method 'isMovingAlongY'
 1461944592982	Extract method 'isMovingAlongX'
 1461944969673	Delete element
+1461953983739	Copy compilation units
+1461954007538	Rename type 'DeltaUniqueTests'
+1461954021282	Rename type 'GammaTestsFromMeOnDelta'
+1461954035229	Rename type 'GammaTestsFromPolliceOnDelta'
