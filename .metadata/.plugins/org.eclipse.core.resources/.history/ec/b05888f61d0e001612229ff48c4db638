@@ -1,0 +1,23 @@
+package hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder;
+
+import java.util.List;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+
+public class JumpingPathBuilder implements PathBuilder {
+
+	@Override
+	public List<HantoCoordinate> getPath(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end) {
+		checkInJumpStraightLine(start, end);
+		return null;
+	}
+	
+	
+	
+	boolean checkInJumpStraightLine(HantoCoordinate start, HantoCoordinate end) throws HantoException{
+		
+	}
+
+}

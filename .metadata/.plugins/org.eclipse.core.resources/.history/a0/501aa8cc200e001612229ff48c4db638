@@ -1,0 +1,25 @@
+package hanto.studentthhughes.common.turnactionvalidator.movecheckers;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoPiece;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
+
+public class JumpingValidator implements TurnActionValidator {
+
+	@Override
+	public boolean isValidMove(HantoBoard theBoard, HantoPiece piece, MoveCounter counter, HantoCoordinate to,
+			HantoCoordinate from) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void invalidError() throws HantoException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

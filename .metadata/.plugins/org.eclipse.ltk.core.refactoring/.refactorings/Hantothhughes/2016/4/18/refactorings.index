@@ -1,2 +1,5 @@
 1461941369783	Extract method 'isFlyingPathValid'
 1461941578636	Extract method 'isWalkingPathValid'
+1461944524140	Extract method 'isMovingAlongY'
+1461944592982	Extract method 'isMovingAlongX'
+1461944969673	Delete element
