@@ -10,6 +10,7 @@ package hanto.studentthhughes.common.turnactionvalidator.movecheckers;
 import java.util.List;
 
 import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
@@ -51,13 +52,38 @@ public class FlyingValidator extends AbsTurnActionValidator implements TurnActio
 	protected void handleMoveCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		if(!theBoard.isLocationOccupied(to)){
-			final List<HantoCoordinate> path = astarFlyer.getPath(theBoard, from, to);
-			
-			// NOTE: PATH INCLUDES THE STARTING NODE, hence '-1'
-			validResult = ((path.size() - 1) <= maxDistance);   
+			try{
+				validResult = isFlyingPathValid(theBoard, to, from); 
+			}
+			catch (HantoException e){  // There is no valid path
+				validResult = false;
+			}
 		}else{
 			validResult = false;
 		}
 		
+	}
+
+	/**
+	 * This function finds a path from one node to another and then returns a boolean on if
+	 * the path is shorter than or equal to the maximum distance. 
+	 * 
+	 * @param theBoard
+	 * 				HantoBoard
+	 * @param to
+	 * 			HantoCoordinateImpl
+	 * @param from
+	 * 			HantoCoordinateImpl
+	 * @return
+	 * 			Boolean : true if the flight path is valid
+	 * @throws HantoException
+	 * 			if there is no valid path to be taken
+	 */
+	private boolean isFlyingPathValid(HantoBoard theBoard, HantoCoordinateImpl to, HantoCoordinateImpl from)
+			throws HantoException {
+		final List<HantoCoordinate> path = astarFlyer.getPath(theBoard, from, to);
+		// NOTE: PATH INCLUDES THE STARTING NODE, hence '-1'
+		boolean someBoolean = ((path.size() - 1) <= maxDistance);
+		return someBoolean;
 	}
 }

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="DRAW" key="selection"/>
+		<item value="playerColor" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="playerColor"/>
 			<item value="draw"/>
 			<item value="twenty"/>
 			<item value="getPieceAt"/>
@@ -15,7 +16,6 @@
 			<item value="Flys"/>
 			<item value="sparrow"/>
 			<item value="hcToImpl"/>
-			<item value="hantoMC"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Walks"/>

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Queue;
 
 import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
 import hanto.common.HantoPiece;
 import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
@@ -59,18 +60,46 @@ public class WalkingValidator extends AbsTurnActionValidator implements TurnActi
 	protected void handleMoveCheck(HantoBoard theBoard, HantoPiece piece, MoveCounterImpl counter,
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		if(!theBoard.isLocationOccupied(to)){
-			final List<HantoCoordinate> path = astarWalker.getPath(theBoard, from, to);
+			try {
+				validResult = isWalkingPathValid(theBoard, to, from); 
+			} catch (HantoException e) {	// There is no valid path
+				validResult = false;
+			}
 			
-			validResult =  checkPathForRoomToWalk(theBoard, path);
-			validResult = validResult && checkForContinuityOnPath(theBoard, path, from);
 			
-			// NOTE: PATH INCLUDES STARTING NODE : hence '-1'
-			validResult = validResult  && ((path.size() - 1) <= maxDistance);  
 		}else{
 			validResult = false;
 		}
 		
 	}
+
+	/**
+	 * This function finds a path from one node to another and then returns a boolean on if
+	 * the path is shorter than or equal to the maximum distance. 
+	 * 
+	 * @param theBoard
+	 * 				HantoBoard
+	 * @param to
+	 * 			HantoCoordinateImpl
+	 * @param from
+	 * 			HantoCoordinateImpl
+	 * @return
+	 * 			Boolean : true if the walking path is valid
+	 * @throws HantoException
+	 * 			if there is no valid path to be taken
+	 */
+	private boolean isWalkingPathValid(HantoBoard theBoard, HantoCoordinateImpl to, HantoCoordinateImpl from)
+			throws HantoException {
+		List<HantoCoordinate> path;
+		path = astarWalker.getPath(theBoard, from, to);
+		boolean someBoolean =  checkPathForRoomToWalk(theBoard, path);
+		someBoolean = someBoolean && checkForContinuityOnPath(theBoard, path, from);
+		
+		// NOTE: PATH INCLUDES STARTING NODE : hence '-1'
+		someBoolean = someBoolean  && ((path.size() - 1) <= maxDistance);
+		return someBoolean;
+	}
+	
 	
 	private boolean checkForContinuityOnPath(HantoBoard theBoard, List<HantoCoordinate> path,
 			HantoCoordinateImpl from) {

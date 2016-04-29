@@ -10,6 +10,7 @@ package hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder;
 import java.util.List;
 
 import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
 import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
 
 /**
@@ -34,6 +35,6 @@ public interface PathBuilder {
 	 * @return
 	 * 			List<HantoCoordinate> : the path
 	 */
-	List<HantoCoordinate> getPath(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end);
+	List<HantoCoordinate> getPath(HantoBoard theBoard, HantoCoordinate start, HantoCoordinate end) throws HantoException;
 	
 }

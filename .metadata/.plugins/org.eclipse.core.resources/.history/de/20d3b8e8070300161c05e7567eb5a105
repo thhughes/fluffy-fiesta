@@ -1,5 +1,0 @@
-package hanto.studentthhughes.common.hantoboardandboardtools.pathbuilder;
-
-public interface PathBuilder {
-
-}

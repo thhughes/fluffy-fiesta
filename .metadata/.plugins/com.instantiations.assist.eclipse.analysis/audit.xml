@@ -5,7 +5,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.useOfThreadInterrupted.enabled=true
 		com.instantiations.assist.eclipse.audit.noRunMethod.enabled=true
 		com.instantiations.assist.eclipse.audit.useStartRatherThanRun.enabled=true
@@ -69,7 +69,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.emptyEnhancedForStatement.enabled=true
 		com.instantiations.assist.eclipse.audit.returnInFinally.enabled=true
 		com.instantiations.assist.eclipse.audit.packageNamingConvention.enabled=true
@@ -249,7 +249,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.wrongIntegerTypeSuffix.autoResolutionEnabled=false
 		com.instantiations.assist.eclipse.audit.thrownExceptions.severity=0
 		com.instantiations.assist.eclipse.analysis.sqlInjection.enabled=true
@@ -494,7 +494,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.favorStaticMemberClassesOverNonStatic.enabled=true
 		com.instantiations.assist.eclipse.audit.packageNamingConvention.enabled=true
 		com.instantiations.assist.eclipse.analysis.audit.rule.effectivejava.avoidFinalizers.avoidFinalizers.comment=To quote from Effective Java\:\r\n\r\n"Finalizers are unpredictable, often dangerous, and generally unnecessary. Their use can cause erratic behavior, poor performance, and portability problems. Finalizers have a few valid uses, ... but as a rule of thumb, finalizers should be avoided."
@@ -586,7 +586,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.restrictedPackages.restrictedNames=.internal.
 		com.instantiations.assist.eclipse.audit.restrictedPackages.enabled=true
 	</auditRuleSet>
@@ -595,7 +595,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.methodChainLength.enabled=true
 		com.instantiations.assist.eclipse.audit.variableShouldBeFinal.enabled=true
 		com.instantiations.assist.eclipse.audit.overridingNonAbstractMethod.enabled=true
@@ -703,7 +703,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.analysis.mutableConstantField.enabled=true
 		com.instantiations.assist.eclipse.audit.dynamicDependencyInIvy.enabled=true
 		com.instantiations.assist.eclipse.analysis.doNotImplementSerializable.enabled=true
@@ -815,7 +815,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.spellCheckComments.enabled=true
 		com.instantiations.assist.eclipse.audit.spellCheckXMLAttributeNames.enabled=true
 		com.instantiations.assist.eclipse.audit.spellCheckPropertyComments.enabled=true
@@ -833,7 +833,7 @@
 			<null/>
 		</resourceFilter>
 	
-		#Tue Apr 19 12:37:44 EDT 2016
+		#Sun Apr 24 10:08:08 EDT 2016
 		com.instantiations.assist.eclipse.audit.bracePosition.openingBraceType=false
 		com.instantiations.assist.eclipse.audit.interfaceNamingConvention.namingConvention=;1;7;
 		com.instantiations.assist.eclipse.audit.missingBlock.enabled=true
