@@ -118,8 +118,9 @@ public class JumpingValidatorTest {
 	@Test
 	public void horseJumpsOverTwoHex() throws HantoException
 	{
-		assertTrue(tav.isValidMove(theBoard, new HantoPieceImpl(BLUE,HORSE), new MoveCounterImpl(), 
-				makeCoordinate(2,-2), makeCoordinate(-1,1)));
+		boolean result = tav.isValidMove(theBoard, new HantoPieceImpl(BLUE,HORSE), new MoveCounterImpl(), 
+				makeCoordinate(2,-2), makeCoordinate(-1,1));
+		assertTrue(result);
 	}
 	
 	@Test

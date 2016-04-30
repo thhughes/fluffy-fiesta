@@ -1,0 +1,12 @@
+package hanto.studentthhughes.common;
+
+import hanto.common.HantoGameID;
+
+public class HantoGamePieceInformation {
+
+	
+	
+	public HantoGamePieceInformation(HantoGameID gameID){
+		
+	}
+}

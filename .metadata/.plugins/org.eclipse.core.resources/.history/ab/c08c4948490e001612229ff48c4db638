@@ -1,0 +1,11 @@
+package hanto.studentthhughes.movefinder;
+
+import hanto.common.HantoGameID;
+
+public class MoveFinder {
+	
+	public MoveFinder(HantoGameID gameID){
+		
+	}
+
+}

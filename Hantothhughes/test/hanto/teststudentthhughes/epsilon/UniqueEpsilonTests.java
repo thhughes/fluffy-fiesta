@@ -1,10 +1,14 @@
 package hanto.teststudentthhughes.epsilon;
 
+import static hanto.common.HantoPieceType.BUTTERFLY;
+import static hanto.common.HantoPieceType.SPARROW;
 import static hanto.common.HantoPlayerColor.BLUE;
+import static hanto.common.HantoPlayerColor.RED;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 import hanto.common.HantoCoordinate;
 import hanto.common.HantoException;
@@ -13,10 +17,9 @@ import hanto.common.HantoGameID;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPieceType;
 import hanto.common.HantoPlayerColor;
+import hanto.common.HantoPrematureResignationException;
 import hanto.common.MoveResult;
 import hanto.studentthhughes.HantoGameFactory;
-import hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta.MoveData;
-import hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta.TestHantoCoordinate;
 
 public class UniqueEpsilonTests {
 
@@ -67,6 +70,8 @@ public class UniqueEpsilonTests {
 	
 	private static HantoGameFactory factory;
 	private HantoGame game;
+//	private HantoPiece p1,p2,p3,p4;
+//	private HantoCoordinate hc1, hc2, hc3, hc4;
 	
 	@BeforeClass
 	public static void initializeClass()
@@ -75,12 +80,20 @@ public class UniqueEpsilonTests {
 	}
 	
 	@Before
-	public void setup()
+	public void setup() throws HantoException
 	{
 		// By default, blue moves first.
-		game = factory.makeHantoGame(HantoGameID.DELTA_HANTO, BLUE);
+		game = factory.makeHantoGame(HantoGameID.EPSILON_HANTO, BLUE);
+		
+		makeMoves(md(BUTTERFLY,0,0),md(BUTTERFLY,0,1),
+				md(SPARROW,0,-1),md(SPARROW,0,2));
 	}
 	
+	
+	@Test(expected=HantoPrematureResignationException.class)
+	public void testCorrectExceptionOnEarlySurrender() throws HantoException{
+		game.makeMove(null, null, null);
+	}
 	
 	
 	
@@ -124,7 +137,7 @@ public class UniqueEpsilonTests {
 	 */
 	
 	// Helper methods
-	private HantoCoordinate makeCoordinate(int x, int y)
+	private HantoCoordinate mc(int x, int y)
 	{
 		return new TestHantoCoordinate(x, y);
 	}
@@ -138,7 +151,7 @@ public class UniqueEpsilonTests {
 	 */
 	private void checkPieceAt(int x, int y, HantoPlayerColor color, HantoPieceType type)
 	{
-		final HantoPiece piece = game.getPieceAt(makeCoordinate(x, y));
+		final HantoPiece piece = game.getPieceAt(mc(x, y));
 		assertEquals(color, piece.getColor());
 		assertEquals(type, piece.getType());
 	}
@@ -154,12 +167,12 @@ public class UniqueEpsilonTests {
 	 */
 	private MoveData md(HantoPieceType type, int toX, int toY) 
 	{
-		return new MoveData(type, null, makeCoordinate(toX, toY));
+		return new MoveData(type, null, mc(toX, toY));
 	}
 	
 	private MoveData md(HantoPieceType type, int fromX, int fromY, int toX, int toY)
 	{
-		return new MoveData(type, makeCoordinate(fromX, fromY), makeCoordinate(toX, toY));
+		return new MoveData(type, mc(fromX, fromY), mc(toX, toY));
 	}
 	
 	/**

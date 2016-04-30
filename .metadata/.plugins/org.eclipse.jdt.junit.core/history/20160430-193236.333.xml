@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.teststudentthhughes.epsilon" project="Hantothhughes" tests="56" started="56" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0">
+    <testcase name="testPassingNullTo" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.001"/>
+    <testcase name="movePieceThatDoesntExistEGWrongLocation" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testGameOver" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testMovingMostlyNotSurroundedPiece" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testPlayingIllegalItem" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="moveButterflyOnSecondTurnRedToDisjointPlace" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testAddingTooManyPieces" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="placingThreePiecesOnTheBoardInCorrectlyBasedOffTheirColors" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testPlacingPieceOnInvalidTileFirstTime" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testMovingMostlySurroundedPiece" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testnotPlayingButterflyRightAway" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="makeSingleMoveCorrectly" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="moveButterflyOnSecondTurnRedLegalPlaceThatsTooFarAway" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="placingThreePiecesOnTheBoardCorrectly" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testThatRedCanWin" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="movePieceThatDoesntExistEGWrongPiece" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="testNotNull" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+    <testcase name="moveButterflyOnSecondRedTurn" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromMeOnEpsilon" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0">
+    <testcase name="bluePlacesButterflyFirst" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="redSelfLoses" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToMoveWhenNotEnoughSpace" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToUseTooManyButterflies" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="blueWins" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveByFirstPlayer" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="moveToDisconnectConfiguration" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="moveFromEmptyHex" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="moveSparrowToOccupiedHex" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToPlacePieceNextToOpponent" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="blueMovesSparrow" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToMoveWrongColorPiece" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveBySecondPlayer" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToMoveTooFar" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToMoveWrongPieceType" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToUseTooManySparrows" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="moveButterflyToSameHex" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToMoveAfterGameIsOver" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="tryToUsePieceNotInGame" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+    <testcase name="redPlacesSparrowFirst" classname="hanto.teststudentthhughes.epsilon.GammaTestsFromPolliceOnEpsilon" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0">
+    <testcase name="canPlaceACrab" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="testMovingCorrectPieceButterflyIsWrongPieceType" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="crabMovesFourPlace" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="redWinsWhenBlueSurrenders" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="butterflyMovesOneHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="butterflyMovesTwoHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="sparrowMovesOneHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="crabMovesThreePlace" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="sparrowMovesTwoHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="sparrowFlysTwoHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="testMovingCorrectPieceCrabIsWrongPieceType" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="gameEndsAfterSomeoneSurrenders" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="crabMovesTwoPlace" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="crabMovesOnePlace" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="sparrowFlysFourHex" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="testMovingPieceInvalidLocation" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+    <testcase name="blueWinsWhenRedSurrenders" classname="hanto.teststudentthhughes.epsilon.EpislonTestsCarriedOverFromDelta" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.epsilon.UniqueEpsilonTests" time="0.0">
+    <testcase name="testCorrectExceptionOnEarlySurrender" classname="hanto.teststudentthhughes.epsilon.UniqueEpsilonTests" time="0.0"/>
+  </testsuite>
+</testrun>

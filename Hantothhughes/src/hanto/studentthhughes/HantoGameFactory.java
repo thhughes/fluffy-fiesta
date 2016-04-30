@@ -14,6 +14,7 @@ import hanto.common.*;
 import hanto.studentthhughes.common.HantoGameStateEvaluatorFactory;
 import hanto.studentthhughes.common.HantoTurnActionValidatorFactory;
 import hanto.studentthhughes.delta.DeltaHantoGame;
+import hanto.studentthhughes.epsilon.EpsilonHantoGame;
 import hanto.studentthhughes.alpha.AlphaHantoGame;
 import hanto.studentthhughes.beta.BetaHantoGame;
 import hanto.studentthhughes.gamma.GammaHantoGame;
@@ -84,7 +85,7 @@ public class HantoGameFactory
 						gsCalculatorFactory.makeHantoValidator(gameId));
 				break;
 			case EPSILON_HANTO:
-				game = new DeltaHantoGame(movesFirst,
+				game = new EpsilonHantoGame(movesFirst,
 						mValidatorFactory.makeHantoValidator(gameId),
 						gsCalculatorFactory.makeHantoValidator(gameId));
 				break;

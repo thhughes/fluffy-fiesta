@@ -1,0 +1,52 @@
+package hanto.studentthhughes.movefinder;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoPiece;
+
+public class MoveData {
+
+	HantoPiece piece;
+	HantoCoordinate to;
+	HantoCoordinate from;
+	
+	/**
+	 * Constructor
+	 * 
+	 * @param piece
+	 * 				HantoPiece : 
+	 * @param to
+	 * 				HantoCoordinate : to in the move
+	 * @param from
+	 * 				HantoCoordiante : from in the move
+	 */
+	public MoveData (HantoPiece piece, HantoCoordinate to, HantoCoordinate from){
+		this.piece = piece;
+		this.to = to;
+		this.from = from;
+	}
+	
+	/**
+	 * Gets the piece in this data
+	 * @return HantoPiece
+	 */
+	public HantoPiece getPiece(){
+		return piece;
+	}
+	
+	/**
+	 * Gets the to coordinate to in this data
+	 * @return HantoCoordinate
+	 */
+	public HantoCoordinate getTo(){
+		return to;
+	}
+	
+	/**
+	 * Gets the coordinate from in this data
+	 * @return HantoCoordinate
+	 */
+	public HantoCoordinate getFrom(){
+		return from;
+	}
+	
+}

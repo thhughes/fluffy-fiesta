@@ -1,0 +1,30 @@
+package hanto.studentthhughes.movefinder;
+
+import hanto.common.HantoGameID;
+import hanto.common.HantoPlayerColor;
+import hanto.studentthhughes.common.HantoGameStateEvaluatorFactory;
+import hanto.studentthhughes.common.HantoTurnActionValidatorFactory;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
+import hanto.tournament.HantoMoveRecord;
+
+public class ActionFinder {
+	TurnActionValidator tav;
+	GameStateEvaluator gse;
+	
+	public ActionFinder(HantoGameID gameID){
+		gse = HantoGameStateEvaluatorFactory.getInstance().makeHantoValidator(gameID);
+		tav = HantoTurnActionValidatorFactory.getInstance().makeHantoValidator(gameID);
+		
+	}
+	
+	
+	HantoMoveRecord getAction(HantoBoard theBoard, MoveCounter theCounter, HantoPlayerColor color){
+		HantoMoveRecord result = 
+		
+		return result;
+	}
+
+}

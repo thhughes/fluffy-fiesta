@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ActionFinderTest" project="Hantothhughes" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.actionfinder.ActionFinderTest" time="16.541">
+    <testcase name="testThatSomethingIsReturned" classname="hanto.teststudentthhughes.actionfinder.ActionFinderTest" time="16.54"/>
+    <testcase name="startingTests" classname="hanto.teststudentthhughes.actionfinder.ActionFinderTest" time="0.002"/>
+  </testsuite>
+</testrun>

@@ -11,6 +11,8 @@ import hanto.common.HantoCoordinate;
 import hanto.common.HantoGame;
 import hanto.common.HantoPiece;
 import hanto.common.HantoPlayerColor;
+import hanto.common.HantoPrematureResignationException;
+import hanto.common.MoveResult;
 import hanto.studentthhughes.TemplateHantoGame;
 import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
 import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
@@ -53,6 +55,9 @@ public class DeltaHantoGame extends TemplateHantoGame implements HantoGame {
 	public HantoPiece getPieceAt(HantoCoordinate where) {
 		return super.getPieceAt(where);
 	}
+
+
+
 
 	
 }

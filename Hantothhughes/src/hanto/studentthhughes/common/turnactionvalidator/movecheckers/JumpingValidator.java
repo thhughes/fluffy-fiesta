@@ -21,7 +21,9 @@ public class JumpingValidator extends AbsTurnActionValidator implements TurnActi
 			HantoCoordinateImpl to, HantoCoordinateImpl from) {
 		
 		if(!theBoard.isLocationOccupied(to)){
-			validResult = isMovingAlongY(to, from) || isMovingAlongX(to, from);
+			validResult =  isMovingAlongY(to, from) || 
+					isMovingAlongX(to, from) ||
+					isMovingAlongXY(to, from);
 			
 		}else{
 			validResult = false;
@@ -45,5 +47,11 @@ public class JumpingValidator extends AbsTurnActionValidator implements TurnActi
 		return Math.abs((start.getX() - end.getX())) == 0 && 
 				Math.abs((start.getY() - end.getY())) > 0;
 	}
+	
+	private boolean isMovingAlongXY(HantoCoordinate start, HantoCoordinate end) {
+		return Math.abs((start.getX() - end.getX())) ==
+				Math.abs((start.getY() - end.getY()));
+	}
+	
 
 }

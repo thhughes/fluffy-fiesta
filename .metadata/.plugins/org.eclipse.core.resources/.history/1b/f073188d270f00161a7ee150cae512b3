@@ -1,0 +1,30 @@
+package hanto.studentthhughes.epsilon;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoGame;
+import hanto.common.HantoGameID;
+import hanto.common.HantoPiece;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.common.MoveResult;
+import hanto.studentthhughes.TemplateHantoGame;
+import hanto.studentthhughes.actionfinder.ActionFinder;
+import hanto.studentthhughes.common.gamestateevaluator.GameStateEvaluator;
+import hanto.studentthhughes.common.turnactionvalidator.TurnActionValidator;
+
+public class EpsilonHantoGame extends TemplateHantoGame implements HantoGame {
+
+	ActionFinder af = new ActionFinder(HantoGameID.EPSILON_HANTO);
+	
+	public EpsilonHantoGame(HantoPlayerColor firstMovePlayer, TurnActionValidator tav, GameStateEvaluator gse) {
+		super(firstMovePlayer, tav, gse);
+		canSurrender = true;
+	}
+
+	protected void handleSurrender(){
+		
+		super.handleSurrender();
+	}
+
+}

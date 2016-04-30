@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="hanto.teststudentthhughes.delta" project="Hantothhughes" tests="55" started="55" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.001">
+    <testcase name="canPlaceACrab" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="testMovingCorrectPieceButterflyIsWrongPieceType" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="crabMovesFourPlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="redWinsWhenBlueSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="butterflyMovesOneHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="butterflyMovesTwoHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="sparrowMovesOneHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="crabMovesThreePlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="sparrowMovesTwoHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="sparrowFlysTwoHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="testMovingCorrectPieceCrabIsWrongPieceType" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="gameEndsAfterSomeoneSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="crabMovesTwoPlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="crabMovesOnePlace" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="sparrowFlysFourHex" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="testMovingPieceInvalidLocation" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+    <testcase name="blueWinsWhenRedSurrenders" classname="hanto.teststudentthhughes.delta.DeltaUniqueTests" time="0.0"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.008">
+    <testcase name="testPassingNullTo" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="movePieceThatDoesntExistEGWrongLocation" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="testGameOver" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="testMovingMostlyNotSurroundedPiece" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="testPlayingIllegalItem" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="moveButterflyOnSecondTurnRedToDisjointPlace" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="testAddingTooManyPieces" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="placingThreePiecesOnTheBoardInCorrectlyBasedOffTheirColors" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="testPlacingPieceOnInvalidTileFirstTime" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="testMovingMostlySurroundedPiece" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="testnotPlayingButterflyRightAway" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="makeSingleMoveCorrectly" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="moveButterflyOnSecondTurnRedLegalPlaceThatsTooFarAway" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="placingThreePiecesOnTheBoardCorrectly" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="testThatRedCanWin" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="movePieceThatDoesntExistEGWrongPiece" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+    <testcase name="testNotNull" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.0"/>
+    <testcase name="moveButterflyOnSecondRedTurn" classname="hanto.teststudentthhughes.delta.GammaTestsFromMeOnDelta" time="0.001"/>
+  </testsuite>
+  <testsuite name="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.01">
+    <testcase name="bluePlacesButterflyFirst" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="redSelfLoses" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="tryToMoveWhenNotEnoughSpace" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToUseTooManyButterflies" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="blueWins" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveByFirstPlayer" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="moveToDisconnectConfiguration" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="moveFromEmptyHex" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="moveSparrowToOccupiedHex" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToPlacePieceNextToOpponent" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="blueMovesSparrow" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToMoveWrongColorPiece" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="butterflyNotPlacedByFourthMoveBySecondPlayer" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="tryToMoveTooFar" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToMoveWrongPieceType" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="tryToUseTooManySparrows" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="moveButterflyToSameHex" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToMoveAfterGameIsOver" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+    <testcase name="tryToUsePieceNotInGame" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.001"/>
+    <testcase name="redPlacesSparrowFirst" classname="hanto.teststudentthhughes.delta.GammaTestsFromPolliceOnDelta" time="0.0"/>
+  </testsuite>
+</testrun>

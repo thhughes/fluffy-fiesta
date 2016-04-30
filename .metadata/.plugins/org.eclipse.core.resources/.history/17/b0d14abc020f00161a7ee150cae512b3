@@ -1,0 +1,145 @@
+package hanto.teststudentthhughes.actionfinder;
+
+import static hanto.common.HantoPlayerColor.*;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+import hanto.common.HantoCoordinate;
+import hanto.common.HantoException;
+import hanto.common.HantoGame;
+import hanto.common.HantoGameID;
+import hanto.common.HantoPiece;
+import static hanto.common.HantoPieceType.*;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.common.MoveResult;
+import hanto.studentthhughes.HantoGameFactory;
+import hanto.studentthhughes.actionfinder.ActionFinder;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoard;
+import hanto.studentthhughes.common.hantoboardandboardtools.HantoBoardImpl;
+import hanto.studentthhughes.common.hantopiece.HantoPieceImpl;
+import hanto.studentthhughes.common.movecounter.MoveCounter;
+import hanto.studentthhughes.common.movecounter.MoveCounterImpl;
+
+public class ActionFinderTest {
+
+	class MoveData {
+		final HantoPieceType type;
+		final HantoCoordinate from, to;
+		
+		private MoveData(HantoPieceType type, HantoCoordinate from, HantoCoordinate to) 
+		{
+			this.type = type;
+			this.from = from;
+			this.to = to;
+		}
+	}
+	
+	/**
+	 * Internal class for these test cases.
+	 * @version Sep 13, 2014
+	 */
+	class TestHantoCoordinate implements HantoCoordinate
+	{
+		private final int x, y;
+		
+		public TestHantoCoordinate(int x, int y)
+		{
+			this.x = x;
+			this.y = y;
+		}
+		/*
+		 * @see hanto.common.HantoCoordinate#getX()
+		 */
+		@Override
+		public int getX()
+		{
+			return x;
+		}
+
+		/*
+		 * @see hanto.common.HantoCoordinate#getY()
+		 */
+		@Override
+		public int getY()
+		{
+			return y;
+		}
+
+	}
+	
+	private MoveCounter counter;
+	private HantoBoard theBoard;
+	private HantoPiece p1;
+	private HantoPiece p2;
+	private HantoPiece p3;
+	private HantoPiece p4;
+	private HantoCoordinate hc1;
+	private HantoCoordinate hc2;
+	private HantoCoordinate hc3;
+	private HantoCoordinate hc4;
+	private ActionFinder af;
+	
+	@Before
+	public void setup()
+	{
+		theBoard = new HantoBoardImpl();
+		counter = new MoveCounterImpl();
+		p1 = new HantoPieceImpl(BLUE, SPARROW);
+		p2 = new HantoPieceImpl(RED, SPARROW);
+		p3 = new HantoPieceImpl(BLUE, SPARROW);
+		p4 = new HantoPieceImpl(RED, SPARROW);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * NOTE: Most, if not all, of the below testing helper functions must be attributed 
+	 * to Gary Pollice, I did not write them. I am just using them because they make
+	 * life infinitely easier and I'm sad I didn't thing/implement similar myself 
+	 * earlier. 
+	 */
+	
+	// Helper methods
+	private HantoCoordinate mc(int x, int y)
+	{
+		return new TestHantoCoordinate(x, y);
+	}
+	
+
+}

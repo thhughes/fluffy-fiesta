@@ -7,3 +7,21 @@
 1461954007538	Rename type 'DeltaUniqueTests'
 1461954021282	Rename type 'GammaTestsFromMeOnDelta'
 1461954035229	Rename type 'GammaTestsFromPolliceOnDelta'
+1461960402340	Move compilation unit
+1461960450427	Delete element
+1461960481199	Move compilation unit
+1461962379352	Rename compilation unit 'MoveFinder.java'
+1461962402274	Rename package 'hanto.studentthhughes.movefinder'
+1461962414613	Delete element
+1461962421733	Delete element
+1461962436295	Rename package 'hanto.teststudentthhughes.movefinder'
+1461964337570	Extract method 'checkForNulls'
+1462029487024	Extract method 'setGamma'
+1462029497789	Extract method 'setDelta'
+1462029515283	Extract method 'setEpsilon'
+1462029556613	Extract method 'setDefault'
+1462035345001	Extract method 'getNumberPieceMap'
+1462038905249	Rename local variable 'piece'
+1462039495283	Extract method 'getEmptySpacesNearPlayerPieces'
+1462039856671	Extract method 'buildPossiblePlaceLocationSet'
+1462058100355	Rename method 'makeCoordinate'

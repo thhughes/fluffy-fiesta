@@ -42,10 +42,7 @@ public class HantoBoardImpl implements HantoBoard {
 	 */
 	@Override
 	public boolean placeOnBoard(HantoPiece piece, HantoCoordinate where) throws HantoException {
-		if (piece == null) throw new HantoException("Board Exception: "
-				+ "Cannot place null on board");
-		if (where == null) throw new HantoException("Board Exception: "
-				+ "Cannot place piece at null on board");
+		checkForNulls(piece, where);
 		final HantoCoordinateImpl cleanPiece = new HantoCoordinateImpl(where);
 		
 		if(theBoard.containsKey(cleanPiece)){
@@ -58,6 +55,15 @@ public class HantoBoardImpl implements HantoBoard {
 		theBoard.put(new HantoCoordinateImpl(where), piece);
 		playerBoard.put(new HantoCoordinateImpl(where), piece);
 		return true;
+	}
+
+
+
+	private void checkForNulls(HantoPiece piece, HantoCoordinate where) throws HantoException {
+		if (piece == null) throw new HantoException("Board Exception: "
+				+ "Cannot place null on board");
+		if (where == null) throw new HantoException("Board Exception: "
+				+ "Cannot place piece at null on board");
 	}
 
 	/* (non-Javadoc)
