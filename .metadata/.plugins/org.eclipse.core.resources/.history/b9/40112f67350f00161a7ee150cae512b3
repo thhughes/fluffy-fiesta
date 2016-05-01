@@ -1,0 +1,18 @@
+package hanto.teststudentthhughes.tournament;
+
+import org.junit.Before;
+
+import hanto.studentthhughes.tournament.HantoPlayer;
+
+public class HantoPlayerTest {
+
+	
+	HantoPlayer player;
+	
+	@Before
+	public void setup(){
+		player = new HantoPlayer();
+	}
+	
+	
+}

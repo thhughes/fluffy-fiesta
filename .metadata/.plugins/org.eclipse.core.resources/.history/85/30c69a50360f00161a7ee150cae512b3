@@ -1,0 +1,39 @@
+package hanto.teststudentthhughes.tournament;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.common.HantoGameID;
+import hanto.common.HantoPlayerColor;
+import hanto.studentthhughes.tournament.HantoPlayer;
+
+public class HantoPlayerTest {
+
+	
+	HantoPlayer player;
+	
+	@Before
+	public void setup(){
+		player = new HantoPlayer();
+		
+	}
+	
+	@Test
+	public void testPlayerNotNull(){
+		assertNotNull(player);
+	}
+	
+	@Test
+	public void testPlayerCanGoFirst(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, true);
+		HantoMoveRecord firstMoveResult = player.makeMove(null);
+		assertNotNull(firstMoveResult);
+	}
+	
+//	@Test
+//	public void 
+	
+}
