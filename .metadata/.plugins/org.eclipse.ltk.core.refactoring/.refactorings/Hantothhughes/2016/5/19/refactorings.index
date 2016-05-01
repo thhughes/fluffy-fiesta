@@ -1,0 +1,7 @@
+1462068868955	Rename method 'setDefault'
+1462068885829	Rename method 'setEpsilon'
+1462068894159	Rename method 'setDelta'
+1462068905566	Rename method 'setGamma'
+1462072820391	Rename method 'makeOpponentAction'
+1462072841610	Change method 'makeAction'
+1462073381167	Extract method 'tryPlaceThenMoveAction'

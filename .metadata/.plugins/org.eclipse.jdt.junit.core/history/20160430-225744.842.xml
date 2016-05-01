@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HantoPlayerTest" project="Hantothhughes" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0">
+    <testcase name="testPlayerNotNull" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+    <testcase name="testPlayerPutsButterflyForFirstMove" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+    <testcase name="testOpponentCanGoFirst" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+    <testcase name="testPlayerCanGoFirst" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+    <testcase name="playAThirtyTurnGame" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+    <testcase name="testOpponentCanGoFirstAndPlayerWillPlayInCorrectLocation" classname="hanto.teststudentthhughes.tournament.HantoPlayerTest" time="0.0"/>
+  </testsuite>
+</testrun>

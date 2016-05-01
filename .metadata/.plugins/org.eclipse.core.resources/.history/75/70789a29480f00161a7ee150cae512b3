@@ -1,0 +1,95 @@
+package hanto.teststudentthhughes.tournament;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import hanto.common.HantoGameID;
+import hanto.common.HantoPieceType;
+import hanto.common.HantoPlayerColor;
+import hanto.studentthhughes.common.coordinate.HantoCoordinateImpl;
+import hanto.studentthhughes.tournament.HantoPlayer;
+import hanto.tournament.HantoMoveRecord;
+
+public class HantoPlayerTest {
+
+	
+	HantoPlayer player;
+	HantoPlayer player2;
+	
+	@Before
+	public void setup(){
+		player = new HantoPlayer();
+		player2 = new HantoPlayer();
+		
+	}
+	
+	@Test
+	public void testPlayerNotNull(){
+		assertNotNull(player);
+	}
+	
+	@Test
+	public void testPlayerCanGoFirst(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, true);
+		HantoMoveRecord firstMoveResult = player.makeMove(null);
+		assertNotNull(firstMoveResult);
+	}
+	
+	@Test
+	public void testPlayerPutsButterflyForFirstMove(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, true);
+		HantoMoveRecord firstMoveResult = player.makeMove(null);
+		assertEquals(firstMoveResult.getPiece(),
+				HantoPieceType.BUTTERFLY);
+		assertEquals(firstMoveResult.getFrom(), null);
+		assertEquals(firstMoveResult.getTo().getX(),0);
+		assertEquals(firstMoveResult.getTo().getY(),0);
+	}
+	
+	@Test
+	public void testOpponentCanGoFirst(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, false);
+		HantoMoveRecord opponentMove = new HantoMoveRecord(HantoPieceType.BUTTERFLY, null, 
+					new HantoCoordinateImpl(0,0));
+		HantoMoveRecord firstMoveResult = player.makeMove(opponentMove);
+		assertNotNull(firstMoveResult);
+	}
+	
+	@Test
+	public void testOpponentCanGoFirstAndPlayerWillPlayInCorrectLocation(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, false);
+		HantoMoveRecord opponentMove = new HantoMoveRecord(HantoPieceType.BUTTERFLY, null, 
+				new HantoCoordinateImpl(0,0));
+		
+		HantoMoveRecord firstMoveResult = player.makeMove(opponentMove);
+		
+		assertEquals(firstMoveResult.getPiece(),
+				HantoPieceType.BUTTERFLY);
+		assertEquals(firstMoveResult.getFrom(), null);
+		assertFalse(((firstMoveResult.getTo().getX() == 0) &&
+				(firstMoveResult.getTo().getY() == 0)));
+	}
+	
+	@Test
+	public void playAThirtyTurnGame(){
+		player.startGame(HantoGameID.EPSILON_HANTO, 
+				HantoPlayerColor.BLUE, false);
+		HantoMoveRecord opponentMove = new HantoMoveRecord(HantoPieceType.BUTTERFLY, null, 
+				new HantoCoordinateImpl(0,0));
+		
+		HantoMoveRecord firstMoveResult = player.makeMove(opponentMove);
+		
+		assertEquals(firstMoveResult.getPiece(),
+				HantoPieceType.BUTTERFLY);
+		assertEquals(firstMoveResult.getFrom(), null);
+		assertFalse(((firstMoveResult.getTo().getX() == 0) &&
+				(firstMoveResult.getTo().getY() == 0)));
+	}
+	
+}
