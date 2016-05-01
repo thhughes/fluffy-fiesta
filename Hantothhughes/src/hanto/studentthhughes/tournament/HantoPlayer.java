@@ -124,7 +124,7 @@ public class HantoPlayer implements HantoGamePlayer
 			}
 			
 		} catch (HantoException e) {
-
+			System.out.print("");
 			
 		}
 	}
